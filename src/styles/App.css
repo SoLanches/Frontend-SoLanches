@@ -1,0 +1,38 @@
+:root {
+   --primary-text: #314E52;
+   --secondary-text: #454545;
+   --tertiary-text: #636363;
+
+   --primary-color: #FF983B;
+   --color-background: #EEEFF4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+     background: var(--color-background);  
+}
+
+body, input, textarea, button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;  
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    color: var(--primary-text);
+}
+
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
