@@ -1,0 +1,53 @@
+.outContainer {
+    position: fixed;
+    width: 100vw;
+    background-color: #eeeff473;
+    transition: transform .5s ease;
+}
+
+.retracted {
+    transform: translateY(-20vh);
+}
+
+
+.container {
+    display: flex;
+    
+    max-width: 1500px;
+    
+    justify-content: space-between;
+    align-items: center;
+    
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.paginas {
+    display: flex;
+    gap: 2rem;
+    font-size: 20px;
+}
+
+.paginas li {
+    font-weight: bold;
+}
+
+.active {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 600px){
+    .container {
+        padding: 1rem 1rem;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .paginas {
+        font-size: 13px;
+        gap: 1rem;
+    }
+}
