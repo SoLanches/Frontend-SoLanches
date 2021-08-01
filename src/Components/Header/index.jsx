@@ -17,6 +17,7 @@ export const Header = () => {
         const currentScrolTop = window.pageYOffset
         setRetract(currentScrolTop > lastScrollTop ? true : false)
         setScrollTop(currentScrolTop)
+        
     }, [setScrollTop, setRetract, lastScrollTop])
 
     useEffect(() => {
