@@ -43,11 +43,11 @@
     }
 
     .logo {
-        max-width: 120px;
+        max-width: 100px;
     }
 
     .paginas {
-        font-size: 13px;
-        gap: 1rem;
+        font-size: 12px;
+        gap: .5rem;
     }
 }
