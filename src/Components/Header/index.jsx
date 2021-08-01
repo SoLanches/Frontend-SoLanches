@@ -11,13 +11,13 @@ import style from './style.module.css'
 export const Header = () => {
     const { pathname, handlePathname, pages } = usePagesContext()
     const [lastScrollTop, setScrollTop] = useState(window.pageYOffset)
-    const [retracted, setRetract] = useState(true)
+    const [retracted, setRetract] = useState(false)
 
     const handleScroll = useCallback(() => {
         const currentScrolTop = window.pageYOffset
         setRetract(currentScrolTop > lastScrollTop ? true : false)
         setScrollTop(currentScrolTop)
-        
+
     }, [setScrollTop, setRetract, lastScrollTop])
 
     useEffect(() => {

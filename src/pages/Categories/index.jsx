@@ -6,7 +6,7 @@ export function Categories() {
   return (
     <div className={style.container}>
       <div className={style.title}>
-        <h1>Sobre o HoCo</h1>
+        <h1>Página de categorias</h1>
       </div>
     </div>
   );
