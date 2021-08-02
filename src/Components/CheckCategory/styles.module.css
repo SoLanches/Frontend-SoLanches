@@ -28,12 +28,12 @@
 
 /* Essa passa a ser nossa checkbox personalizada*/
 .check {
-    width: 20px;
+    width: 19px;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    border: 1.5px solid black;
+    border: 2.25px solid black;
     border-radius: 5px;
     background-color: var(--color-background);
 }
@@ -54,7 +54,7 @@
 
 .container input:checked ~ .check {
     background-color: var(--color-background);
-    border: 1.5px solid var(--primary-color);
+    border: 2.25px solid var(--primary-color);
 }
 
 /* Ao clicar na checagem, o nome da categoria muda de cor também */
@@ -67,12 +67,12 @@
     content: "";
     position: absolute;
     display: none;
-    top: 1.8px;
-    left: 8.3px;
-    width: 5px;
-    height: 10px;
+    top: -2.75px;
+    left: 4.75px;
+    width: 6px;
+    height: 11.5px;
     border: solid var(--primary-color);
-    border-width: 0 3.5px 3.5px 0;
+    border-width: 0 4px 4px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
