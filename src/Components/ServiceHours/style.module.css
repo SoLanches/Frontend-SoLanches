@@ -45,35 +45,29 @@
 }
 
 .table {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
     margin-top: 2rem;
     text-align: center;
     width: 90%;
     font-size: 18px;
 }
 
-.tableHead {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 5px;
-    border-bottom: 2px solid rgb(202, 202, 202);
+.day {
+    text-align: start;
 }
 
-.tableHour {
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem 0rem;
+.closes {
+    text-align: end;
+}
+
+.table li:nth-child(1), .table li:nth-child(2), .table li:nth-child(3) {
+    padding-bottom: .1rem;
+    border-bottom: 2px solid rgb(219, 219, 219);
+}
+
+.table :not(.table li:nth-child(1), .table li:nth-child(2), .table li:nth-child(3)) {
+    margin: .5rem 0rem;
     color: var(--primary-color);
     font-weight: bold;
 }
-
-.tableHead div li:first-child {
-    margin-right: .5rem;
-}
-
-.tableHour div, .tableHead div {
-    display: flex;
-    gap: 2rem;
-}
-
-
-

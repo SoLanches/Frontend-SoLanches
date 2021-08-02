@@ -24,26 +24,18 @@ export const ServiceHours = ({ hours }) => {
                     <h3 className={style.title}>Nossos Horários</h3>
 
                     <div className={style.table}>
-                        <ul className={style.tableHead}>
-                            <li>Dia da semana</li>
-                            <div>
-                                <li>Abre</li>
-                                <li>Fecha</li>
-                            </div>
-                        </ul>
-                        <div className={style.tableBody}>
-                            {hours.map((hour) => {
-                                return (
-                                    <ul className={style.tableHour}>
-                                        <li>{hour.day}</li>
-                                        <div>
-                                            <li>{hour.opens}</li>
-                                            <li>{hour.closes}</li>
-                                        </div>
-                                    </ul>
-                                )
-                            })}
-                        </div>
+                        <li className={style.day}>Dia da semana</li>
+                        <li className={style.opens}>Abre</li>
+                        <li className={style.closes}>Fecha</li>
+                        {hours.map((hour, index) => {
+                            return (
+                                <>
+                                    <li className={style.day}>{hour.day}</li>
+                                    <li className={style.opens}>{hour.opens}</li>
+                                    <li className={style.closes}>{hour.closes}</li>
+                                </>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
