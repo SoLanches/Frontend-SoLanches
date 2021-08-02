@@ -8,12 +8,12 @@ export const ServiceHours = ({ hours }) => {
     const [active, setActive] = useState(false);
 
     const handleClick = useCallback(() => {
-        console.log(active)
         setActive(!active)
     }, [setActive, active])
 
     return (
-        <>
+        <>  
+            {/* TODO: Atualizar para componente de botão quando esse componente for criado*/}
             <button onClick={handleClick}>Horarios</button>
             <div className={`${active ? style.active : ''} ${style.outContainer}`}>
                 <div className={style.container}>
@@ -30,9 +30,13 @@ export const ServiceHours = ({ hours }) => {
                         {hours.map((hour, index) => {
                             return (
                                 <>
-                                    <li className={style.day}>{hour.day}</li>
-                                    <li className={style.opens}>{hour.opens}</li>
-                                    <li className={style.closes}>{hour.closes}</li>
+                                    <li className={style.day}>
+                                        {hour.day}
+                                    </li><li className={style.opens}>
+                                        {hour.opens}
+                                    </li><li className={style.closes}>
+                                        {hour.closes}
+                                    </li>
                                 </>
                             )
                         })}

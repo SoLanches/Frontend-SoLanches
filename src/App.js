@@ -4,7 +4,6 @@ import './styles/App.css'
 function App() {
   return (
     <div className="App">
-      <ServiceHours/>
       Welcome!
     </div>
   );
