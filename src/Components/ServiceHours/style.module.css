@@ -71,3 +71,20 @@
     color: var(--primary-color);
     font-weight: bold;
 }
+
+@media screen and (max-width: 550px) {
+    .container {
+        width: 300px;
+        min-height: 350px;
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .table {
+        font-size: 14px;
+    }
+    
+}
