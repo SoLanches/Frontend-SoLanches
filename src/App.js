@@ -1,9 +1,16 @@
 import './styles/App.css';
+import CategoryCard from './Components/CategoryCard'
+import lunch from './Assets/lunch.svg'
+
 function App() {
   return (
     <div className="App">
-      <h1>Welcome!</h1>
+      <CategoryCard 
+      title= 'Todas'
+      imageUrl={lunch}
+      />
     </div>
+
   );
 }
 

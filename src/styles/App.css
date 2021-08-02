@@ -17,7 +17,7 @@ body {
     background: var(--color-background); 
 }
 
-body, input, textarea, button {
+body, input, textarea, button, p {
     font-family: 'Inter', sans-serif;
     font-weight: 500; 
 }
