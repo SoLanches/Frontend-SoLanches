@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
-import './style.module.css'
-import Dropdown from './Dropdown'
+import './style.component.css'
+import Dropdown from './dropdown'
 
 
 function CategoryCard({title, imageUrl}) {
@@ -13,7 +13,7 @@ function CategoryCard({title, imageUrl}) {
     }
 
     return (
-        <div className={`${active ? "category-card" : "category-card-white"}`}>
+        <div className={`${active ? "category-card" : "category-card-white"}`} >
             <button className={`button-container ${active}`} onClick={toggle}>
             <div className="image-container">
                 <div className="circle">
@@ -30,4 +30,3 @@ function CategoryCard({title, imageUrl}) {
 
 
 export default CategoryCard
-

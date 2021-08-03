@@ -2,7 +2,7 @@
     width: 12.5rem;
     height: 16rem;
     overflow: hidden;
-    box-shadow: 0px 0px 10px -5px;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
     border-radius: 50px ;
     background-color: var(--primary-color);
     position: relative;
@@ -15,7 +15,7 @@
     width: 12.5rem;
     height: 16rem;
     overflow: hidden;
-    box-shadow: 0px 0px 10px -5px;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.2));
     border-radius: 50px ;
     background-color: var(--color-base);
     position: relative;
@@ -91,4 +91,50 @@
 .rotate{
 
     transform: rotate(180deg);
+}
+
+@media screen and (max-width: 550px) {
+
+    .category-card{
+        width: 9.4rem;
+        height: 13.12rem;
+        border-radius: 35px;
+    }
+
+    .category-card-white{
+        width: 9.4rem;
+        height: 13.12rem;
+        border-radius: 35px;
+    }
+
+    .circle{
+        width: 60px;
+        height: 60px;
+        transform: translate(78%, -95%);
+
+    }
+
+    .title {
+        font-size: 18px;
+        top: 8rem;
+       
+    }
+    
+    .title-blue {
+        font-size: 18px;
+        top: 8rem;
+       
+    }
+    .dropdown__icon{
+        left: 42%;
+    }
+
+    .image-container img{
+        width: 2.8rem ;
+        height: 2.8rem;
+        position: absolute;
+        top: 25%;
+    
+    }
+
 }
