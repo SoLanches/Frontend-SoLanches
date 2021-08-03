@@ -1,92 +1,75 @@
 .category-card{
     width: 12.5rem;
     height: 16rem;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
     border-radius: 50px ;
     background-color: var(--primary-color);
-    position: relative;
-    margin: 100px 100px 100px 100px;
-
-
+    margin: 100px;
 }
 
-.category-card-white{
+
+
+.category-card-active{
     width: 12.5rem;
     height: 16rem;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.2));
     border-radius: 50px ;
     background-color: var(--color-base);
-    position: relative;
-    margin: 100px 100px 100px 100px;
-
-
+    margin: 100px;
 }
 
-.button-container {
-    width: 12.5rem;
-    height: 16rem;
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    outline: none;    
-}
 
-.dropdown__icon{
-    position: absolute;
-    top: 80%;
-    left: 44%;
+.dropdown-icon{
+    margin-top: 24px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-direction: row;
-    
-
 }
 
-.image-container img{
+.dropdown-icon-active{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
     width: 6rem ;
     height: 4rem;
-    position: absolute;
-    top: 25%;
-
+    margin-top: 20px;
 }
 
-.circle{
-    overflow: hidden;
+.container{
     width: 90px;
     height: 90px;
+        margin-top: 30px;
     border-radius: 100%;
     background-color: var(--color-base);
-    position:relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    transform: translate(60%, -50%);
-
 
 }
 
 .title {
-    color:#fff;
+    color: var(--color-base);
     font-size: 20px;
-    text-align: center;
-    position: relative;
-    top: 10.25rem;
-   
+    margin-top: 2.2rem;
 }
 
-.title-blue {
+.title-active {
     color: var(--primary-text);
     font-size: 20px;
-    text-align: center;
-    position: relative;
-    top: 10.25rem;
-   
+    margin-top: 2.2rem;
 }
-
-
 
 .rotate{
 
@@ -101,40 +84,36 @@
         border-radius: 35px;
     }
 
-    .category-card-white{
+    .category-card-active{
         width: 9.4rem;
         height: 13.12rem;
         border-radius: 35px;
     }
 
-    .circle{
+    .container{
         width: 60px;
         height: 60px;
-        transform: translate(78%, -95%);
-
     }
 
     .title {
         font-size: 18px;
         top: 8rem;
-       
     }
     
-    .title-blue {
+    .title-active {
         font-size: 18px;
         top: 8rem;
-       
     }
-    .dropdown__icon{
-        left: 42%;
-    }
-
-    .image-container img{
+   
+    .icon{
         width: 2.8rem ;
         height: 2.8rem;
-        position: absolute;
-        top: 25%;
-    
+        margin-top: 12px;
+
     }
 
+    .rotate{
+        transform: rotate(180deg);
+
+    }
 }

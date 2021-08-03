@@ -8,7 +8,6 @@ function App() {
       <CategoryCard 
       title= 'Todas'
       imageUrl={lunch}
-      color='#fff'
       />
     </div>
 

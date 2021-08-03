@@ -1,30 +1,28 @@
-import React, { useState} from 'react';
-import './style.component.css'
+import React, { useState, useCallback} from 'react';
+import './style.css'
 import Dropdown from './dropdown'
 
 
-function CategoryCard({ title, imageUrl }) {
+function CategoryCard({title, imageUrl}) {
     const [active, setActive] = useState(false);
 
 
-    const handleClick = usecallback(() => {
+const handleClick = useCallback(
+    () => {
         setActive(!active)
-
-    }
-
+    },
+)
     return (
-        <div className={`${active ? "category-card" : "category-card-active"}`} >
-            <button className={`button-container ${active}`} onClick={toggle}>
-            <div className="image-container">
-                <div className="circle">
-                    <img src={imageUrl} alt=""/>
-                </div>
+
+        <div className={`${active ? "category-card" : "category-card-active"}`} onClick= {handleClick}>
+            <div className="container">
+                <img className= "icon" src={imageUrl} alt="Todas as categorias"/>
             </div>
-            </button>
-            <p className={`${active ? "title" : "title-blue"}`}>{title}</p>
-                <Dropdown className={`${active ? "dropdown__icon" : "dropdown__icon rotate"}`} 
-                color={`${active ? "#FFF" : "#FF983B" }`}/>
-            </div>
+            <p className={`${active ? "title": "title-active"}`}>{title}</p>
+            <Dropdown className={`${active ? "dropdown-icon": "dropdown-icon-active rotate"}`} color={`${active ? "#FFF" : "#FF983B"}`}/>
+        </div>
+
+           
     )
 }
 
