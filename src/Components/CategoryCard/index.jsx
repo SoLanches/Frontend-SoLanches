@@ -16,7 +16,7 @@ function CategoryCard({ title, imageUrl }) {
         <div className={`${active ? "category-card" : "category-card-active"}`} >
             <button className={`button-container ${active}`} onClick={toggle}>
             <div className="image-container">
-                <div className="circle">
+                <div className="images">
                     <img src={imageUrl} alt=""/>
                 </div>
             </div>
