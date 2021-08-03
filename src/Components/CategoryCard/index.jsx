@@ -13,7 +13,7 @@ function CategoryCard({ title, imageUrl }) {
     }
 
     return (
-        <div className={`${active ? "category-card" : "category-card-white"}`} >
+        <div className={`${active ? "category-card" : "category-card-active"}`} >
             <button className={`button-container ${active}`} onClick={toggle}>
             <div className="image-container">
                 <div className="circle">
