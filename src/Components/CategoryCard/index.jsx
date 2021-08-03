@@ -3,7 +3,7 @@ import './style.component.css'
 import Dropdown from './dropdown'
 
 
-function CategoryCard({title, imageUrl}) {
+function CategoryCard({ title, imageUrl }) {
     const [active, setActive] = useState(false);
 
 
