@@ -7,7 +7,7 @@ function CategoryCard({ title, imageUrl }) {
     const [active, setActive] = useState(false);
 
 
-    function toggle(){
+    const handleClick = usecallback(() => {
         setActive(!active)
 
     }
