@@ -1,0 +1,83 @@
+.container {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+/* Isso impede o usuário de selecionar e/ou arrastar o conteúdo de texto */
+.categoryCheck {
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* Esconde o campo de input por trás da label */
+.categoryCheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Essa passa a ser nossa checkbox personalizada*/
+.check {
+    width: 19px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 2.25px solid black;
+    border-radius: 5px;
+    background-color: var(--color-background);
+}
+
+.categoryName {
+    font-weight: 600;
+    color: var(--primary-text);
+    margin-left: 1.75rem;
+}
+
+.checkbox {
+    margin-right: 0.4rem;
+}
+
+.container input {
+    margin-right: 0.4rem;
+}
+
+.container input:checked ~ .check {
+    background-color: var(--color-background);
+    border: 2.25px solid var(--primary-color);
+}
+
+/* Ao clicar na checagem, o nome da categoria muda de cor também */
+.container input:checked ~ span {
+    color: var(--primary-color) !important;
+}
+
+/* A marca de check que aparece ao selecionar a checkbox. */
+.container .check::after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: -2.75px;
+    left: 4.75px;
+    width: 6px;
+    height: 11.5px;
+    border: solid var(--primary-color);
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.container input:checked ~ .check:after{
+    display: block;
+}
