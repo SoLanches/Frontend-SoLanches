@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from 'react';
-import './style.css'
-import Dropdown from './dropdown'
+import style from'./style.module.css'
+import { IoChevronDownOutline as Dropdown } from 'react-icons/io5'
 
 
-export const CategoryCard({ title, imageUrl }) {
+
+export const CategoryCard = ({title, imageUrl}) => {
     const [active, setActive] = useState(false);
-
 
     const handleClick = useCallback(
         () => {
@@ -14,14 +14,12 @@ export const CategoryCard({ title, imageUrl }) {
     )
     return (
 
-        <div className={`${active ? "category-card" : "category-card-active"}`} onClick={handleClick}>
-            <div className="container">
-                <img className="icon" src={imageUrl} alt="Todas as categorias" />
+        <div className={`${active ? style.categoryCard : style.categoryCardActive}`} onClick={handleClick}>
+            <div className={style.container}>
+                <img className={style.icon} src={imageUrl} alt="Todas as categorias" />
             </div>
-            <p className={`${active ? "title" : "title-active"}`}>{title}</p>
-            <Dropdown className={`${active ? "dropdown-icon" : "dropdown-icon-active rotate"}`} color={`${active ? "#FFF" : "#FF983B"}`} />
+            <p className={`${active ? style.title : style.titleActive}`}>{title}</p>
+            <div className={style.dropdownIcon}><Dropdown color={`${active ? "#FFF": "#FF983B"}`} size='1.8rem' className={`${active ? "": style.rotate}`}/></div>
         </div>
-
-
     )
 }

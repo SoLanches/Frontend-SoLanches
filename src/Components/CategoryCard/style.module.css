@@ -1,4 +1,4 @@
-.category-card{
+.categoryCard{
     width: 12.5rem;
     height: 16rem;
     display: flex;
@@ -9,11 +9,17 @@
     border-radius: 50px ;
     background-color: var(--primary-color);
     margin: 100px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 }
 
-
-
-.category-card-active{
+.categoryCardActive{
     width: 12.5rem;
     height: 16rem;
     display: flex;
@@ -24,22 +30,20 @@
     border-radius: 50px ;
     background-color: var(--color-base);
     margin: 100px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 
-.dropdown-icon{
+.dropdownIcon{
     margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.dropdown-icon-active{
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .icon {
     width: 6rem ;
@@ -50,7 +54,7 @@
 .container{
     width: 90px;
     height: 90px;
-        margin-top: 30px;
+    margin-top: 34px;
     border-radius: 100%;
     background-color: var(--color-base);
     display: flex;
@@ -65,11 +69,12 @@
     margin-top: 2.2rem;
 }
 
-.title-active {
+.titleActive {
     color: var(--primary-text);
     font-size: 20px;
     margin-top: 2.2rem;
 }
+
 
 .rotate{
 
