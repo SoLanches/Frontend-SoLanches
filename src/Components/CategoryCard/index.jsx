@@ -2,8 +2,6 @@ import React, { useState, useCallback } from 'react';
 import style from'./style.module.css'
 import { IoChevronDownOutline as Dropdown } from 'react-icons/io5'
 
-
-
 export const CategoryCard = ({title, imageUrl}) => {
     const [active, setActive] = useState(false);
 
@@ -14,14 +12,14 @@ export const CategoryCard = ({title, imageUrl}) => {
     )
     return (
 
-        <div className={`${active ? style.categoryCard : style.categoryCardActive}`} onClick={handleClick}>
+        <div className={`${style.categoryCard} ${active ? `${style.active}`: ""}`} onClick={handleClick}>
             <div className={style.container}>
-                <img className={style.icon} src={imageUrl} alt="Todas as categorias" />
+                <img className={style.icon} src={imageUrl} alt="Todas as categorias"/>
             </div>
-            <p className={`${active ? style.title : style.titleActive}`}>{title}</p>
+            <p className={style.title}>{title}</p>
             <div className={style.dropdownIcon}>
-                <Dropdown color={`${active ? "#FFF": "#FF983B"}`} size='1.6rem'
-                className={`${active ? style.rotateActive: style.rotate}`}/>
+                <Dropdown color={`${active ? "#FF983B" :"#FFF"}`} size='1.6rem'
+                className={style.rotate}/>
             </div>
         </div>
     )

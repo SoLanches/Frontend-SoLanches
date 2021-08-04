@@ -10,28 +10,14 @@
     background-color: var(--primary-color);
     margin: 100px;
 
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
     transition: ease-in-out 0.3s;
+    outline: none;
+    cursor: pointer;
 
 }
+/*Configuração para que os itens não sejam selecionados ou arrastados*/
 
-.categoryCardActive{
-    width: 12.5rem;
-    height: 16rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.2));
-    border-radius: 50px ;
-    background-color: var(--color-base);
-    margin: 100px;
+.categoryCard{
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -39,7 +25,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    transition: ease-in-out 0.3s;
+}
+
+.active.categoryCard{
+    background-color: var(--color-base);
 }
 
 
@@ -72,25 +61,18 @@
     margin-top: 2.2rem;
 }
 
-.titleActive {
+.active .title {
     color: var(--primary-text);
-    font-size: 20px;
-    margin-top: 2.2rem;
 }
 
 
 .rotate{
-
     transform: rotate(180deg);
     transition:ease-in-out 0.4s;
-
 }
 
-.rotateActive{
-
+.active .rotate{
     transform: rotate(360deg);
-    transition:ease-in-out 0.4s;
-
 }
 
 @media screen and (max-width: 550px) {
@@ -101,7 +83,7 @@
         border-radius: 35px;
     }
 
-    .categoryCardActive{
+    .active.categoryCard{
         width: 9.4rem;
         height: 13.12rem;
         border-radius: 35px;
@@ -117,10 +99,6 @@
         top: 8rem;
     }
     
-    .titleActive {
-        font-size: 18px;
-        top: 8rem;
-    }
    
     .icon{
         width: 2.8rem ;
@@ -136,7 +114,7 @@
     
     }
     
-    .rotateActive{
+    .active.rotate{
     
         transform: rotate(360deg);
         transition:ease-in-out 0.4s;
