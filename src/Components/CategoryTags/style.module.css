@@ -1,0 +1,20 @@
+.categoryTag{
+    max-width: 140rem;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    display: inline-block;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 20px 0px 20px;
+    margin: 120px;
+
+    
+}
+
+.title{
+    text-align: center;
+    white-space: nowrap;
+    font-size: 18px;
+    color: #FFF;
+}

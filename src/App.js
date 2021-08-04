@@ -1,10 +1,10 @@
-import { CheckCategory } from './Components/CheckCategory'
+import { CategoryTags } from './Components/CategoryTags'
 import './styles/App.css';
 
 function App() {
   return (
     <div className="App">
-      Welcome!
+      <CategoryTags title="Pizza"/>
     </div>
   );
 }
