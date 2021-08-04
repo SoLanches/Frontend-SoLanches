@@ -18,7 +18,7 @@ export const CategoryCard = ({title, imageUrl}) => {
             </div>
             <p className={style.title}>{title}</p>
             <div className={style.dropdownIcon}>
-                <Dropdown color={`${active ? "#FF983B" :"#FFF"}`} size='1.6rem'
+                <Dropdown color={`${active ? "#FFFFFF": "#FF983B"}`} size='1.6rem'
                 className={style.rotate}/>
             </div>
         </div>

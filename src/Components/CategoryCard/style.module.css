@@ -7,7 +7,7 @@
 
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
     border-radius: 50px ;
-    background-color: var(--primary-color);
+    background-color: var(--color-base);
     margin: 100px;
 
     transition: ease-in-out 0.3s;
@@ -28,7 +28,7 @@
 }
 
 .active.categoryCard{
-    background-color: var(--color-base);
+    background-color: var(--primary-color);
 }
 
 
@@ -56,13 +56,13 @@
 }
 
 .title {
-    color: var(--color-base);
+    color: var(--primary-text);
     font-size: 20px;
     margin-top: 2.2rem;
 }
 
 .active .title {
-    color: var(--primary-text);
+    color: var(--color-base);
 }
 
 
