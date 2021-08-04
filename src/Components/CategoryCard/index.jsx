@@ -19,7 +19,10 @@ export const CategoryCard = ({title, imageUrl}) => {
                 <img className={style.icon} src={imageUrl} alt="Todas as categorias" />
             </div>
             <p className={`${active ? style.title : style.titleActive}`}>{title}</p>
-            <div className={style.dropdownIcon}><Dropdown color={`${active ? "#FFF": "#FF983B"}`} size='1.8rem' className={`${active ? "": style.rotate}`}/></div>
+            <div className={style.dropdownIcon}>
+                <Dropdown color={`${active ? "#FFF": "#FF983B"}`} size='1.6rem'
+                className={`${active ? style.rotateActive: style.rotate}`}/>
+            </div>
         </div>
     )
 }

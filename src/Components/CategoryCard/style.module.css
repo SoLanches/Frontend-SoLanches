@@ -17,6 +17,8 @@
     -ms-user-select: none;
     user-select: none;
 
+    transition: ease-in-out 0.3s;
+
 }
 
 .categoryCardActive{
@@ -37,6 +39,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    transition: ease-in-out 0.3s;
 }
 
 
@@ -79,17 +82,26 @@
 .rotate{
 
     transform: rotate(180deg);
+    transition:ease-in-out 0.4s;
+
+}
+
+.rotateActive{
+
+    transform: rotate(360deg);
+    transition:ease-in-out 0.4s;
+
 }
 
 @media screen and (max-width: 550px) {
 
-    .category-card{
+    .categoryCard{
         width: 9.4rem;
         height: 13.12rem;
         border-radius: 35px;
     }
 
-    .category-card-active{
+    .categoryCardActive{
         width: 9.4rem;
         height: 13.12rem;
         border-radius: 35px;
@@ -105,7 +117,7 @@
         top: 8rem;
     }
     
-    .title-active {
+    .titleActive {
         font-size: 18px;
         top: 8rem;
     }
@@ -118,7 +130,20 @@
     }
 
     .rotate{
-        transform: rotate(180deg);
 
+        transform: rotate(180deg);
+        transition:ease-in-out 0.4s;
+    
     }
+    
+    .rotateActive{
+    
+        transform: rotate(360deg);
+        transition:ease-in-out 0.4s;
+    
+    }
+    .dropdownIcon{
+        margin-top: 14px;
+    }
+
 }
