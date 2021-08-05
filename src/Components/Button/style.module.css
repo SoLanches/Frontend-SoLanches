@@ -1,0 +1,32 @@
+.container{
+    background-color: var(--primary-color);
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
+    height: 2.5rem;
+    margin: 1.88rem;
+    border: none;
+    padding: 0px 32px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.container:hover{
+    background-color: var(--color-effect) ;
+}
+
+.title{
+    color: var(--color-base);
+    font-size: 16px;
+}
+
+@media screen and (max-width: 550px) {
+
+    .container{
+        height: 2rem ;
+        padding: 0px 22px;
+        border-radius: 8px;
+    }
+
+    .title{
+        font-size: 12px;
+    }
+}
