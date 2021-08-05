@@ -1,8 +1,9 @@
-import './styles/App.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';
+
+import './styles/App.css';
 
 function App() {
   const { pages } = usePagesContext()
