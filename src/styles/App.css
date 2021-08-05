@@ -37,5 +37,13 @@ button{
 
 a {
     text-decoration: none;
+    color: var(--primary-text)
+}
 
+ul, li {
+    list-style: none;
+}
+
+.body {
+    padding-top: 5rem;
 }
