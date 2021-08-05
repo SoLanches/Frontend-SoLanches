@@ -11,7 +11,6 @@
     transition: ease-in-out 0.3s;
     margin: 60px; 
     cursor: pointer;
-
 }
 
 .categoryTag{
@@ -26,7 +25,6 @@
 .active.categoryTag{
     background-color: var(--primary-color);
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
-
 }
 
 .title{
@@ -43,7 +41,6 @@
 @media screen and (max-width: 550px) {
 
     .categoryTag{
-        max-width: 140rem;
         height: 30px;
     }
 
