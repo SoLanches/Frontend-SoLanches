@@ -9,7 +9,7 @@
     flex-direction: column;
     padding: 10px 20px 0px 20px;
     transition: ease-in-out 0.3s;
-    margin: 120px; 
+    margin: 60px; 
     cursor: pointer;
 
 }
@@ -38,4 +38,17 @@
 
 .active .title{
     color: var(--color-base);
+}
+
+@media screen and (max-width: 550px) {
+
+    .categoryTag{
+        max-width: 140rem;
+        height: 30px;
+    }
+
+    .title{
+        margin-top: -3px;
+        font-size: 14px;
+    }
 }
