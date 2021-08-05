@@ -55,6 +55,7 @@
 
 .day {
     text-align: start;
+    color: var(--primary-text)
 }
 
 .closes {
