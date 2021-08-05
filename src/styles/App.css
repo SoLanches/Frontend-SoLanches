@@ -5,6 +5,7 @@
 
    --primary-color: #FF983B;
    --color-background: #EEEFF4;
+   --color-base: #FFFFFF;
 }
 
 * {
@@ -17,7 +18,7 @@ body {
      background: var(--color-background);  
 }
 
-body, input, textarea, button {
+body, input, textarea, button, p {
     font-family: 'Inter', sans-serif;
     font-weight: 500;  
 }
@@ -29,10 +30,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-button {
+button{
     cursor: pointer;
+
 }
 
 a {
     text-decoration: none;
+    color: var(--primary-text)
+}
+
+ul, li {
+    list-style: none;
+}
+
+.body {
+    padding-top: 5rem;
 }
