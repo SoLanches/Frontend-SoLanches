@@ -1,11 +1,15 @@
-import { CheckCategory } from './Components/CheckCategory'
+
 import './styles/App.css';
+import { CategoryCard }from './Components/CategoryCard'
+import lunch from './Assets/lunch.svg'
 
 function App() {
   return (
     <div className="App">
-      Welcome!
+      <CategoryCard
+    title="Todas" imageUrl={lunch}/>
     </div>
+
   );
 }
 
