@@ -8,5 +8,3 @@ export const Button= ({title}) => {
         </button>
     )
 }
-
-

@@ -10,7 +10,7 @@
 }
 
 .container:hover{
-    background-color: var(--color-effect) ;
+    background-color: var(--color-effect);
 }
 
 .title{
