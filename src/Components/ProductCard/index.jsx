@@ -25,6 +25,7 @@ ProductCard.defaultProps = {
     title: 'Coxinha de frango',
     alt: '8 coxinhas dentro laranja em cima de um prato',
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-    price: '8,50'
+    price: '8,50',
+    removable: true,
 
 }
