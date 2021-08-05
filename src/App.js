@@ -14,7 +14,7 @@ function App() {
         <div className='body'>
           <Switch>
             {pages.map((page, index) => <Route key={index} path={page.path} component={page.component} />)}
-            <Route path='*'><Redirect to='/' /></Route>
+            <Route path='*'><Redirect to='/inicio' /></Route>
           </Switch>
         </div>
       </BrowserRouter>
