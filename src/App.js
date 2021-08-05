@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-import { Button } from './Components/Button';
+import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';
 
 import './styles/App.css';
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Button title="Cadastre-se"/>
+        <Header />
         <div className='body'>
           <Switch>
             {pages.map((page, index) => <Route key={index} path={page.path} component={page.component} />)}

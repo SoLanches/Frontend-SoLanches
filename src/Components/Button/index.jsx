@@ -3,7 +3,7 @@ import style from './style.module.css'
 
 export const Button= ({title}) => {
     return (
-        <button className={style.container} onClick= "">
+        <button className={style.container}>
             <p className={style.title}>{title}</p>
         </button>
     )

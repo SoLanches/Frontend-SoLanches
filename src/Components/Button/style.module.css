@@ -2,7 +2,7 @@
     background-color: var(--primary-color);
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
     height: 2.5rem;
-    margin: 1.88rem;
+    margin: 8.88rem;
     border: none;
     padding: 0px 32px;
     border-radius: 10px;
@@ -27,6 +27,6 @@
     }
 
     .title{
-        font-size: 12px;
+        font-size: 14px;
     }
 }
