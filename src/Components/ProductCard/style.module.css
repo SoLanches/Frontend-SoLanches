@@ -6,7 +6,6 @@
     gap: 1rem;
 
     width: 19rem;
-    min-height: 20rem;
 
     overflow: hidden;
     border-radius: 48px;
@@ -52,4 +51,32 @@
 
 .deletable {
     display: inline;
+}
+
+@media screen and (max-width: 600px) {
+
+    .container {
+        width: 13rem;
+        gap: .75rem;
+        padding-bottom: 1rem;
+        border-radius: 36px;
+    }
+
+    .imageContainer {
+        max-height: 6rem;
+    }
+
+    .title {
+        font-size: 15px;
+    }
+
+    .description {
+        font-size: 11px;
+    }
+
+    .price, .delete {
+        font-size: 13px;
+    }
+
+    
 }
