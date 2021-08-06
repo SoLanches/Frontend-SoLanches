@@ -1,20 +1,24 @@
 import { useState, useCallback } from "react";
 
 import { IoCloseOutline } from "react-icons/io5";
+import { BiBell } from "react-icons/bi";
 
 import style from './style.module.css'
 
 export const ServiceHours = ({ hours }) => {
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(true);
 
     const handleClick = useCallback(() => {
         setActive(!active)
     }, [setActive, active])
 
     return (
-        <>  
+        <>
             {/* TODO: Atualizar para componente de botão quando esse componente for criado*/}
-            <button onClick={handleClick}>Horarios</button>
+            <button onClick={handleClick}>
+                <BiBell size="1.25rem" />
+                <span>Horarios</span>
+            </button>
             <div className={`${active ? style.active : ''} ${style.outContainer}`}>
                 <div className={style.container}>
                     <IoCloseOutline

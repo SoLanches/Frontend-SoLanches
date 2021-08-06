@@ -1,4 +1,5 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { CommerceInfo } from './Components/CommerceInfo';
 
 import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';

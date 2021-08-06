@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 1rem 3rem 1rem;
+    margin: 0.5rem 1rem 3rem 1rem;
 }
 
 h1 {
@@ -13,7 +13,7 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 700 !important; 
     padding: 0.75rem 0 0.1rem 0;
 }
@@ -41,7 +41,7 @@ img {
 .buttons {
     display: flex;
     justify-content: center;
-    padding-top: 1rem;
+    margin-top: 1rem;
     width: 100%;
 }
 
@@ -53,10 +53,6 @@ img {
     .buttons {
         width: 100%;
     }
-
-    button {
-        padding: 0 2rem;
-    }
 }
 
 .buttons button {
@@ -64,7 +60,7 @@ img {
     align-items: center;
     text-align: center;
     background-color: var(--primary-color);
-    padding: 0.7rem;
+    padding: 0.7rem 1rem;
     border-radius: 0.6rem;
     border: none;
     color: white;
@@ -94,6 +90,10 @@ img {
 
 .social_medias {
     padding-top: 0.4rem;
+}
+
+#none_icon {
+    display: none;
 }
 
 #social_icon:first-child {
