@@ -6,7 +6,7 @@
  src="https://user-images.githubusercontent.com/50140771/128458981-b4a6d117-a5b1-4399-abc4-03f085c99032.png"/> 
 </p>
 
-### Índice
+### 📎 Índice
 - [O que é o Solanches?](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#-o-que-%C3%A9-o-solanches)
 - [Funcionalidades](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#computer-funcionalidades)
   - [Funcionalidades destinadas aos comércios](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#convenience_store-funcionalidades-destinadas-aos-com%C3%A9rcios)
@@ -67,7 +67,7 @@ Existem funcionalidades tanto para o cliente quanto para os comércios, são ela
 
 - :electron: [React](https://pt-br.reactjs.org/)
 - :wrench: [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) 
-- 📝[Ant Design](https://ant.design/docs/react/introduce)
+- 📝 [Ant Design](https://ant.design/docs/react/introduce)
 - :wrench: [Axios](https://axios-http.com/docs/intro)
 
 ## 📌 Equipe do SoLanches 
