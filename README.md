@@ -31,7 +31,7 @@ Dessa forma, a ideia é desenvolver uma plataforma personalizada para a cidade d
 
 ## :computer: Funcionalidades
 
-Existem funcionalidades tanto para o cliente quanto para os comércios, são elas:
+Foram desenvolvidas funcionalidades tanto para os clientes quanto para os comércios, são elas:
 
 ### :convenience_store: Funcionalidades destinadas aos comércios
 
@@ -45,7 +45,7 @@ Existem funcionalidades tanto para o cliente quanto para os comércios, são ela
   - Cadastro de nome, imagem, preço e descrição do produto;
   -  Opção de edição e remoção de qualquer um dos campos de cadastro do produto.
 
-- Após isso, o perfil do comércio estará criado com sucesso, e já poderá ser encontrado de forma rápida e simplificada.
+- ✔️ Após isso, o perfil do comércio estará criado com sucesso, e já poderá ser encontrado de forma rápida e simplificada.
 
 ### 👩🏼‍💻👨🏻‍💻👩🏾‍💻 Funcionalidades destinadas aos clientes
 
@@ -53,10 +53,9 @@ Existem funcionalidades tanto para o cliente quanto para os comércios, são ela
 
 - Poderão selecionar qual o tipo de alimento ou serviço que estão procurando e as opções disponíveis de lugares que disponibilizam o produto procurado serão listados;
 
-- Após isso, poderão conhecer o estabelecimento;
-
+- Após isso, poderão conhecer o estabelecimento, bem como:
   - Produtos disponíveis e seus respectivos valores;
-  - Bem como ter acesso as suas formas de contato.
+  - Opções de contato.
 
 
 ## :link: Como acessar o SoLanches?
