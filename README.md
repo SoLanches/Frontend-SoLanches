@@ -7,16 +7,16 @@
 </p>
 
 ### Índice
--[O que é o Solanches?]()
--[Funcionalidades]()
-  -[Funcionalidades destinadas ao comércio]()
-  -[Funcionalidades destinadas aos clientes]()
- - [Como acessar o SoLanches?]()
- - [Tecnologias utilizadas]()
- - [Equipe do Solanches]()
+- [O que é o Solanches?](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#-o-que-%C3%A9-o-solanches)
+- [Funcionalidades](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#computer-funcionalidades)
+  - [Funcionalidades destinadas aos comércios](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#convenience_store-funcionalidades-destinadas-aos-com%C3%A9rcios)
+  - [Funcionalidades destinadas aos clientes](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#-funcionalidades-destinadas-aos-clientes)
+ - [Como acessar o SoLanches?](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#link-como-acessar-o-solanches)
+ - [Tecnologias utilizadas](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#gear-tecnologias-utilizadas)
+ - [Equipe do Solanches](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#-equipe-do-solanches)
 
 
-O SoLanches é um sistema web criado e desenvolvido durante a disciplina de Engenharia de Software do curso de Ciência da Computação na Universidade Federal de Campina Grande, que tem como objetivo exibir todos os comércios do ramo alimentício de cidades pequenas.
+O SoLanches é um sistema web, criado e desenvolvido durante a disciplina de Engenharia de Software do curso de Ciência da Computação na Universidade Federal de Campina Grande, que tem como objetivo exibir todos os comércios do ramo alimentício de cidades pequenas.
 
 ## 📝 O que é o SoLanches?
 
@@ -33,7 +33,7 @@ Dessa forma, a ideia é desenvolver uma plataforma personalizada para a cidade d
 
 Existem funcionalidades tanto para o cliente quanto para os comércios, são elas:
 
-### :convenience_store: Funcionalidades destinadas ao comércio
+### :convenience_store: Funcionalidades destinadas aos comércios
 
 - Realizar  seguintes as etapas de cadastro do perfil:
   - Cadastro de nome, opções de contato, endereço, e cadastro de senha;
@@ -59,7 +59,7 @@ Existem funcionalidades tanto para o cliente quanto para os comércios, são ela
   - Bem como ter acesso as suas formas de contato.
 
 
-## :arrow_forward: Como acessar o SoLanches?
+## :link: Como acessar o SoLanches?
 
 🖥️ Através [deste link]() você poderá conhecer a aplicação.
 
@@ -72,15 +72,15 @@ Existem funcionalidades tanto para o cliente quanto para os comércios, são ela
 
 ## 📌 Equipe do SoLanches 
 
-- [Ana Carolina]()
-- [Daniel Gomes]()
-- [Eduardo Afonso]()
-- [Emilly Albuquerque]()
-- [Erick Senna]()
-- [Francicláudio Dantas]()
-- [Gustavo Farias]()
-- [Leandra Oliveira]()
-- [Luciano Erick]()
-- [Marta Laís]()
-- [Mariana Nascimento]()
-- [Rodrigo Eloy]()
+- [Ana Carolina](https://github.com/anacarolinacv)
+- [Daniel Gomes](https://github.com/dnlgomesl)
+- [Eduardo Afonso](https://github.com/EduardoNunes5)
+- [Emilly Albuquerque](https://github.com/emys-alb)
+- [Erick Senna](https://github.com/erickems)
+- [Francicláudio Dantas](https://github.com/claudiodantas)
+- [Gustavo Farias](https://github.com/GusttaFS)
+- [Leandra Oliveira](https://github.com/LeandraOS)
+- [Luciano Erick](https://github.com/LucianErick)
+- [Marta Laís](https://github.com/martalais)
+- [Mariana Nascimento](https://github.com/marianasn)
+- [Rodrigo Eloy](https://github.com/RodrigoEC)
