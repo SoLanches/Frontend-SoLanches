@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# SoLanches
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align=center>
+  <img width=350 src="https://user-images.githubusercontent.com/50140771/128449867-ad40f72b-5031-40a7-86f2-d5ef541352d3.png"/> 
+</p>
 
-## Available Scripts
+### Índice
 
-In the project directory, you can run:
+SoLanches é um sistema web criado e desenvolvido durante a disciplina de Engenharia de Software do curso de Ciência da Computação na Universidade Federal de Campina Grande, que tem como objetivo exibir todos os comércios do ramo alimentício de cidades pequenas.
 
-### `yarn start`
+## O que é o SoLanches ?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+No estado da Paraíba existem 223 municípios, dos quais apenas 44 tem algum restaurante cadastrado no iFood ou outro aplicativo de delivery. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Com isso, os estabelecimentos  de cidades pequenas não possuem a oportunidade de ter seus produtos listados em uma plataforma unificada e além disso, os clientes não possuem a oportunidade de conhecer a grande maioria dos estabelecimentos e servições do ramo alimentício da sua cidade e precisam pesquisar em redes sociais(que muita das vezes também não tem essas informações de telefone e etc) ou simplesmente pedir a recomendação de amigos.
 
-### `yarn test`
+Com toda essa problemática, tanto os estabelecimentos perdem a oportunidade de divulgar seus produtos em larga escala, quanto os clientes perdem também seu poder de compra por não possuir o conhecimento de novos estabelecimentos, serviços e disponibilidade de produtos.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Dessa forma, a ideia seria fazer uma plataforma personalizada para a cidade de Solânea (inicialmente), sendo uma aplicação openSource que serveria justamente para que as lanchonetes, restaurantes ou qualquer estabelecimento que queira fazer entregas ou divulgar seu trabalho em uma plataforma única consiga fazer isso.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Funcionalidades
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Existem funcionalidades tanto para o cliente quanto para os comércios, sendo elas:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### Funcionalidades destinadas ao comércio
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ realizar o cadastro de seu perfil que possui as etapas de:
+  - Cadastro de nome, opções de contato, endereço, e cadastro de senha;
+  - Horários de atendimento;
+  - Envio da logo do estabelecimento;
+  - Seleção de tipos de produtos ofertados;
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Logo após a etapa construção do perfil o comércio deve partir para a construção do seu cardápio, que possui as seguintes etapas:
+  - Cadastro de nome, imagem, preço e descrição do produto.
+  -  Opção de edição e remoção de qualquer um dos campos de cadastro do produto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Após isso, o perfil do comércio estará criado com sucesso, e já poderá ser encontrado de forma rápida e simplificada.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Funcionalidades para os clientes
 
-## Learn More
+- Os clientes poderão acessar a plataforma sem necessitar de realizar cadastro ou login;
+- Poderão selecionar qual o tipo de alimento ou serviço que estão procurando e as opções disponíveis de lugares que disponibilizam o 
+produto procurado serão listados;
+- Após isso, poderão conhecer o estabelecimento;
+  - Produtos disponíveis e seus respectivos valores; 
+  - Bem como ter acesso as suas formas de contato.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Como acessar o SoLanches ?
 
-### Code Splitting
+Através desse link você poderá conhecer a aplicação.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Tecnologias utilizadas
 
-### Analyzing the Bundle Size
+- [React]()
+- [JavaScript]() 
+- [Ant Design]()
+- [Axios]()
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Equipe do SoLanches 
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Ana Carolina]()
+- [Daniel Gomes]()
+- [Eduardo Afonso]()
+- [Emilly Albuquerque]()
+- [Erick Senna]()
+- [Francicláudio Dantas]()
+- [Gustavo Farias]()
+- [Leandra Oliveira]()
+- [Luciano Erick]()
+- [Marta Laís]()
+- [Mariana Nascimento]()
+- [Rodrigo Eloy]()
