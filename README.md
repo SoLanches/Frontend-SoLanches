@@ -67,7 +67,7 @@ Existem funcionalidades tanto para o cliente quanto para os comércios, são ela
 
 - :electron: [React](https://pt-br.reactjs.org/)
 - :wrench: [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) 
-- ✏️[Ant Design](https://ant.design/docs/react/introduce)
+- 📝[Ant Design](https://ant.design/docs/react/introduce)
 - :wrench: [Axios](https://axios-http.com/docs/intro)
 
 ## 📌 Equipe do SoLanches 
