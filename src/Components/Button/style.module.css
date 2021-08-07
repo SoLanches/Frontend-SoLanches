@@ -5,7 +5,7 @@
     margin: 8.88rem;
     border: none;
     padding: 0px 32px;
-    border-radius: 10px;
+    border-radius: 0.6rem;
     outline: none;
 }
 
@@ -18,15 +18,42 @@
     font-size: 16px;
 }
 
+.icon{
+    display: none;
+}
+
+
 @media screen and (max-width: 550px) {
 
     .container{
         height: 2rem ;
         padding: 0px 22px;
-        border-radius: 8px;
+        border-radius: 0.5rem;
+
     }
 
     .title{
         font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+
+    .title {
+        display: none;
+    }
+
+    .icon{
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        display: flex;
+    }
+
+    .container{
+        height: 2rem ;
+        border-radius: 0.5rem;
+        padding: 0px 12px;        
     }
 }
