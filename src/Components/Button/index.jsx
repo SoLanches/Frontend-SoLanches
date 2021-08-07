@@ -1,11 +1,11 @@
 import React from 'react'
 import style from './style.module.css'
 
-export const Button = ({title, handleClick, icon}) => {
+export const Button = (props) => {
     return (
-        <button className={style.container} onClick={handleClick}>
-            <p className={style.title}>{title}</p>
-            <img className={style.icon} src={icon}/>
+        <button className={style.container} onClick={props.handleClick}>
+            <p className={style.title}>{props.title}</p>
+            <img className={style.icon} src={props.icon}/>
         </button>
     )
 }
