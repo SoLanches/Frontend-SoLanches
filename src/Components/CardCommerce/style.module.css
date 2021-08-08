@@ -1,0 +1,36 @@
+.container{
+    width: 320px;
+    height: 330px;
+    border-radius: 50px;
+    background-color: var(--color-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
+    transition: .3s;
+
+}
+
+.container:hover{
+
+    transform: scale(1.03);
+}
+
+img{
+    border-radius: 100%;
+    width: 25%;
+    height: 25%;
+    margin: 10% 0 5%;
+}
+.title{
+    color: var(--primary-text);
+    font-weight: 600;
+}
+
+.linha{
+    border: 0;
+    border-top: 1px solid #DCDCDC ;
+    margin: 12px;
+    width: 210px;
+}
