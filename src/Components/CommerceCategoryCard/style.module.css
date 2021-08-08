@@ -1,0 +1,138 @@
+.commerceCategoryCard{
+    position: relative;
+    background-color: white;
+    width: 12rem;
+    height: 9.5rem;
+    padding: 5px;
+    box-shadow: 0px 6px 5px -2px rgba(0,0,0,0.39);
+    border-radius: 15px
+}
+
+/*Configuração para que os itens não sejam selecionados ou arrastados*/
+
+.commerceCategoryCard{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.categoryConfig{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    gap: 15px;
+}
+
+.categoryConfig h3{
+    color: #314E52;
+    font-weight: bold;
+}
+
+.categoryConfig h4{
+    color: #909090;
+    font-style: italic;
+}
+
+.settingButton{
+    color: #909090;
+    position: absolute;
+    top: 15px;
+    right: 15px
+}
+
+.closeButton{
+    color: #314E52;
+    position: absolute;
+    top: 15px;
+    right: 15px
+}
+
+.categoryOptions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categoryOptions hr{
+    width: 100%;
+    color: #909090;
+}
+
+.categoryOptions h3{
+    color: #FF983B;
+    font-weight: bold;
+    margin: 7px
+}
+
+.categoryOptions ul{
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 14px;
+    color: #314E52;
+}
+
+.categoryOptions li{
+    margin: 4px 0;
+    cursor: pointer;
+}
+
+.categoryOptions span{
+    margin-left: 8px;
+}
+
+@media screen and (max-width: 550px) {
+    
+    .commerceCategoryCard {
+        width: 8.5rem;
+        height: 6.7rem;    
+        padding: 1px;
+    }
+
+    .categoryConfig {    
+        gap: 8px;
+    }
+
+    .categoryConfig h3{
+        font-size: small;
+    }
+    
+    .categoryConfig h4{
+        font-size: small;
+    }
+    
+    .settingButton{
+        top: 10px;
+        right: 10px;
+    }
+    
+    .closeButton{
+        top: 8px;
+        right: 8px;
+    }
+
+    .categoryOptions h3{
+        margin: 5px;
+        font-size: small;
+    }
+    
+    .categoryOptions ul{
+        padding: 0.5rem;
+        font-size: 10px;
+    }
+
+    .categoryOptions li{
+        margin: 2.5px 0;
+        
+    }
+    
+    .categoryOptions span{
+        margin-left: 8px;
+    }
+        
+}
