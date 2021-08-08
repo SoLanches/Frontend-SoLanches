@@ -1,7 +1,6 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Header } from './Components/Header';
-import { CommerceCategoryCard } from './Components/CommerceCategoryCard';
 import usePagesContext from './contexts/pages.context';
 
 import './styles/App.css';
@@ -14,7 +13,6 @@ function App() {
       <BrowserRouter>
         <Header />
         <div className='body'>
-          <CommerceCategoryCard categoryName="Bebidas" quantItens="7" deleteCategory={() => {}}/>
           <Switch>
             {pages.map((page, index) => <Route key={index} path={page.path} component={page.component} />)}
             <Route path='*'><Redirect to='/' /></Route>
