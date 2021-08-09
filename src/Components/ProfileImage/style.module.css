@@ -21,3 +21,11 @@
     height: auto;
     object-fit: cover;
 }
+
+@media screen and (max-width: 550px) {
+    .imageContainer {
+        width: 10rem;
+        height: 10rem;
+        font-size: 12px;
+    }
+}
