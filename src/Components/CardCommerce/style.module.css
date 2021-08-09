@@ -1,11 +1,12 @@
 .container{
     width: 320px;
-    height: 330px;
+    height: 75%;
     border-radius: 50px;
     background-color: var(--color-base);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 24px;
     margin: 100px;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
     transition: .3s;
@@ -23,14 +24,90 @@ img{
     height: 25%;
     margin: 10% 0 5%;
 }
-.title{
+#title{
     color: var(--primary-text);
     font-weight: 600;
+    text-align: center;
 }
 
 .linha{
     border: 0;
     border-top: 1px solid #DCDCDC ;
-    margin: 12px;
+    margin-bottom: 8px;
     width: 210px;
+}
+
+.containerAdress{
+    display: flex;
+}
+
+.bell{
+    margin-top: -3px;
+    max-width: 200px;
+}
+
+
+span{
+    margin-top: 1px;
+    margin-bottom: 8px;
+    margin-left: -6px;
+}
+
+.containerSchedules{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+
+}
+.adress{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+.containerLocation{
+
+
+
+}
+
+.containerText{
+
+}
+
+.location{
+    align-items: left;
+    margin-top: -4px;
+
+
+
+}
+p  {
+    text-align: left;
+    margin-bottom: 18px;
+    color: var(--primary-text);
+    font-size: 14px;
+    margin-left: 10px;
+    min-width: 120px;
+}
+
+.containerHoras{
+    display: absolute;
+    align-items: left;
+    position: relative;
+
+
+}
+
+.containerButton{
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--color-base);
+    height: 30px;
+    border-radius: 12px;
+    padding: 0 10px ;
+    margin-top: 10px;
+    font-weight: 600;
+
+
 }
