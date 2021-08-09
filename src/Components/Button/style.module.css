@@ -1,12 +1,15 @@
 .container{
     background-color: var(--primary-color);
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
-    height: 2.5rem;
+    height: 2.8rem;
     margin: 8.88rem;
     border: none;
-    padding: 0px 32px;
+    padding: 0px 18px;
     border-radius: 0.6rem;
     outline: none;
+    align-items: center;
+    display: inline-flex;
+
 }
 
 .container:hover{
@@ -16,18 +19,24 @@
 .title{
     color: var(--color-base);
     font-size: 16px;
+    white-space: nowrap;
+
 }
 
-.icon{
+img[src=""], img:not([src]) {
     display: none;
 }
 
+.icon{
+    width: 1.2rem;
+    margin-right: 0.3rem
+}
 
 @media screen and (max-width: 550px) {
 
     .container{
         height: 2rem ;
-        padding: 0px 22px;
+        padding: 0px 1rem;
         border-radius: 0.5rem;
 
     }
@@ -45,15 +54,15 @@
     }
 
     .icon{
-        display: inline-block;
         width: 1rem;
         height: 1rem;
-        display: flex;
+        margin-right: auto;
+
     }
 
     .container{
         height: 2rem ;
         border-radius: 0.5rem;
-        padding: 0px 12px;        
+        padding: 0px 0.75rem;        
     }
 }
