@@ -9,7 +9,6 @@
     outline: none;
     align-items: center;
     display: inline-flex;
-
 }
 
 .container:hover{
@@ -20,7 +19,6 @@
     color: var(--color-base);
     font-size: 16px;
     white-space: nowrap;
-
 }
 
 img[src=""], img:not([src]) {
@@ -38,7 +36,6 @@ img[src=""], img:not([src]) {
         height: 2rem ;
         padding: 0px 1rem;
         border-radius: 0.5rem;
-
     }
 
     .title{
@@ -57,7 +54,6 @@ img[src=""], img:not([src]) {
         width: 1rem;
         height: 1rem;
         margin-right: auto;
-
     }
 
     .container{

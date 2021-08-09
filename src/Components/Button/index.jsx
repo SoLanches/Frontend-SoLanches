@@ -6,8 +6,6 @@ export const Button = (props) => {
         <button className={style.container} onClick={props.handleClick}>
             <img className={style.icon} src={props.icon}/>
             <p className={style.title}>{props.title}</p>
-
         </button>
-
     )
 }
