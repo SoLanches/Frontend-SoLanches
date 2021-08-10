@@ -13,14 +13,14 @@ export const CardCommerce = (props) => {
             <hr className={style.line}></hr>
             <div className={style.containerInfos}>
                 <span className={style.location}><Location size="1.2rem" color="#FF983B" /></span>
-                <p>{props.adress}</p>
+                <p className={style.adress}>{props.adress}</p>
             </div>
             <div className={style.containerInfos}>
                 <span className={style.infos}><Time  size="1.2rem" color="#FF983B" /></span>
                 <div>
-                    <p>{props.info}</p>
-                    <p>{props.infoTwo}</p>
-                    <p>{props.infoThree}</p>
+                    <p>{props.time}</p>
+                    <p>{props.timeTwo}</p>
+                    <p>{props.timeThree}</p>
                 </div>
             </div>
         </div>

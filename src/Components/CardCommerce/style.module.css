@@ -1,5 +1,5 @@
 .container{
-    width: 320px;
+    width: 300px;
     height: fit-content;
     border-radius: 40px;
     background-color: var(--color-base);
@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 12px;
+    padding-bottom: 18px;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
     transition: .3s;
 }
@@ -38,6 +38,9 @@
     margin-bottom: 14px;
     width: 210px;
 }
+.adress{
+    margin-bottom: 18px;
+}
 
 .containerInfos{
     display: flex;
@@ -54,7 +57,7 @@
 
 p  {
     text-align: left;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
     color: var(--primary-text);
     font-size: 14px;
     margin-left: 10px;
