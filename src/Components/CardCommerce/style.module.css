@@ -1,13 +1,13 @@
 .container{
     width: 320px;
     height: fit-content;
-    border-radius: 50px;
+    border-radius: 40px;
     background-color: var(--color-base);
+    margin: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 16px;
-    margin: 100px;
+    padding-bottom: 12px;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
     transition: .3s;
 }
@@ -41,7 +41,7 @@
 
 .containerInfos{
     display: flex;
-    width: 75%;
+    width: 80%;
 }
 
 .infos{
@@ -58,4 +58,28 @@ p  {
     color: var(--primary-text);
     font-size: 14px;
     margin-left: 10px;
+}
+
+@media screen and (max-width: 550px) {
+    .container{
+        width: 240px;
+        border-radius: 35px;
+    }
+
+    p{
+        font-size: 12px;
+    }
+
+    .containerInfos{
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 330px) {
+    .container{
+        width: 200px;
+        border-radius: 25px;
+    }
+
 }
