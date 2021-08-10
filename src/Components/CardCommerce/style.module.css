@@ -1,16 +1,15 @@
 .container{
     width: 320px;
-    height: 75%;
+    height: fit-content;
     border-radius: 50px;
     background-color: var(--color-base);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 24px;
+    padding-bottom: 16px;
     margin: 100px;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
     transition: .3s;
-
 }
 
 .container:hover{
@@ -18,96 +17,45 @@
     transform: scale(1.03);
 }
 
-img{
+.icon{
     border-radius: 100%;
     width: 25%;
     height: 25%;
     margin: 10% 0 5%;
 }
-#title{
+
+.title{
     color: var(--primary-text);
     font-weight: 600;
     text-align: center;
+    font-size: 16px;
+    margin-bottom: 12px;
 }
 
-.linha{
+.line{
     border: 0;
     border-top: 1px solid #DCDCDC ;
-    margin-bottom: 8px;
+    margin-bottom: 14px;
     width: 210px;
 }
 
-.containerAdress{
+.containerInfos{
     display: flex;
+    width: 75%;
 }
 
-.bell{
-    margin-top: -3px;
-    max-width: 200px;
-}
-
-
-span{
-    margin-top: 1px;
-    margin-bottom: 8px;
-    margin-left: -6px;
-}
-
-.containerSchedules{
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    width: 100%;
+.infos{
+    margin: -2px -6px 8px;
 
 }
-.adress{
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-}
-.containerLocation{
-
-
-
-}
-
-.containerText{
-
-}
-
 .location{
-    align-items: left;
-    margin-top: -4px;
-
-
-
+    margin: -4px -6px 8px;
 }
+
 p  {
     text-align: left;
     margin-bottom: 18px;
     color: var(--primary-text);
     font-size: 14px;
     margin-left: 10px;
-    min-width: 120px;
-}
-
-.containerHoras{
-    display: absolute;
-    align-items: left;
-    position: relative;
-
-
-}
-
-.containerButton{
-    border: none;
-    background-color: var(--primary-color);
-    color: var(--color-base);
-    height: 30px;
-    border-radius: 12px;
-    padding: 0 10px ;
-    margin-top: 10px;
-    font-weight: 600;
-
-
 }
