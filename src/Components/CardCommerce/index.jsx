@@ -7,7 +7,7 @@ import { IoLocationOutline as Location } from "react-icons/io5";
 export const CardCommerce = (props) => {
     return (
         <div className={style.container}>
-            <Link to={props.router}></Link>
+            <Link to={props.router}>
             <img className={style.icon} src={props.icon} alt="Logo do comercio" />
             <p className={style.title}>{props.title}</p>
             <hr className={style.line}></hr>
@@ -27,7 +27,9 @@ export const CardCommerce = (props) => {
                     <p className={style.times}>{props.timeSeven}</p>
                 </div>
             </div>
+            </Link>
         </div>
+        
     )
 }
 

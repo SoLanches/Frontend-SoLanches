@@ -10,6 +10,7 @@
     padding-bottom: 18px;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
     transition: .3s;
+    cursor: pointer;
 }
 
 .container:hover{
