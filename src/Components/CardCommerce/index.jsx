@@ -16,14 +16,13 @@ export const CardCommerce = (props) => {
                 <p className={style.adress}>{props.adress}</p>
             </div>
             <div className={style.containerInfos}>
-                <span className={style.infos}><Time  size="1.2rem" color="#FF983B" /></span>
+                <span className={style.infos}><Time  size="1.15rem" color="#FF983B" /></span>
                 <div>
-                    <p>{props.time}</p>
-                    <p>{props.timeTwo}</p>
-                    <p>{props.timeThree}</p>
+                    <p className={style.times}>{props.time}</p>
+                    <p className={style.times}>{props.timeTwo}</p>
+                    <p className={style.times}>{props.timeThree}</p>
                 </div>
             </div>
         </div>
-
     )
 }
