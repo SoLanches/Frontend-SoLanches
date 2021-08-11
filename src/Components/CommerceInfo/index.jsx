@@ -1,14 +1,10 @@
-import { AiOutlineMail, AiOutlineInstagram, AiOutlineFacebook } from 'react-icons/ai'
-import { BiMap, BiBell } from 'react-icons/bi';
-import { FaWhatsapp } from 'react-icons/fa';
 import { ServiceHours } from '../ServiceHours';
-import styles from './styles.module.css'
-
+import { Button } from '../Button';
 import Instagram from '../../assets/icons/instagram.svg'
 import Facebook from '../../assets/icons/facebook.svg'
 import Mail from '../../assets/icons/mail.svg'
 import Whatsapp from '../../assets/icons/whatsapp.svg'
-import { Button } from '../Button';
+import styles from './styles.module.css'
 
 export const CommerceInfo = (props) => {
     return (
