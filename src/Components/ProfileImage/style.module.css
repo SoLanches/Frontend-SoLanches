@@ -1,7 +1,3 @@
-.profileImage{
-
-}
-
 .imageContainer {
     display: flex;
     justify-content: center;
@@ -9,7 +5,7 @@
     width: 15rem;
     height: 15rem;
     border-radius: 20rem;
-    border: 1px #314E52 solid;
+    border: 1px var(--primary-text) solid;
     background-color: #FAF7F7;
     color: #959595;
     cursor: pointer;
