@@ -25,10 +25,9 @@ export const CardCommerce = (props) => {
                     <p className={style.times}>{props.timeFive}</p>
                     <p className={style.times}>{props.timeSix}</p>
                     <p className={style.times}>{props.timeSeven}</p>
-
-
                 </div>
             </div>
         </div>
     )
 }
+
