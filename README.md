@@ -14,7 +14,7 @@
   - [Funcionalidades destinadas aos comércios](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#convenience_store-funcionalidades-destinadas-aos-com%C3%A9rcios)
   - [Funcionalidades destinadas aos clientes](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#-funcionalidades-destinadas-aos-clientes)
  - [Como acessar o SoLanches?](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#link-como-acessar-o-solanches)
- - [API SoLanches](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#🛠️-API-solanches)
+ - [API SoLanches](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#%EF%B8%8F-api-solanches)
  - [Tecnologias utilizadas](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#gear-tecnologias-utilizadas)
  - [Equipe do Solanches](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#-equipe-do-solanches)
  
