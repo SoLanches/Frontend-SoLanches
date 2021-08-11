@@ -14,8 +14,10 @@
   - [Funcionalidades destinadas aos comércios](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#convenience_store-funcionalidades-destinadas-aos-com%C3%A9rcios)
   - [Funcionalidades destinadas aos clientes](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#-funcionalidades-destinadas-aos-clientes)
  - [Como acessar o SoLanches?](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#link-como-acessar-o-solanches)
+ - [API SoLanches](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#🛠️-API-solanches)
  - [Tecnologias utilizadas](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#gear-tecnologias-utilizadas)
  - [Equipe do Solanches](https://github.com/SoLanches/Frontend-SoLanches/blob/main/README.md#-equipe-do-solanches)
+ 
 
 
 O SoLanches é um sistema web, criado e desenvolvido durante a disciplina de Engenharia de Software do curso de Ciência da Computação na Universidade Federal de Campina Grande, que tem como objetivo exibir todos os comércios do ramo alimentício de cidades pequenas.
@@ -64,12 +66,17 @@ Foram desenvolvidas funcionalidades tanto para os clientes quanto para os comér
 
 🖥️ Através [deste link]() você poderá conhecer a aplicação.
 
+## 🛠️ API SoLanches
+
+Nossa API pode ser encontrada [nesse link](https://github.com/SoLanches/API-SoLanches.git).
+
 ## :gear: Tecnologias utilizadas
 
 - :electron: [React](https://pt-br.reactjs.org/)
 - :wrench: [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) 
 - 📝 [Ant Design](https://ant.design/docs/react/introduce)
 - :wrench: [Axios](https://axios-http.com/docs/intro)
+
 
 ## 📌 Equipe do SoLanches 
 
