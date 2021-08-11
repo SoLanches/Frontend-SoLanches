@@ -21,6 +21,12 @@ export const CardCommerce = (props) => {
                     <p className={style.times}>{props.time}</p>
                     <p className={style.times}>{props.timeTwo}</p>
                     <p className={style.times}>{props.timeThree}</p>
+                    <p className={style.times}>{props.timeFour}</p>
+                    <p className={style.times}>{props.timeFive}</p>
+                    <p className={style.times}>{props.timeSix}</p>
+                    <p className={style.times}>{props.timeSeven}</p>
+
+
                 </div>
             </div>
         </div>
