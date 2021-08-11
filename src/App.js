@@ -4,14 +4,6 @@ import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';
 import './styles/App.css';
 
-
-
-
-
-
-import {CommerceInfo } from './Components/CommerceInfo'
-
-
 function App() {
   const { pages } = usePagesContext()
 
@@ -26,8 +18,6 @@ function App() {
           </Switch>
         </div>
       </BrowserRouter>
-
-      <CommerceInfo/>
     </div>
   );
 }
