@@ -1,0 +1,10 @@
+
+.container {
+    display: flex;
+    gap: 4rem;
+}
+
+.days {
+    padding: .5rem;
+    border: none;
+}
