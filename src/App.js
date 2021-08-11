@@ -2,8 +2,8 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';
-import {CommerceInfo} from './Components/CommerceInfo';
 import './styles/App.css';
+import { LoginCard } from './Components/LoginCard';
 
 function App() {
   const { pages } = usePagesContext()
@@ -19,6 +19,7 @@ function App() {
           </Switch>
         </div>
       </BrowserRouter>
+      <LoginCard/>
     </div>
   );
 }
