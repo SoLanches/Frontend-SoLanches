@@ -37,7 +37,7 @@ export const CommerceInfo = (props) => {
                 <a href={`https://wa.me/55${props.phone}?text=Olá!%20Eu%20gostaria%20de%20fazer%20um%20pedido.`} target="_blank">
                     <Button title="Contate-nos" icon={Whatsapp}/>
                 </a>
-                <ServiceHours hours={props.hours} />
+                <ServiceHours hours={props.schedule} />
             </div>
         </div >
     );
