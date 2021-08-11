@@ -14,15 +14,15 @@ export const CommerceInfo = (props) => {
             </div>
             <h1>{props.name}</h1>
             <div className={styles.social_medias}>
-                <a href={props.social_medias.instagram} target="_blank" id={props.social_medias.instagram ? '' : styles.none_icon}  >
+                <a href={props.social_medias.instagram} target="_blank" rel="noreferrer" id={props.social_medias.instagram ? '' : styles.none_icon}  >
                     <img src={Instagram} alt="Instagram" />
                 </a>
 
-                <a href={props.social_medias.facebook} target="_blank" id={props.social_medias.facebook ? '' : styles.none_icon}  >
+                <a href={props.social_medias.facebook} target="_blank" rel="noreferrer" id={props.social_medias.facebook ? '' : styles.none_icon}  >
                     <img src={Facebook} alt="Facebook" />
                 </a>
 
-                <a href={`mailto:${props.social_medias.email}`} target="_blank">
+                <a href={`mailto:${props.social_medias.email}`} target="_blank" rel="noreferrer">
                     <img src={Mail} alt="Email" />
                 </a>
             </div>
@@ -30,7 +30,7 @@ export const CommerceInfo = (props) => {
                 <span>{props.address}</span>
             </div>
             <div className={styles.buttons}>
-                <a href={`https://wa.me/55${props.phone}?text=Olá!%20Eu%20gostaria%20de%20fazer%20um%20pedido.`} target="_blank">
+                <a href={`https://wa.me/55${props.phone}?text=Olá!%20Eu%20gostaria%20de%20fazer%20um%20pedido.`} target="_blank" rel="noreferrer">
                     <Button title="Contate-nos" icon={Whatsapp}/>
                 </a>
                 <ServiceHours hours={props.hours} />
