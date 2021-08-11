@@ -47,7 +47,5 @@ export const CommerceCategoryCard = ({categoryName, quantItens, deleteCategory})
                 </div>
             }
         </div>
-
-
     )
 }

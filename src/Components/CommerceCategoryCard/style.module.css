@@ -1,6 +1,6 @@
 .commerceCategoryCard{
     position: relative;
-    background-color: white;
+    background-color: var(--color-base);
     width: 12rem;
     height: 9.5rem;
     padding: 5px;
@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     justify-content: center;
@@ -30,24 +31,24 @@
 }
 
 .categoryConfig h3{
-    color: #314E52;
+    color: var(--primary-text);
     font-weight: bold;
 }
 
 .categoryConfig h4{
-    color: #909090;
+    color: var(--gray-base);
     font-style: italic;
 }
 
 .settingButton{
-    color: #909090;
+    color: var(--gray-base);
     position: absolute;
     top: 15px;
     right: 15px
 }
 
 .closeButton{
-    color: #314E52;
+    color: var(--primary-text);
     position: absolute;
     top: 15px;
     right: 15px
@@ -60,12 +61,17 @@
 }
 
 .categoryOptions hr{
-    width: 100%;
-    color: #909090;
+    width: 95%;
+    border-top: 0.5px solid var(--gray-base);
+}
+
+.categoryConfig hr{
+    width: 95%;
+    border-top: 0.5px solid var(--gray-base);
 }
 
 .categoryOptions h3{
-    color: #FF983B;
+    color: var(--primary-color);
     font-weight: bold;
     margin: 7px
 }
@@ -74,7 +80,7 @@
     width: 100%;
     padding: 0.7rem;
     font-size: 14px;
-    color: #314E52;
+    color: var(--primary-text);
 }
 
 .categoryOptions li{
@@ -128,7 +134,6 @@
 
     .categoryOptions li{
         margin: 2.5px 0;
-        
     }
     
     .categoryOptions span{
