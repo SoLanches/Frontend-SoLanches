@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Header />
         <div className='body'>
           <Switch>
@@ -18,7 +18,7 @@ function App() {
             <Route path='*'><Redirect to='/inicio' /></Route>
           </Switch>
         </div>
-      </BrowserRouter>
+      </BrowserRouter> */}
       <LoginCard/>
     </div>
   );
