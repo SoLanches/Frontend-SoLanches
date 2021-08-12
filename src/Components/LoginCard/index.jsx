@@ -6,7 +6,7 @@ import { IoCloseOutline } from 'react-icons/io5';
 
 import styles from "./styles.module.css";
 
-export const LoginCard = (props) => {
+export const LoginCard = () => {
 
     const [isActive, setIsActive] = useState(false);
     const emailRef = useRef(null);
