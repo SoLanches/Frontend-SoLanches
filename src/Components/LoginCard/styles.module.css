@@ -20,7 +20,7 @@
     align-items: center;
     margin: 0 auto;
     width: 400px;
-    min-height: 460px;
+    min-height: 430px;
     padding: 2.5rem 2.25rem;
     background-color: var(--color-background);
     border-radius: 20px;
@@ -98,26 +98,7 @@ input:focus {
     box-shadow: 1px solid var(--primary-color);
 }
 
-#forgotPassword {
-    margin-top: 0.85rem;
-    display: inline-flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 90%;
-}
-
-#forgotPassword a {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--primary-text);
-    padding-left: 0.2rem;
-}
-
 @media (max-width: 360px) {
-    #forgotPassword {
-        padding-top: 0.3rem;
-        justify-content: center;
-    }
 
     .registerNow {
         flex-direction: column;

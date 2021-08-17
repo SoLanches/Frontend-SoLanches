@@ -49,10 +49,6 @@ export const LoginCard = () => {
                             <input type="password" id="loginPassword" placeholder="Digite sua senha" ref={passwordRef} />
                         </div>
                     </div>
-                    <div id={styles.forgotPassword}>
-                        <img src={Help} alt="Dúvidas" />
-                        <a href="#">Esqueci minha senha</a>
-                    </div>
                     <Button title="Entrar" handleClick={handleLogin} />
                     <div className={styles.registerNow}>
                         <span>Novo(a) no SoLanches?</span>
