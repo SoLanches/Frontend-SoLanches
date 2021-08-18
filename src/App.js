@@ -2,7 +2,6 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';
-
 import './styles/App.css';
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
         </div>
       </BrowserRouter>
     </div>
-
   );
 }
 
