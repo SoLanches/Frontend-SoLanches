@@ -1,5 +1,4 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { CommerceCategoryCard } from './Components/CommerceCategoryCard';
 
 import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';
@@ -13,7 +12,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <CommerceCategoryCard/>
         <div className='body'>
           <Switch>
             {pages.map((page, index) => <Route key={index} path={page.path} component={page.component} />)}
