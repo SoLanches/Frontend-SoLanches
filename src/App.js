@@ -2,7 +2,6 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';
-
 import './styles/App.css';
 
 function App() {
@@ -15,12 +14,11 @@ function App() {
         <div className='body'>
           <Switch>
             {pages.map((page, index) => <Route key={index} path={page.path} component={page.component} />)}
-            <Route path='*'><Redirect to='/' /></Route>
+            <Route path='*'><Redirect to='/inicio' /></Route>
           </Switch>
         </div>
       </BrowserRouter>
     </div>
-
   );
 }
 

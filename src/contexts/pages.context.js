@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from 'react'
+import React, { createContext, useContext, useState, useCallback, useEffect } from 'react'
 
 import { Categories } from '../pages/Categories'
 import { Home } from '../pages/Home'
@@ -13,6 +13,10 @@ export function PagesProvider({ children }) {
         { name: 'Categories', text: 'Categorias', path: '/categorias', component: Categories, header: true },
         { name: 'Login', text: 'Login', path: '/login', component: Login, header: true },
     ]
+
+    useEffect(() => {
+        setPathname(window.location.pathname)
+    }, [setPathname, pathname])
 
     const handlePathname = useCallback(() => {
         setPathname(window.location.pathname)
