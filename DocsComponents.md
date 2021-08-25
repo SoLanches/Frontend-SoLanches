@@ -1,4 +1,4 @@
-# Documentation of SoLanches components
+# Documentation of SoLanches Components
 
 ### Índice
 
@@ -38,8 +38,20 @@ Responsável por listar as opções de comércios de um dado segmento.
 
 ### Forma de uso:
 
-`        <CategoryCard title="Todas" imageUrl={icon}/>
-`
+```jsx
+import { CategoryCard } from './Components/CategoryCard'
+
+<CategoryCard title="Todas" imageUrl={icon}/>
+
+```
+
+| Nome        | Tipo    | Descrição|
+| ----------- | ----------|------------------------------- |
+| `title`     | `string`  | Título da categoria ao qual o comércio pertence|
+| `imageUrl`  | `string`  | Endereço da imagem que representa a categoria ao qual o comércio se enquadra|
+
+```
+
 ### :movie_camera: GIF demonstrativo
 
 <p align=center >
