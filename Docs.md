@@ -36,7 +36,10 @@ Responsável por listar as opções de comércios de um dado segmento.
 - [X] O título e a imagem utilizada são recebidos via props.
 - [X] Além disso, o componente conta com a sua versão responsiva.
 
-### Forma de uso:
+**Exemplo:** Dado que o cliente deseja visualizar quais os estabelecimentos que vendem pizza
+ele irá clicar no card que há a opção "Pizza" e assim as pizzarias serão listadas.
+
+### ⚙️ Forma de uso:
 
 ```jsx
 import { CategoryCard } from './Components/CategoryCard'
@@ -44,13 +47,12 @@ import { CategoryCard } from './Components/CategoryCard'
 <CategoryCard title="Todas" imageUrl={icon}/>
 
 ```
+### 📝 Descrição das props
 
 | Nome        | Tipo    | Descrição|
 | ----------- | ----------|------------------------------- |
-| `title`     | `string`  | Título da categoria ao qual o comércio pertence|
-| `imageUrl`  | `string`  | Endereço da imagem que representa a categoria ao qual o comércio se enquadra|
-
-```
+| `title`     | `string`  | Título da categoria ao qual o comércio pertence.|
+| `imageUrl`  | `string`  | Endereço da imagem que representa a categoria ao qual o comércio se enquadra.|
 
 ### :movie_camera: GIF demonstrativo
 
@@ -58,8 +60,6 @@ import { CategoryCard } from './Components/CategoryCard'
 <img src="https://user-images.githubusercontent.com/50140771/128279159-be15f44e-fbd5-4201-8201-0dea0a34b684.gif"/>
  </p> 
 
-**Exemplo:** Dado que o cliente deseja visualizar quais os estabelecimentos que vendem pizza
-ele irá clicar no card que há a opção "Pizza" e assim as pizzarias serão listadas.
 
 ## Category Tags
     
