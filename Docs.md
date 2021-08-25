@@ -30,7 +30,7 @@
 
 ## Category Card
 
-Responsável por listar as opções de comércios de um dado segmento.
+**Responsável por listar as opções de comércios de um dado segmento.**
 
 - [X] Ao clicar no card a cor é alterada bem como a direção do dropdown.
 - [X] O título e a imagem utilizada são recebidos via props.
@@ -39,7 +39,7 @@ Responsável por listar as opções de comércios de um dado segmento.
 **Exemplo:** Dado que o cliente deseja visualizar quais os estabelecimentos que vendem pizza
 ele irá clicar no card que há a opção "Pizza" e assim as pizzarias serão listadas.
 
-### ⚙️ Forma de uso:
+### ⚙️ Forma de uso
 
 ```jsx
 import { CategoryCard } from './Components/CategoryCard'
