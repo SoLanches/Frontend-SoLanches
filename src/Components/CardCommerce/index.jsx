@@ -17,18 +17,30 @@ export const CardCommerce = (props) => {
                 </div>
                 <div className={style.containerInfos}>
                     <span className={style.infos}><Time size="1.15rem" color="#FF983B" /></span>
-                    <div>
-                        <p className={style.times}>{props.time}</p>
-                        <p className={style.times}>{props.timeTwo}</p>
-                        <p className={style.times}>{props.timeThree}</p>
-                        <p className={style.times}>{props.timeFour}</p>
-                        <p className={style.times}>{props.timeFive}</p>
-                        <p className={style.times}>{props.timeSix}</p>
-                        <p className={style.times}>{props.timeSeven}</p>
-                    </div>
+                        <div>{props.times.map((hours) => {
+                            return (
+                                <p className={style.times} >
+                                    {hours.days_hours}
+                                </p>
+                            )
+                        }
+                        )}
+                        </div>
+
                 </div>
             </Link>
         </div>
     )
 }
 
+CardCommerce.defaultProps = {
+    times: [
+        { days_hours: 'Seg, ter : 14h - 23h' },
+        { days_hours: 'Qua : Fechado' },
+        { days_hours: 'Qui : 16h - 23h' },
+        { days_hours: 'Sáb: 15h - 23:30h' },
+        { days_hours: 'Dom: 12h- 22h' },
+        
+
+    ]
+}

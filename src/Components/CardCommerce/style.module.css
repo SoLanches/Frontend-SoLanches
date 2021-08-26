@@ -5,7 +5,7 @@
     background-color: var(--color-base);
     margin: 60px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     align-items: center;
     padding-bottom: 18px;
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
@@ -14,7 +14,6 @@
 }
 
 .container:hover{
-
     transform: scale(1.03);
 }
 
@@ -23,6 +22,9 @@
     width: 25%;
     height: 25%;
     margin: 10% 0 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title{
@@ -36,8 +38,10 @@
 .line{
     border: 0;
     border-top: 1px solid #DCDCDC ;
-    margin-bottom: 14px;
     width: 75%;
+    display: block;
+    align-self: center;
+    margin: 0 auto 14px auto 
 }
 
 .adress{
@@ -46,22 +50,21 @@
 
 .containerInfos{
     display: grid;
-    width: 80%;
+    width: 100%;
     grid-template-columns: 1fr 10fr;
-
+    padding:0 24px 0 24px;
 }
 
 .location{
-    margin-top: -4px;
-
+    margin-top: -5px;
 }
 
 .infos{
-    margin-top: -1.5px;
+    margin-top: -2px;
 }
 
 .times  {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 p{
@@ -73,7 +76,6 @@ p{
     .container{
         width: 240px;
         border-radius: 35px;
-
     }
 
     .title{
@@ -84,19 +86,22 @@ p{
         font-size: 12px;
     }
 
+    .times  {
+        margin-bottom: 6px;
+    }
+
     .containerInfos{
         display: grid;
-        grid-template-columns: 1fr 9fr;
-        width: 90%;
+        grid-template-columns: 1.3fr 12fr;
+        padding:0 12px 0 14px
     }
 
     .location{
-        margin-top: -6px;
-    
+        margin-top: -7px;
     }
     
     .infos{
-        margin-top: -2px;
+        margin-top: -4px;
     }
 
 }
@@ -110,7 +115,8 @@ p{
 
     .containerInfos{
         display: grid;
-        grid-template-columns: 1fr 8fr;
+        grid-template-columns: 1.2fr 8fr;
+        padding:0 8px 0 8px;
         width: 100%;
     }
 
@@ -123,7 +129,7 @@ p{
     }
 
     .location{
-        margin-top: -8px;
+        margin-top: -9px;
     
     }
     
