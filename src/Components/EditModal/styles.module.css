@@ -234,10 +234,6 @@ textarea {
     transition: all 0.25s ease;
 }
 
-input[type="number"] {
-    width: 100%;
-}
-
 @media screen and (max-width: 375px){
     .category i {
         display: none;

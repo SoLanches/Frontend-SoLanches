@@ -22,6 +22,7 @@ export const EditModal = (props) => {
     }, [setIsActive, isActive])
 
     const handleSubmit = () => {
+        // Quando houver a integração com o back melhorar isso aqui
         console.log(name, price, description, image, category)
         handleClick()
     }
@@ -122,6 +123,7 @@ export const EditModal = (props) => {
     );
 }
 
+// TODO: Tirar isso dps
 EditModal.defaultProps = {
     categoryList: [
         { name: "Hamburguer" },
