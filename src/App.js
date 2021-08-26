@@ -2,7 +2,6 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';
-import { EditModal } from './Components/EditModal';
 import './styles/App.css';
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
             <Route path='*'><Redirect to='/inicio' /></Route>
           </Switch>
         </div>
-        <EditModal/>
       </BrowserRouter>
     </div>
   );

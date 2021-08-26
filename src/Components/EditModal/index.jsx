@@ -46,7 +46,7 @@ export const EditModal = (props) => {
                     </header>
                     <div className={styles.field_group}>
                         <div className={styles.name}>
-                            <label htmlFor="edit-name">Nome do produto</label>
+                            <label htmlFor="edit-name">Nome</label>
                             <input
                                 type="text"
                                 id="edit-name"

@@ -64,6 +64,7 @@
     margin-top: 1.5rem;
     grid-gap: 10px 20px;
     border: none;
+    grid-auto-flow: column;
 }
 
 /* Configuração da grid dos campos */
@@ -117,7 +118,7 @@ input[type="text"], input[type="number"] {
     border: none;
     width: 100%;
     appearance: none;
-    padding: 0.75rem 1.1rem;
+    padding: 0.75rem 0.95rem;
     margin: 0.25rem 0 0.75rem 0;
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
@@ -178,7 +179,7 @@ input[type="text"], input[type="number"] {
 ::-webkit-input-placeholder {
     color: #909090;
     font-weight: 500;
-    font-style: normal;
+    font-style: italic;
     font-size: 0.75rem;
 }
 
@@ -235,4 +236,10 @@ textarea {
 
 input[type="number"] {
     width: 100%;
+}
+
+@media screen and (max-width: 375px){
+    .category i {
+        display: none;
+    }
 }
