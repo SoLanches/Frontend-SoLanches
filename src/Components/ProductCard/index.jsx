@@ -13,6 +13,10 @@ export const ProductCard = ({ image, alt, title, description, price, editable })
         // TODO: Add integration to backend
     };
 
+    const handleEdit = () => {
+        // TODO: Add integration to backend
+    }
+
     const handleDelete = () => {
         // TODO: Add integration to backend
         console.log("DELETAANDOOO");
