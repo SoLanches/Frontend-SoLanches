@@ -13,8 +13,8 @@ export const Hour = () => {
                 <option value='sexta-feira'>Sexta-Feira</option>
                 <option value='Sábado'>Sábado</option>
             </select>
-            <input type='time' className={style.opens}></input>
-            <input type='time' className={style.closes}></input>
+            <input type="time"/>
+            <input type="time"/>
         </div>
     )
 }
