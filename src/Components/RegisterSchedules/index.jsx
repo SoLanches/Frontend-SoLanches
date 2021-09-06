@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react/cjs/react.development'
+import { useState } from 'react'
 import { Button } from '../Button'
 import { Schedule } from '../Schedule'
 
@@ -30,7 +30,7 @@ export const RegisterSchedules = () => {
         })}
       </div>
       <div className={style.scheduleAdd} onClick={handleClick}>
-        <Button title="Adicionar horário" />
+        <Button disabled={false} title="Adicionar horário" />
       </div>
     </div>
   )
