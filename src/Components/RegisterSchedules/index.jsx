@@ -21,6 +21,7 @@ export const RegisterSchedules = () => {
         {schedules.map((schedule, index) => {
           return (
             <Schedule
+              key={index}
               schedule={schedule}
               schedules={schedules}
               setSchedules={setSchedules}

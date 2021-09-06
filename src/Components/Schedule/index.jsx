@@ -39,11 +39,15 @@ export const Schedule = ({ schedule, schedules, setSchedules, index }) => {
 
   return (
     <div className={style.container}>
-      <select className={style.days} onChange={handleDaySelect}>
+      <select
+        defaultValue={schedule.day}
+        className={style.days}
+        onChange={handleDaySelect}
+      >
         <option value="notSelected">Selecione um dia</option>
         {days.map((day, i) => {
           return (
-            <option value={day} selected={schedule.day === day}>
+            <option key={day} id={day} value={day}>
               {day}
             </option>
           )
