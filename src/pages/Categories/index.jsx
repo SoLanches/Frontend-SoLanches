@@ -1,6 +1,6 @@
 import React from 'react'
-import { RegisterHour } from '../../Components/RegisterHour'
 import { ProductCard } from '../../Components/ProductCard'
+import { RegisterSchedules } from '../../Components/RegisterSchedules'
 
 import style from './style.module.css'
 
@@ -8,9 +8,8 @@ export function Categories() {
   return (
     <div className={style.container}>
       <div className={style.title}>
-        <RegisterHour />
+        <RegisterSchedules />
         <h1>Página de categorias</h1>
-        <ProductCard />
       </div>
     </div>
   )

@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react/cjs/react.development'
+import { Button } from '../Button'
 import { Schedule } from '../Schedule'
 
 import style from './style.module.css'
 
-export const RegisterHour = () => {
+export const RegisterSchedules = () => {
   const [schedules, setSchedules] = useState([
-    { day: 'Sábado', opens: '', closes: '' },
+    { day: '', opens: '', closes: '' },
   ])
 
   const handleClick = () => {
     let schedulesCopy = schedules
-    schedulesCopy.push({ day: 'Domingo', opens: '', closes: '' })
+    schedulesCopy.push({ day: '', opens: '', closes: '' })
     setSchedules([...schedulesCopy])
   }
 
   return (
-    <div>
+    <div className={style.wrapper}>
       <div className={style.schedulesContainer}>
         {schedules.map((schedule, index) => {
           return (
@@ -28,7 +29,9 @@ export const RegisterHour = () => {
           )
         })}
       </div>
-      <div onClick={handleClick}>sapato</div>
+      <div className={style.scheduleAdd} onClick={handleClick}>
+        <Button title="Adicionar horário" />
+      </div>
     </div>
   )
 }

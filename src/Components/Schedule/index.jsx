@@ -1,6 +1,4 @@
-import { useEffect } from 'react/cjs/react.development'
 import style from './style.module.css'
-
 export const Schedule = ({ schedule, schedules, setSchedules, index }) => {
   const days = [
     'Domingo',
