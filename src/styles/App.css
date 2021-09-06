@@ -6,6 +6,8 @@
   --primary-color: #ff983b;
   --color-background: #eeeff4;
   --color-base: #ffffff;
+  --gray-base: #909090;
+  --color-effect: #fc8621;
 }
 
 * {

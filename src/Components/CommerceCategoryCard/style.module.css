@@ -1,0 +1,143 @@
+.commerceCategoryCard{
+    position: relative;
+    background-color: var(--color-base);
+    width: 12rem;
+    height: 9.5rem;
+    padding: 5px;
+    box-shadow: 0px 6px 5px -2px rgba(0,0,0,0.39);
+    border-radius: 15px
+}
+
+/*Configuração para que os itens não sejam selecionados ou arrastados*/
+
+.commerceCategoryCard{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.categoryConfig{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    gap: 15px;
+}
+
+.categoryConfig h3{
+    color: var(--primary-text);
+    font-weight: bold;
+}
+
+.categoryConfig h4{
+    color: var(--gray-base);
+    font-style: italic;
+}
+
+.settingButton{
+    color: var(--gray-base);
+    position: absolute;
+    top: 15px;
+    right: 15px
+}
+
+.closeButton{
+    color: var(--primary-text);
+    position: absolute;
+    top: 15px;
+    right: 15px
+}
+
+.categoryOptions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categoryOptions hr{
+    width: 95%;
+    border-top: 0.5px solid var(--gray-base);
+}
+
+.categoryConfig hr{
+    width: 95%;
+    border-top: 0.5px solid var(--gray-base);
+}
+
+.categoryOptions h3{
+    color: var(--primary-color);
+    font-weight: bold;
+    margin: 7px
+}
+
+.categoryOptions ul{
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 14px;
+    color: var(--primary-text);
+}
+
+.categoryOptions li{
+    margin: 4px 0;
+    cursor: pointer;
+}
+
+.categoryOptions span{
+    margin-left: 8px;
+}
+
+@media screen and (max-width: 550px) {
+    
+    .commerceCategoryCard {
+        width: 8.5rem;
+        height: 6.7rem;    
+        padding: 1px;
+    }
+
+    .categoryConfig {    
+        gap: 8px;
+    }
+
+    .categoryConfig h3{
+        font-size: small;
+    }
+    
+    .categoryConfig h4{
+        font-size: small;
+    }
+    
+    .settingButton{
+        top: 10px;
+        right: 10px;
+    }
+    
+    .closeButton{
+        top: 8px;
+        right: 8px;
+    }
+
+    .categoryOptions h3{
+        margin: 5px;
+        font-size: small;
+    }
+    
+    .categoryOptions ul{
+        padding: 0.5rem;
+        font-size: 10px;
+    }
+
+    .categoryOptions li{
+        margin: 2.5px 0;
+    }
+    
+    .categoryOptions span{
+        margin-left: 8px;
+    }
+        
+}

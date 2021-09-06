@@ -37,6 +37,7 @@
 .close {
     align-self: flex-end;
     cursor: pointer;
+    color: var(--primary-text);
 }
 
 .title {
@@ -55,15 +56,18 @@
 
 .day {
     text-align: start;
-    color: var(--primary-text)
+    color: var(--primary-text);
+    font-weight: 600;
 }
 
-.closes {
+.closes, .opens {
     text-align: end;
+    font-weight: 600;
+    color: var(--primary-text);
 }
 
 .table li:nth-child(1), .table li:nth-child(2), .table li:nth-child(3) {
-    padding-bottom: .1rem;
+    padding-bottom: .4rem;
     border-bottom: 2px solid rgb(219, 219, 219);
 }
 
