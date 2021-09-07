@@ -27,7 +27,7 @@
 - [x] É opcional utilizar o ícone e este recebe o link para o endereço da imagem.
 - [X] Além disso, o componente conta com as suas versões responsivas.
 
-### Forma de uso 
+### :page_facing_up: Forma de uso 
 ``` jsx
 <Button title="Criar" icon="./assets/icons/exemplo.svg"/>
 ```
@@ -83,7 +83,7 @@ Responsável por listar as opções de comércios de um dado segmento.
 - [X] O título e a imagem utilizada são recebidos via props.
 - [X] Além disso, o componente conta com a sua versão responsiva.
 
-### Forma de uso:
+### :page_facing_up: Forma de uso:
 
 ```jsx
 import { CategoryCard } from './Components/CategoryCard'
@@ -115,7 +115,7 @@ ele irá clicar no card que há a opção "Pizza" e assim as pizzarias serão li
 - [x] O título é recebido via props.
 - [X] Além disso, o componente conta com a sua versão responsiva.
 
-## Forma de uso: 
+## :page_facing_up: Forma de uso: 
 
 ``` jsx
     <CategoryTags title="Pizza"/>
