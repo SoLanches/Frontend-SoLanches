@@ -94,8 +94,8 @@ import { CategoryCard } from './Components/CategoryCard'
 
 | Nome        | Tipo    | Descrição|
 | ----------- | ----------|------------------------------- |
-| `title`     | `string`  | Título da categoria ao qual o comércio pertence|
-| `imageUrl`  | `string`  | Endereço da imagem que representa a categoria ao qual o comércio se enquadra|
+| `title`     | `string`  | Título da categoria ao qual o comércio pertence.|
+| `imageUrl`  | `string`  | Endereço da imagem que representa a categoria ao qual o comércio se enquadra.|
 
 
 ### :movie_camera: GIF demonstrativo
