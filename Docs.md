@@ -152,11 +152,10 @@ A ideia é que uma vez logado, o header do usuário (comércio) não possui mais
 
 ### :movie_camera: GIF demonstrativo
 
-<p align=center >
-<img src="https://user-images.githubusercontent.com/42751604/127779934-86192da4-7a44-4980-86f0-651c7d03be15.mp4"/>
- 
+https://user-images.githubusercontent.com/42751604/127779934-86192da4-7a44-4980-86f0-651c7d03be15.mp4
+
 ## Infos Commerce
-  
+
 ## Image Perfil
 
 ## Modal Card Login
@@ -189,8 +188,7 @@ Esse é um exemplo de forma de uso do componente
 
 ### :movie_camera: GIF demonstrativo
 
-<p align=center >
-<img src="https://user-images.githubusercontent.com/42751604/127795138-7e33d98b-d17c-4dba-bc4c-fe5ecd92d3f5.mp4"/>
+https://user-images.githubusercontent.com/42751604/127795138-7e33d98b-d17c-4dba-bc4c-fe5ecd92d3f5.mp4
 
 ## Product card
 
@@ -224,8 +222,7 @@ import Coxinha from '../../assets/images/coxinha.png'
 
 ### :movie_camera: GIF demonstrativo
 
-<p align=center >
-<img src="https://user-images.githubusercontent.com/42751604/128377074-e1041191-5fc2-4e37-8471-ecf43cc0a516.mp4"/>
+https://user-images.githubusercontent.com/42751604/128377074-e1041191-5fc2-4e37-8471-ecf43cc0a516.mp4
 
 ## Register Hours
 
@@ -241,7 +238,6 @@ Esse é um exemplo de forma de uso do componente
 
 ### :movie_camera: GIF demonstrativo
 
-<p align=center >
-<img src="https://user-images.githubusercontent.com/42751604/132227802-dc0095e0-9899-4f1b-96ad-8b3a504ef770.mp4"/>
+https://user-images.githubusercontent.com/42751604/132227802-dc0095e0-9899-4f1b-96ad-8b3a504ef770.mp4
 
 ## Text
