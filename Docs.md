@@ -150,3 +150,4 @@ ele irá clicar no card que há a opção "Pizza" e assim as pizzarias serão li
 ## Register Hours
  
 ## Text
+
