@@ -26,5 +26,7 @@ describe("Testa comportamento do componente ProductCard", () => {
 
         // Verifica se o atributo href existe na tag a
         cy.get('.styles_buttons__2eZIf a').should('have.prop', 'href')
+        // cy.get('.styles_buttons__2eZIf a').click()
+        // cy.url().then(url => console.log(url))
     })
 })
