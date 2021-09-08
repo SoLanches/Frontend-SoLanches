@@ -6,6 +6,7 @@ import { ProductCard } from '../../Components/ProductCard'
 
 import style from './style.module.css'
 import { Select } from '../../Components/Select'
+import { EditModal } from '../../Components/EditModal'
 
 export const EditMenu = () => {
   const { ProjectName } = useParams()
@@ -66,6 +67,17 @@ export const EditMenu = () => {
     },
   })
 
+  const [menu, setMenu] = useState({})
+
+  useEffect(() => {
+    const getMenu = async () => {
+      // const response = await getMenu(ProjectName)
+      // setMenu(response)
+    }
+
+    getMenu()
+  }, [])
+
   const handleUpdateMenu = () => {
     // IMPLEMENT
     console.log('UPDATED MENU')
@@ -116,7 +128,7 @@ export const EditMenu = () => {
 
           <h3>Deletar categoria</h3>
           <div className={style.categoryDeleteContainer}>
-            <Select />
+            <Select options={projectInfo.attributes.categories} />
             <Button title="Deletar" handleClick={handleDeleteCategory} />
           </div>
         </div>
@@ -127,8 +139,14 @@ export const EditMenu = () => {
         <div className={style.sectionBody}>
           <h3>Categoria</h3>
           <div className={style.productController}>
-            <Select />
-            <Button title="Adicionar produto" handleClick={handleAddProduct} />
+            <Select
+              defaultValue={'todos'}
+              options={[...projectInfo.attributes.categories, 'todos']}
+            />
+            <EditModal
+              buttonTitle="Adicionar produto"
+              categoryList={projectInfo.attributes.categories}
+            />
           </div>
           <div className={style.productsContainer}>
             {projectInfo.attributes.products.map((product, index) => {
