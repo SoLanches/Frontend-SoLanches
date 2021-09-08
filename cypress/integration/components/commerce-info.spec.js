@@ -1,4 +1,4 @@
-describe("Testa comportamento do componente ProductCard", () => {
+describe("Testa comportamento do componente CommerceInfo", () => {
     it("Testa se as divs estão visíveis", () => {
 
         cy.visit('/')
