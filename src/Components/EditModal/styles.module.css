@@ -1,0 +1,242 @@
+.outContainer {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.74);
+  z-index: 11;
+}
+
+.inactive {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 430px;
+  min-height: 430px;
+  padding: 1.75rem 1.75rem;
+  background-color: var(--color-background);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgb(150, 150, 150);
+}
+
+@media (max-width: 450px) {
+  .container {
+    width: 90%;
+  }
+}
+
+.itemHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemHeader img {
+  width: 9rem;
+}
+
+.close {
+  color: var(--primary-text);
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.container button {
+  margin: 1rem 0 0.35rem 0;
+  transition: all 0.2s;
+}
+
+/* Estilos relativos a campos de input */
+
+.field_group {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  height: fit-content;
+  margin-top: 1.5rem;
+  grid-gap: 10px 20px;
+  border: none;
+  grid-auto-flow: column;
+}
+
+/* Configuração da grid dos campos */
+
+.name {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.price {
+  grid-row-start: 1;
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
+
+.category {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.description {
+  grid-row-start: 3;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.image {
+  grid-row-start: 2;
+  grid-column-start: 3;
+  grid-column-end: 3;
+}
+
+input:focus {
+  outline: none;
+}
+
+label {
+  width: fit-content;
+  padding-left: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--primary-text);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: none;
+  width: 100%;
+  appearance: none;
+  padding: 0.75rem 0.95rem;
+  margin: 0.25rem 0 0.75rem 0;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--color-tertiary);
+  background-color: var(--color-base);
+  letter-spacing: 0.02em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-style: normal;
+}
+
+.category {
+  position: relative;
+}
+
+.category div {
+  display: flex;
+  align-items: center;
+}
+
+.category select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.category select {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  padding: 0.825rem;
+  margin-top: 0.25rem;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  background-color: var(--color-base);
+  color: var(--primary-text);
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+
+.category i {
+  position: absolute;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  border-left: 2.75px solid var(--primary-text);
+  border-bottom: 2.75px solid var(--primary-text);
+  transform: rotate(-45deg);
+}
+
+::-webkit-input-placeholder {
+  color: #909090;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+#fakeInput {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.25rem;
+  padding: 1.2rem 1.2rem;
+  border-radius: 10px;
+  background-color: var(--color-base);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.225s ease;
+}
+
+#fakeInput:hover {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#fakeInput span {
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+}
+
+textarea {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  resize: none;
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  outline: none;
+  border: none;
+  background-color: var(--color-base);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 0.8rem;
+  transition: all 0.25s ease;
+}
+
+@media screen and (max-width: 375px) {
+  .category i {
+    display: none;
+  }
+}
