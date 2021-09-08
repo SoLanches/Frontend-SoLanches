@@ -1,52 +1,138 @@
 :root {
-   --primary-text: #314E52;
-   --secondary-text: #454545;
-   --tertiary-text: #636363;
+  --primary-text: #314e52;
+  --secondary-text: #454545;
+  --tertiary-text: #636363;
 
-   --primary-color: #FF983B;
-   --color-background: #EEEFF4;
-   --color-base: #FFFFFF;
-   --gray-base: #909090;
-   --color-effect: #FC8621;
+  --primary-color: #ff983b;
+  --color-background: #eeeff4;
+  --color-base: #ffffff;
+  --gray-base: #909090;
+  --color-effect: #fc8621;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-     background: var(--color-background);  
+  background: var(--color-background);
 }
 
-body, input, textarea, button, p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;  
+body,
+input,
+textarea,
+button,
+p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    color: var(--primary-text);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: var(--primary-text);
 }
 
-
-button{
-    cursor: pointer;
-
+button {
+  cursor: pointer;
 }
 
 a {
-    text-decoration: none;
-    color: var(--primary-text)
+  text-decoration: none;
+  color: var(--primary-text);
 }
 
-ul, li {
-    list-style: none;
+ul,
+li {
+  list-style: none;
 }
 
 .body {
-    padding-top: 5rem;
+  padding: 5rem;
 }
-  
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+}
+
+input {
+  display: inline-block;
+  background-color: var(--color-base);
+  position: relative;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  min-width: 10rem;
+  border-radius: 5px;
+  border: 0;
+  cursor: text;
+  outline: 0;
+  color: var(--primary-text);
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+  height: fit-content;
+}
+
+select {
+  display: inline-block;
+  background-color: var(--color-base);
+  position: relative;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  min-width: 10rem;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  color: var(--primary-text);
+  font-size: 0.9rem;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+  height: fit-content;
+}
+
+@media screen and (max-width: 600px) {
+  .body {
+    padding: 5rem 1rem;
+  }
+
+  select {
+    padding: 0.5rem 0.75rem;
+    min-width: 5rem;
+    border-radius: 5px;
+  }
+
+  input {
+    width: fit-content;
+    min-width: 5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}

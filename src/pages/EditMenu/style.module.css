@@ -1,0 +1,80 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0rem 5rem;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.subTitle {
+  color: #868585;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.categoryDeleteContainer,
+.categoryAddContainer {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.sectionTitle {
+  margin-bottom: 1rem;
+}
+
+.sectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.productController {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productsContainer {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    padding: 1rem 0.5rem;
+  }
+
+  .subTitle {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  .titleContainer {
+    margin-top: 0rem;
+  }
+
+  .productsContainer {
+    justify-content: center;
+  }
+
+  .productController {
+    gap: 1.5rem;
+  }
+
+  select {
+    width: 100%;
+  }
+}
