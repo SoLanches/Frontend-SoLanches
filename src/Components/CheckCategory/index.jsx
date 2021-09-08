@@ -6,8 +6,8 @@ export function CheckCategory(props) {
     const handleSelect = (event) => {
         event.preventDefault();
         setIsSelected(!isSelected);
-        console.log(isSelected);
     }
+    
     return (
         <div className={styles.container}>
             <label className={styles.categoryCheck} onClick={handleSelect}>
@@ -18,3 +18,4 @@ export function CheckCategory(props) {
         </div>
     );
 }
+ 
