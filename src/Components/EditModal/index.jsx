@@ -7,14 +7,15 @@ import { BiCheck } from 'react-icons/bi'
 import Logo from '../../assets/icons/logo.svg'
 
 import styles from './styles.module.css'
+import { useEffect } from 'react'
 
 export const EditModal = (props) => {
   const [isActive, setIsActive] = useState(false)
-  const [name, setName] = useState('')
-  const [price, setPrice] = useState('')
-  const [category, setCategory] = useState('')
-  const [image, setImage] = useState()
-  const [description, setDescription] = useState('')
+  const [name, setName] = useState(props.name)
+  const [price, setPrice] = useState(props.price)
+  const [category, setCategory] = useState(props.category)
+  const [image, setImage] = useState('')
+  const [description, setDescription] = useState(props.description)
 
   const handleClick = useCallback(() => {
     setIsActive(!isActive)
@@ -31,8 +32,12 @@ export const EditModal = (props) => {
   }
 
   return (
-    <>
-      <Button title={props.buttonTitle} handleClick={handleClick} />
+    <div>
+      {props.buttonActive ? (
+        <Button title={props.buttonTitle} handleClick={handleClick} />
+      ) : (
+        <div onClick={handleClick}>{props.Icon}</div>
+      )}
 
       <div
         className={`${isActive ? '' : styles.inactive} ${styles.outContainer}`}
@@ -56,6 +61,7 @@ export const EditModal = (props) => {
                 onChange={(e) => {
                   setName(e.target.value)
                 }}
+                value={name}
               />
             </div>
 
@@ -70,6 +76,7 @@ export const EditModal = (props) => {
                 onChange={(e) => {
                   setPrice(e.target.value)
                 }}
+                value={price}
               />
             </div>
 
@@ -78,7 +85,7 @@ export const EditModal = (props) => {
               <div>
                 <select
                   id="edit-category"
-                  defaultValue="none"
+                  defaultValue={category || 'none'}
                   onChange={(e) => {
                     setCategory(e.target.value)
                   }}
@@ -128,24 +135,27 @@ export const EditModal = (props) => {
                 onChange={(e) => {
                   setDescription(e.target.value)
                 }}
+                value={description}
               />
             </div>
           </div>
           <Button title="Salvar alterações" handleClick={handleSubmit} />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
 // TODO: Tirar isso dps
 EditModal.defaultProps = {
   categoryList: [
-    { name: 'Hamburguer' },
-    { name: 'Tapioca' },
-    { name: 'Pizza' },
-    { name: 'Salgado' },
-    { name: 'Cachorro Quente' },
+    'Hamburguer',
+    'Tapioca',
+    'Pizza',
+    'Salgado',
+    'Cachorro Quente',
   ],
   buttonTitle: 'Vacas',
+  buttonActive: true,
+  active: false,
 }

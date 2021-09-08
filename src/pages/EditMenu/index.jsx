@@ -28,7 +28,7 @@ export const EditMenu = () => {
           alt: '8 coxinhas dentro laranja em cima de um prato',
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-          price: '8,50',
+          price: 8.5,
           editable: true,
         },
         {
@@ -36,7 +36,7 @@ export const EditMenu = () => {
           alt: '8 coxinhas dentro laranja em cima de um prato',
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-          price: '8,50',
+          price: 8.5,
           editable: true,
         },
         {
@@ -44,7 +44,8 @@ export const EditMenu = () => {
           alt: '8 coxinhas dentro laranja em cima de um prato',
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-          price: '8,50',
+
+          price: 8.5,
           editable: true,
         },
         {
@@ -52,15 +53,15 @@ export const EditMenu = () => {
           alt: '8 coxinhas dentro laranja em cima de um prato',
           description:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-          price: '8,50',
+          price: 8.5,
           editable: true,
         },
         {
-          title: 'Coxinha de frango',
+          title: 'Coxinha',
           alt: '8 coxinhas dentro laranja em cima de um prato',
           description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-          price: '8,50',
+            "Lorem Ipsum is s printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
+          price: 9.5,
           editable: true,
         },
       ],
@@ -150,7 +151,7 @@ export const EditMenu = () => {
           </div>
           <div className={style.productsContainer}>
             {projectInfo.attributes.products.map((product, index) => {
-              return <ProductCard props={product} />
+              return <ProductCard {...product} />
             })}
           </div>
         </div>
