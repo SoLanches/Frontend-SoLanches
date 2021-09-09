@@ -33,7 +33,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    border: 2.25px solid black;
+    border: 2.25px solid var(--primary-text);
     border-radius: 5px;
     background-color: var(--color-background);
 }
@@ -52,13 +52,13 @@
     margin-right: 0.4rem;
 }
 
-.container input:checked ~ .check {
+.container .isChecked ~ .check {
     background-color: var(--color-background);
     border: 2.25px solid var(--primary-color);
 }
 
 /* Ao clicar na checagem, o nome da categoria muda de cor também */
-.container input:checked ~ span {
+.container .isChecked ~ span {
     color: var(--primary-color) !important;
 }
 
@@ -78,6 +78,6 @@
     transform: rotate(45deg);
 }
 
-.container input:checked ~ .check:after{
+.container .isChecked ~ .check:after{
     display: block;
 }
