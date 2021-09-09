@@ -10,7 +10,6 @@ export function Categories() {
       <div className={style.title}>
         <RegisterSchedules />
         <h1>Página de categorias</h1>
-        <ProductCard />
       </div>
     </div>
   )

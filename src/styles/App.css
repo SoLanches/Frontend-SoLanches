@@ -1,52 +1,59 @@
 :root {
-   --primary-text: #314E52;
-   --secondary-text: #454545;
-   --tertiary-text: #636363;
+  --primary-text: #314e52;
+  --secondary-text: #454545;
+  --tertiary-text: #636363;
 
-   --primary-color: #FF983B;
-   --color-background: #EEEFF4;
-   --color-base: #FFFFFF;
-   --gray-base: #909090;
-   --color-effect: #FC8621;
+  --primary-color: #ff983b;
+  --color-background: #eeeff4;
+  --color-base: #ffffff;
+  --gray-base: #909090;
+  --color-effect: #fc8621;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-     background: var(--color-background);  
+  background: var(--color-background);
 }
 
-body, input, textarea, button, p {
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;  
+body,
+input,
+textarea,
+button,
+p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-    color: var(--primary-text);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: var(--primary-text);
 }
 
-
-button{
-    cursor: pointer;
-
+button {
+  cursor: pointer;
 }
 
 a {
-    text-decoration: none;
-    color: var(--primary-text)
+  text-decoration: none;
+  color: var(--primary-text);
 }
 
-ul, li {
-    list-style: none;
+ul,
+li {
+  list-style: none;
 }
 
 .body {
-    padding-top: 5rem;
+  padding-top: 5rem;
 }
-  
