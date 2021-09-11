@@ -60,10 +60,17 @@ Ao ser clicado, o usuário é redirecionado para a página perfil do comércio.
 
 ```jsx
 <CardCommerce
-  icon="./assets/icons/exemplo.svg"
+  icon={icon}
   route="About"
   title="Hamburgueria Lá em Robson"
   adress="Rua Celso Cirne, 449 - Solânea "
+  times: {[
+        { days_hours: 'Seg, ter : 14h - 23h' },
+        { days_hours: 'Qua : Fechado' },
+        { days_hours: 'Qui : 16h - 23h' },
+        { days_hours: 'Sáb: 15h - 23:30h' },
+        { days_hours: 'Dom: 12h- 22h' },
+    ]}
 />
 ```
 
