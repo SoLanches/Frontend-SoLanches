@@ -18,7 +18,7 @@
 - [Modal Time Listing Card](#Modal-Time-Listing-Card)
 - [Product Card](#Product-Card)
 - [Register Hours](#Register-Hours)
-- [Text](#Text)
+
 
 ## Button
 
@@ -240,4 +240,3 @@ Esse é um exemplo de forma de uso do componente
 
 https://user-images.githubusercontent.com/42751604/132227802-dc0095e0-9899-4f1b-96ad-8b3a504ef770.mp4
 
-## Text
