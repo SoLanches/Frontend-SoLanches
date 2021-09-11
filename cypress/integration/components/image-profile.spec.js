@@ -4,8 +4,9 @@ describe("Testa comportamento do componente ImageProfile", () => {
         cy.visit('/')
         
         cy.get('.style_imageContainer__3bMNP').should('be.visible')
+        cy.get('span').should('be.visible')
         cy.get('.style_imageContainer__3bMNP').click()
         cy.get('.style_imageContainer__3bMNP').should('be.visible')
-        
+
     })
 })
