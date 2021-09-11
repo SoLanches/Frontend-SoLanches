@@ -1,9 +1,16 @@
 import style from './style.module.css'
 
-export const Select = ({ options, defaultValue }) => {
+export const Select = ({ options, defaultValue, setValue }) => {
+  const handleChange = (e) => {
+    if (setValue) {
+      console.log(e.target.value)
+      setValue(e.target.value)
+    }
+  }
+
   return (
-    <select defaultValue={defaultValue}>
-      <option value="default" className={style.option} disabled>
+    <select defaultValue={defaultValue} onChange={handleChange}>
+      <option value='default' className={style.option} disabled>
         selecione
       </option>
       {options.map((option, index) => {

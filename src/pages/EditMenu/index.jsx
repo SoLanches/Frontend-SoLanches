@@ -7,76 +7,24 @@ import { ProductCard } from '../../Components/ProductCard'
 import style from './style.module.css'
 import { Select } from '../../Components/Select'
 import { EditModal } from '../../Components/EditModal'
+import { getProdutos } from '../../services/api'
 
 export const EditMenu = () => {
-  const { ProjectName } = useParams()
-
-  const [projectInfo, useProjectInfo] = useState({
-    attributes: {
-      categories: ['sapato', 'bebida', 'vacas', 'joelho', 'caverna'],
-      products: [
-        {
-          title: 'Coxinha de frango',
-          alt: '8 coxinhas dentro laranja em cima de um prato',
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-          price: '8,50',
-          editable: true,
-        },
-        {
-          title: 'Coxinha de frango',
-          alt: '8 coxinhas dentro laranja em cima de um prato',
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-          price: 8.5,
-          editable: true,
-        },
-        {
-          title: 'Coxinha de frango',
-          alt: '8 coxinhas dentro laranja em cima de um prato',
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-          price: 8.5,
-          editable: true,
-        },
-        {
-          title: 'Coxinha de frango',
-          alt: '8 coxinhas dentro laranja em cima de um prato',
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-
-          price: 8.5,
-          editable: true,
-        },
-        {
-          title: 'Coxinha de frango',
-          alt: '8 coxinhas dentro laranja em cima de um prato',
-          description:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-          price: 8.5,
-          editable: true,
-        },
-        {
-          title: 'Coxinha',
-          alt: '8 coxinhas dentro laranja em cima de um prato',
-          description:
-            "Lorem Ipsum is s printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-          price: 9.5,
-          editable: true,
-        },
-      ],
-    },
-  })
-
-  const [menu, setMenu] = useState({})
+  const { projectName } = useParams()
+  const [produtos, setProdutos] = useState([])
+  const [filterCategorie, setFilterCategorie] = useState('todos')
 
   useEffect(() => {
-    const getMenu = async () => {
-      // const response = await getMenu(ProjectName)
-      // setMenu(response)
+    async function getDados() {
+      const produtosResponse = await getProdutos(projectName)
+      setProdutos(produtosResponse)
+
+      const arr = []
+
+      console.log([].concat.apply([], Object.values(produtosResponse)))
     }
 
-    getMenu()
+    getDados()
   }, [])
 
   const handleUpdateMenu = () => {
@@ -99,8 +47,6 @@ export const EditMenu = () => {
     console.log('ADDING PRODUCT')
   }
 
-  useEffect(() => {})
-
   return (
     <div className={style.wrapper}>
       <section className={style.titleContainer}>
@@ -116,21 +62,21 @@ export const EditMenu = () => {
         <div className={style.sectionBody}>
           <h3>Categorias existentes</h3>
           <div className={style.categories}>
-            {projectInfo.attributes.categories.map((categorie, index) => {
+            {Object.keys(produtos).map((categorie, index) => {
               return <CategoryTags title={categorie} key={index} />
             })}
           </div>
 
           <h3>Adicionar categoria</h3>
           <div className={style.categoryAddContainer}>
-            <input placeholder="Ex: Sobremesas" />
-            <Button title="Adicionar" handleClick={handleAddCategory} />
+            <input placeholder='Ex: Sobremesas' />
+            <Button title='Adicionar' handleClick={handleAddCategory} />
           </div>
 
           <h3>Deletar categoria</h3>
           <div className={style.categoryDeleteContainer}>
-            <Select options={projectInfo.attributes.categories} />
-            <Button title="Deletar" handleClick={handleDeleteCategory} />
+            <Select options={Object.keys(produtos)} />
+            <Button title='Deletar' handleClick={handleDeleteCategory} />
           </div>
         </div>
       </section>
@@ -141,18 +87,25 @@ export const EditMenu = () => {
           <h3>Categoria</h3>
           <div className={style.productController}>
             <Select
-              defaultValue={'todos'}
-              options={[...projectInfo.attributes.categories, 'todos']}
+              options={['todos', ...Object.keys(produtos)]}
+              defaultValue='todos'
+              setValue={setFilterCategorie}
             />
             <EditModal
-              buttonTitle="Adicionar produto"
-              categoryList={projectInfo.attributes.categories}
+              buttonTitle='Adicionar produto'
+              categoryList={Object.keys(produtos)}
             />
           </div>
           <div className={style.productsContainer}>
-            {projectInfo.attributes.products.map((product, index) => {
-              return <ProductCard {...product} />
-            })}
+            {filterCategorie === 'todos'
+              ? [].concat
+                  .apply([], Object.values(produtos))
+                  .map((product, index) => {
+                    return <ProductCard {...product.attributes} key={index} />
+                  })
+              : produtos[filterCategorie].map((product, index) => {
+                  return <ProductCard {...product.attributes} key={index} />
+                })}
           </div>
         </div>
       </section>
