@@ -19,7 +19,7 @@ describe("Testa comportamento do componente CardLogin", () => {
     })
 
 
-    it("Teste de inputs. Recebimento de texto do email e de senha bem como deleta os textos", () => {
+    it("Teste de inputs. Recebimento e delete de texto do email e de senha", () => {
         cy.get('#loginEmail').type('solanches@gmail.com').wait(1000)
         cy.get('#loginEmail').clear()
 
