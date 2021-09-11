@@ -6,7 +6,6 @@ describe('Teste de comportamento do componente categoryCard', () => {
         cy.get('.style_rotate__1hH3A').should('be.visible')
         cy.get('.style_icon__2eIcD').should('be.visible')
         cy.get('.style_title__ZDkRo').should('be.visible')
-
         
     })
 
