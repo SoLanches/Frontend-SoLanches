@@ -25,15 +25,15 @@ export const ProductCard = ({
   price,
   editable,
   category,
+  favedProduct,
 }) => {
-  const [faved, setFav] = useState(false)
+  const [faved, setFav] = useState(favedProduct)
   const [activeModal, setActiveModal] = useState(false)
   const { commerceName, setProducts } = useCommerceContext()
   console.log(id)
 
-  const handleFavorite = () => {
+  const handleFavorite = async () => {
     setFav(!faved)
-    // TODO: Add integration to backend
   }
 
   const handleEdit = () => {
@@ -75,7 +75,8 @@ export const ProductCard = ({
             <EditModal
               buttonActive={false}
               active={activeModal}
-              name={title}
+              productId={id}
+              title={title}
               price={price}
               category={category}
               image={image}
@@ -107,4 +108,5 @@ ProductCard.defaultProps = {
   price: 8.5,
   editable: true,
   category: 'Salgado',
+  favedProduct: false,
 }

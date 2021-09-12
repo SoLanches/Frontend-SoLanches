@@ -37,7 +37,7 @@ export const deleteProduct = async (commerceName, idProduct) => {
 
 export const editProduct = async (commerceName, idProduct, newProduct) => {
   try {
-    await api.patch(`/comercio/${commerceName}/produto/${idProduct}`, newProduct)
+    await api.patch(`/comercio/${commerceName}/produto/${idProduct}`, { attributes: newProduct})
     openNotification(
       commerceName, 
       'Produto alterado com sucesso', 
