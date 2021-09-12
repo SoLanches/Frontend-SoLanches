@@ -27,6 +27,7 @@ export function PagesProvider({ children }) {
       path: '/inicio',
       component: Home,
       header: true,
+      private: false
     },
     {
       name: 'Categories',
@@ -34,13 +35,16 @@ export function PagesProvider({ children }) {
       path: '/categorias',
       component: Categories,
       header: true,
+      private: false
     },
     {
       name: 'Login',
       text: 'Login',
       path: '/login',
       component: Login,
+      logged: false,
       header: true,
+      private: false
     },
     {
       name: 'editMenu',
@@ -48,6 +52,7 @@ export function PagesProvider({ children }) {
       path: '/:commerceName/edit',
       component: EditPage,
       header: false,
+      private: true
     },
   ]
 

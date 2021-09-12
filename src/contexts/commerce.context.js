@@ -5,7 +5,7 @@ import React, {
   useCallback,
   useEffect,
 } from 'react'
-import { useParams } from 'react-router'
+import { useHistory, useParams } from 'react-router'
 import { getProdutos } from '../services/api'
 
 const CommerceContext = createContext()
@@ -18,7 +18,8 @@ export function CommerceProvider({ children }) {
   useEffect(() => {
     async function getDados() {
       const response = await getProdutos(commerceName)
-      setProducts(response)
+
+      setProducts(response) 
     }
     getDados()
   }, [])

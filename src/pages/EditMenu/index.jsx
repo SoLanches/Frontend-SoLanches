@@ -1,5 +1,5 @@
 import { Button } from '../../Components/Button'
-import { useParams } from 'react-router'
+import { useHistory, useParams } from 'react-router'
 import { useEffect, useState } from 'react/cjs/react.development'
 import { CategoryTags } from '../../Components/CategoryTags'
 import { ProductCard } from '../../Components/ProductCard'
@@ -17,6 +17,11 @@ export const EditMenu = () => {
   const [filterCategorie, setFilterCategorie] = useState('todos')
 
   console.log(sapato)
+  const history = useHistory()
+
+  useEffect(() => {
+    console.log(filterCategorie)
+  }, [filterCategorie])
 
   const handleUpdateMenu = () => {
     // IMPLEMENT
@@ -89,7 +94,7 @@ export const EditMenu = () => {
               />
             </div>
             <div className={style.productsContainer}>
-              {products
+              {filterCategorie in products || filterCategorie === 'todos'
                 ? filterCategorie === 'todos'
                   ? [].concat
                       .apply([], Object.values(products))

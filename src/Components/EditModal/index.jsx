@@ -7,7 +7,7 @@ import { BiCheck } from 'react-icons/bi'
 import Logo from '../../assets/icons/logo.svg'
 
 import styles from './styles.module.css'
-import { editProduct, getProdutos } from '../../services/api'
+import { editProduct, getProdutos, addProduct } from '../../services/api'
 import useCommerceContext from '../../contexts/commerce.context'
 
 export const EditModal = (props) => {
@@ -23,17 +23,31 @@ export const EditModal = (props) => {
     setIsActive(!isActive)
   }, [setIsActive, isActive])
 
+  const clearProperties = () => {
+    setName('')
+    setPrice('')
+    setImage('')
+    setDescription('')
+  }
+
   const handleSubmit = async () => {
-    await editProduct(commerceName, props.productId, {
-      title,
-      price,
-      description,
-      category,
-    })
+    props.productId
+      ? await editProduct(commerceName, props.productId, {
+          title,
+          price,
+          description,
+          categoria: category,
+        })
+      : await addProduct(commerceName, {
+          title,
+          price,
+          description,
+          categoria: category,
+        })
 
     const products = await getProdutos(commerceName)
     setProducts(products)
-
+    clearProperties()
     handleClick()
   }
 
