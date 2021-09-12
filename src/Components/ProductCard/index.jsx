@@ -13,8 +13,11 @@ import {
 import { useState } from 'react/cjs/react.development'
 import { EditModal } from '../EditModal'
 import { formatPrice } from '../../util/format'
+import { deleteProduct, getProdutos } from '../../services/api'
+import useCommerceContext from '../../contexts/commerce.context'
 
 export const ProductCard = ({
+  id,
   image,
   alt,
   title,
@@ -25,6 +28,8 @@ export const ProductCard = ({
 }) => {
   const [faved, setFav] = useState(false)
   const [activeModal, setActiveModal] = useState(false)
+  const { commerceName, setProducts } = useCommerceContext()
+  console.log(id)
 
   const handleFavorite = () => {
     setFav(!faved)
@@ -37,9 +42,11 @@ export const ProductCard = ({
     // TODO: Add integration to backend
   }
 
-  const handleDelete = () => {
-    // TODO: Add integration to backend
-    console.log('DELETAANDOOO')
+  const handleDelete = async () => {
+    await deleteProduct(commerceName, id)
+
+    const products = await getProdutos(commerceName)
+    setProducts(products)
   }
 
   return (

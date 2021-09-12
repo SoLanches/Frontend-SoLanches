@@ -10,8 +10,13 @@ import { Categories } from '../pages/Categories'
 import { EditMenu } from '../pages/EditMenu'
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
+import { CommerceProvider } from './commerce.context'
 
 const PagesContext = createContext()
+
+const EditPage = () => {
+  return(<CommerceProvider><EditMenu/></CommerceProvider>)
+}
 
 export function PagesProvider({ children }) {
   const [pathname, setPathname] = useState(window.location.pathname)
@@ -40,8 +45,8 @@ export function PagesProvider({ children }) {
     {
       name: 'editMenu',
       text: 'Edit Menu',
-      path: '/:projectName/edit',
-      component: EditMenu,
+      path: '/:commerceName/edit',
+      component: EditPage,
       header: false,
     },
   ]
