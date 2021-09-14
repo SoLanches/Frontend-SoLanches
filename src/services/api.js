@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { useHistory } from 'react-router'
 import { openNotification } from '../util/notification'
 
 export const api = axios.create({

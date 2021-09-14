@@ -12,6 +12,7 @@ export const Header = () => {
   const [lastScrollTop, setScrollTop] = useState(window.pageYOffset)
   const [retracted, setRetract] = useState(false)
   // TODO: Mudar para quando tiver login adaptando código para o componente saber se o usuario está logado.
+  // eslint-disable-next-line no-unused-vars
   const [logged, setLogged] = useState(false)
 
   const handleScroll = useCallback(() => {
@@ -51,6 +52,7 @@ export const Header = () => {
                 </li>
               )
             }
+            return null
           })}
         </ul>
       </div>

@@ -6,7 +6,7 @@ export const CategoryTags = ({ title }) => {
 
   const handleClick = useCallback(() => {
     setActive(!active)
-  })
+  }, [setActive, active])
 
   return (
     <div
