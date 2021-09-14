@@ -85,7 +85,7 @@ export const ProductCard = ({
               />
             )}
             <EditOutlined onClick={handleEdit} style={{ fontSize: '20px' }} />
-            {activeModal ? (
+            {activeModal && (
               <EditModal
                 buttonActive={false}
                 active={true}
@@ -99,7 +99,7 @@ export const ProductCard = ({
                 description={description}
                 icon={false}
               />
-            ) : null}
+            )}
             <DeleteOutlined
               onClick={handleDelete}
               style={{ fontSize: '20px' }}
