@@ -114,7 +114,7 @@ export const EditModal = (props) => {
               <label htmlFor='edit-category'>Categoria</label>
               <Select
                 options={props.categoryList}
-                defaultValue={category || 'none'}
+                defaultValue={category}
                 setValue={setCategory}
               />
             </div>

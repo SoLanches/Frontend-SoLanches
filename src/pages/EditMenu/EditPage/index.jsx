@@ -104,7 +104,6 @@ export const EditPage = () => {
                 ? [].concat
                     .apply([], Object.values(products))
                     .map((product, index) => {
-                      console.log(product._id)
                       return (
                         <ProductCard
                           id={product._id}
