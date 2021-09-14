@@ -9,6 +9,7 @@ import Logo from '../../assets/icons/logo.svg'
 import styles from './styles.module.css'
 import { editProduct, getProdutos, addProduct } from '../../services/api'
 import useCommerceContext from '../../contexts/commerce.context'
+import { Select } from '../Select'
 
 export const EditModal = (props) => {
   const { commerceName, setProducts } = useCommerceContext()
@@ -32,6 +33,7 @@ export const EditModal = (props) => {
     setPrice('')
     setImage('')
     setDescription('')
+    setCategory('default')
   }
 
   const handleSubmit = async () => {
@@ -63,9 +65,9 @@ export const EditModal = (props) => {
     <div>
       {props.buttonActive ? (
         <Button title={props.buttonTitle} handleClick={handleClick} />
-      ) : props.icon ? (
+      ) : (
         <div onClick={handleClick}>{props.icon}</div>
-      ) : null}
+      )}
 
       <div
         className={`${isActive ? '' : styles.inactive} ${styles.outContainer}`}
@@ -110,30 +112,11 @@ export const EditModal = (props) => {
 
             <div className={styles.category}>
               <label htmlFor='edit-category'>Categoria</label>
-              <div>
-                <select
-                  id='edit-category'
-                  defaultValue={category || 'none'}
-                  onChange={(e) => {
-                    setCategory(e.target.value)
-                  }}
-                >
-                  <option value='none' disabled>
-                    Selecione
-                  </option>
-                  {props.categoryList.map((category) => {
-                    return (
-                      <option
-                        value={category.toLowerCase()}
-                        key={category.toLowerCase()}
-                      >
-                        {category}
-                      </option>
-                    )
-                  })}
-                </select>
-                <i></i>
-              </div>
+              <Select
+                options={props.categoryList}
+                defaultValue={category || 'none'}
+                setValue={setCategory}
+              />
             </div>
 
             <div className={styles.image}>

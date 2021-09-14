@@ -9,18 +9,21 @@ export const Select = ({ options, defaultValue, setValue }) => {
   }
 
   return (
-    <select defaultValue={defaultValue} onChange={handleChange}>
-      <option value='default' className={style.option} disabled>
-        selecione
-      </option>
-      {options.map((option, index) => {
-        return (
-          <option key={index} value={option} className={style.option}>
-            {option}
-          </option>
-        )
-      })}
-    </select>
+    <div className={style.container}>
+      <select defaultValue={defaultValue} onChange={handleChange}>
+        <option value='default' className={style.option} disabled>
+          selecione
+        </option>
+        {options.map((option, index) => {
+          return (
+            <option key={index} value={option} className={style.option}>
+              {option}
+            </option>
+          )
+        })}
+      </select>
+      <i></i>
+    </div>
   )
 }
 
