@@ -13,7 +13,7 @@ export const getCardapio = async (commerceName) => {
   } catch (e) {
     openNotification(
       commerceName, 
-      `Ouve um problema ao retornar os produtos do comércio ${commerceName}`, 
+      `Ocorreu um problema ao retornar os produtos do comércio ${commerceName}`, 
       `os produtos do comércio ${commerceName}`
     )
     return null
@@ -28,7 +28,7 @@ export const getProdutos = async (commerceName) => {
   } catch (e) {
     openNotification(
       commerceName, 
-      `Ouve um problema ao retornar os produtos do comércio ${commerceName}`, 
+      `Ocorreu um problema ao retornar os produtos do comércio ${commerceName}`, 
       `os produtos do comércio ${commerceName}`
     )
     return null
@@ -46,7 +46,7 @@ export const deleteProduct = async (commerceName, idProduct) => {
   } catch (e) {
     openNotification(
       commerceName, 
-      `Ouve um problema remover o produto com id: ${idProduct}`, 
+      `Ocorreu um problema remover o produto com id: ${idProduct}`, 
       e.data
     )
   }
@@ -62,7 +62,7 @@ export const editProduct = async (commerceName, idProduct, newProduct) => {
   } catch (e) {
     openNotification(
       commerceName, 
-      `Ouve um problema ao alterar o produto com id: ${idProduct}`, 
+      `Ocorreu um problema ao alterar o produto com id: ${idProduct}`, 
     )
   }
 }
@@ -78,7 +78,7 @@ export const addProduct = async (commerceName, newProduct) => {
     console.log(e)
     openNotification(
       commerceName, 
-      `Ouve um problema ao alterar o novo produto com nome: ${newProduct.title}`, 
+      `Ocorreu um problema ao alterar o novo produto com nome: ${newProduct.title}`, 
     )
   }
 }
@@ -94,7 +94,7 @@ export const addCategory = async (commerceName, category) => {
   } catch (e) {
     openNotification(
       commerceName, 
-      `Ouve um problema ao cadastrar uma nova categoria com nome: ${category}`, 
+      `Ocorreu um problema ao cadastrar uma nova categoria com nome: ${category}`, 
     )
     return null
   }
@@ -112,9 +112,44 @@ export const deleteCategory = async (commerceName, category) => {
     console.log(e)
     openNotification(
       commerceName, 
-      `Ouve um problema ao remover a categoria com nome: ${category}`, 
+      `Ocorreu um problema ao remover a categoria com nome: ${category}`, 
     )
     return null
   }
 }
 
+export const addFavorite = async (commerceName, productId) => {
+  try {
+    const response = await api.post(`/comercio/${commerceName}/destaques/${productId}`)
+    openNotification(
+      commerceName, 
+      'Produto adicionado aos destaques com sucesso', 
+      )
+    return response.data
+  } catch (e) {
+    console.log(e)
+    openNotification(
+      commerceName, 
+      `Ocorreu um problema ao adicionar o produto com id ${productId} aos destaques`, 
+    )
+    return null
+  }
+}
+
+export const removeFavorite = async (commerceName, productId) => {
+  try {
+    const response = await api.delete(`/comercio/${commerceName}/destaques/${productId}`)
+    openNotification(
+      commerceName, 
+      'Produto removido aos destaques com sucesso', 
+      )
+    return response.data
+  } catch (e) {
+    console.log(e)
+    openNotification(
+      commerceName, 
+      `Ocorreu um problema ao remover o produto com id ${productId} aos destaques`, 
+    )
+    return null
+  }
+}

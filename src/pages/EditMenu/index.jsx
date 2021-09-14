@@ -13,7 +13,7 @@ import useCommerceContext from '../../contexts/commerce.context'
 export const EditMenu = () => {
   const { commerceName } = useParams()
 
-  const { products, setProducts, activeCategories, setActiveCategories } =
+  const { products, activeCategories, setActiveCategories, favs } =
     useCommerceContext()
   const [filterCategorie, setFilterCategorie] = useState('todos')
 
@@ -125,6 +125,7 @@ export const EditMenu = () => {
                           <ProductCard
                             id={product._id}
                             {...product.attributes}
+                            favorited={favs.includes(product._id)}
                             key={index}
                           />
                         )
@@ -135,6 +136,7 @@ export const EditMenu = () => {
                           id={product._id}
                           {...product.attributes}
                           key={index}
+                          favorited={favs.includes(product._id)}
                         />
                       )
                     })

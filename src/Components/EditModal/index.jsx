@@ -12,7 +12,7 @@ import useCommerceContext from '../../contexts/commerce.context'
 
 export const EditModal = (props) => {
   const { commerceName, setProducts } = useCommerceContext()
-  const [isActive, setIsActive] = useState(false)
+  const [isActive, setIsActive] = useState(props.active)
   const [title, setName] = useState(props.title)
   const [price, setPrice] = useState(props.price)
   const [category, setCategory] = useState(props.category)
@@ -21,6 +21,9 @@ export const EditModal = (props) => {
 
   const handleClick = useCallback(() => {
     setIsActive(!isActive)
+    if (props.setActive) {
+      props.setActive(false)
+    }
   }, [setIsActive, isActive])
 
   const clearProperties = () => {
@@ -59,9 +62,9 @@ export const EditModal = (props) => {
     <div>
       {props.buttonActive ? (
         <Button title={props.buttonTitle} handleClick={handleClick} />
-      ) : (
-        <div onClick={handleClick}>{props.Icon}</div>
-      )}
+      ) : props.icon ? (
+        <div onClick={handleClick}>{props.icon}</div>
+      ) : null}
 
       <div
         className={`${isActive ? '' : styles.inactive} ${styles.outContainer}`}

@@ -13,7 +13,12 @@ import {
 import { useState } from 'react/cjs/react.development'
 import { EditModal } from '../EditModal'
 import { formatPrice } from '../../util/format'
-import { deleteProduct, getProdutos } from '../../services/api'
+import {
+  addFavorite,
+  deleteProduct,
+  getProdutos,
+  removeFavorite,
+} from '../../services/api'
 import useCommerceContext from '../../contexts/commerce.context'
 
 export const ProductCard = ({
@@ -24,22 +29,30 @@ export const ProductCard = ({
   description,
   price,
   editable,
-  favedProduct,
+  favorited,
   categoria: category,
 }) => {
-  const [faved, setFav] = useState(favedProduct)
+  const [faved, setFav] = useState(favorited)
   const [activeModal, setActiveModal] = useState(false)
-  const { commerceName, setProducts, products } = useCommerceContext()
-  console.log(Object.keys(products))
+  const { commerceName, setProducts, products, setFavs } = useCommerceContext()
 
   const handleFavorite = async () => {
-    setFav(!faved)
+    let response
+
+    if (favorited) {
+      response = await removeFavorite(commerceName, id)
+    } else {
+      response = await addFavorite(commerceName, id)
+    }
+
+    if (response) {
+      setFavs(response.destaques)
+      setFav(!faved)
+    }
   }
 
   const handleEdit = () => {
-    setActiveModal(!activeModal)
-    console.log(price)
-    // TODO: Add integration to backend
+    setActiveModal(true)
   }
 
   const handleDelete = async () => {
@@ -72,23 +85,22 @@ export const ProductCard = ({
                 style={{ fontSize: '20px' }}
               />
             )}
-            <EditModal
-              buttonActive={false}
-              active={activeModal}
-              productId={id}
-              title={title}
-              price={price}
-              category={category}
-              categoryList={Object.keys(products)}
-              image={image}
-              description={description}
-              Icon={
-                <EditOutlined
-                  onClick={handleEdit}
-                  style={{ fontSize: '20px' }}
-                />
-              }
-            />
+            <EditOutlined onClick={handleEdit} style={{ fontSize: '20px' }} />
+            {activeModal ? (
+              <EditModal
+                buttonActive={false}
+                active={true}
+                setActive={setActiveModal}
+                productId={id}
+                title={title}
+                price={price}
+                category={category}
+                categoryList={Object.keys(products)}
+                image={image}
+                description={description}
+                icon={false}
+              />
+            ) : null}
             <DeleteOutlined
               onClick={handleDelete}
               style={{ fontSize: '20px' }}
