@@ -2,7 +2,6 @@ import React, {
   createContext,
   useContext,
   useState,
-  useCallback,
   useEffect,
 } from 'react'
 import { useHistory, useParams } from 'react-router'
@@ -15,17 +14,26 @@ export function CommerceProvider({ children }) {
   const [activeCategories, setActiveCategories] = useState([])
   const [favProductIds, setFavProductIds] = useState([])
   const [products, setProducts] = useState([])
+  const history = useHistory()
 
   useEffect(() => {
     async function getDadosProdutos() {
       const response = await getProdutos(commerceName)
+
+      !response ? 
+      history.push('/categorias') :
       setProducts(response) 
     }
 
     async function getDadosCardapio() {
       const response = await getCardapio(commerceName)
-      setActiveCategories(response.categorias)
-      setFavProductIds(response.destaques)
+      
+      if (!response) {
+        history.push('/categorias')
+      } else {
+        setActiveCategories(response.categorias)
+        setFavProductIds(response.destaques)
+      }
     }
 
     getDadosProdutos()
