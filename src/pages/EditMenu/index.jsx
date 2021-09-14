@@ -7,21 +7,19 @@ import { ProductCard } from '../../Components/ProductCard'
 import style from './style.module.css'
 import { Select } from '../../Components/Select'
 import { EditModal } from '../../Components/EditModal'
-import { getproducts } from '../../services/api'
+import { addCategory, getproducts } from '../../services/api'
 import useCommerceContext from '../../contexts/commerce.context'
 
 export const EditMenu = () => {
-  const { projectName } = useParams()
+  const { commerceName } = useParams()
 
-  const { setProjectName, products, setProducts, sapato } = useCommerceContext()
+  const { products, setProducts, activeCategories, setActiveCategories } =
+    useCommerceContext()
   const [filterCategorie, setFilterCategorie] = useState('todos')
 
-  console.log(sapato)
-  const history = useHistory()
+  const [currentAddCategory, setCurrentAddCategory] = useState('')
 
-  useEffect(() => {
-    console.log(filterCategorie)
-  }, [filterCategorie])
+  const history = useHistory()
 
   const handleUpdateMenu = () => {
     // IMPLEMENT
@@ -33,14 +31,23 @@ export const EditMenu = () => {
     console.log('DELETING CATEGORY')
   }
 
-  const handleAddCategory = () => {
-    // IMPLEMENT
+  const handleAddCategory = async () => {
+    if (currentAddCategory) {
+      const response = await addCategory(commerceName, currentAddCategory)
+      console.log(response)
+      setActiveCategories(response.categorias)
+    }
     console.log('ADDING CATEGORY')
   }
 
   const handleAddProduct = () => {
     // IMPLEMENT
     console.log('ADDING PRODUCT')
+  }
+
+  const handleTypingCategory = (e) => {
+    console.log(currentAddCategory)
+    setCurrentAddCategory(e.target.value)
   }
 
   return (
@@ -66,13 +73,16 @@ export const EditMenu = () => {
 
             <h3>Adicionar categoria</h3>
             <div className={style.categoryAddContainer}>
-              <input placeholder='Ex: Sobremesas' />
+              <input
+                placeholder='Ex: Sobremesas'
+                onChange={handleTypingCategory}
+              />
               <Button title='Adicionar' handleClick={handleAddCategory} />
             </div>
 
             <h3>Deletar categoria</h3>
             <div className={style.categoryDeleteContainer}>
-              <Select options={Object.keys(products)} />
+              <Select options={activeCategories} />
               <Button title='Deletar' handleClick={handleDeleteCategory} />
             </div>
           </div>

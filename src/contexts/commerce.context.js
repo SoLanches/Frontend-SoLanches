@@ -6,29 +6,37 @@ import React, {
   useEffect,
 } from 'react'
 import { useHistory, useParams } from 'react-router'
-import { getProdutos } from '../services/api'
+import { getProdutos, getCardapio } from '../services/api'
 
 const CommerceContext = createContext()
 
 export function CommerceProvider({ children }) {
   const { commerceName } = useParams()
+  const [activeCategories, setActiveCategories] = useState([])
 
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    async function getDados() {
+    async function getDadosProdutos() {
       const response = await getProdutos(commerceName)
-
       setProducts(response) 
     }
-    getDados()
+
+    async function getDadosCardapio() {
+      const response = await getCardapio(commerceName)
+      setActiveCategories(response.categorias)
+    }
+    getDadosProdutos()
+    getDadosCardapio()
+    
   }, [])
 
   const values = {
     commerceName,
     products,
     setProducts,
-    sapato: 'vacas'
+    activeCategories,
+    setActiveCategories,
   }
 
   return (
