@@ -1,35 +1,31 @@
-import { Button } from '../../Components/Button'
+import { Button } from '../../../Components/Button'
 import { useHistory, useParams } from 'react-router'
 import { useEffect, useState } from 'react/cjs/react.development'
-import { CategoryTags } from '../../Components/CategoryTags'
-import { ProductCard } from '../../Components/ProductCard'
+import { CategoryTags } from '../../../Components/CategoryTags'
+import { ProductCard } from '../../../Components/ProductCard'
 
 import style from './style.module.css'
-import { Select } from '../../Components/Select'
-import { EditModal } from '../../Components/EditModal'
-import { addCategory, deleteCategory } from '../../services/api'
-import useCommerceContext from '../../contexts/commerce.context'
+import { Select } from '../../../Components/Select'
+import { EditModal } from '../../../Components/EditModal'
+import { addCategory, deleteCategory } from '../../../services/api'
+import useCommerceContext from '../../../contexts/commerce.context'
 
 export const EditMenu = () => {
-  const { commerceName } = useParams()
+  const {
+    commerceName,
+    products,
+    activeCategories,
+    setActiveCategories,
+    favs,
+  } = useCommerceContext()
 
-  const { products, activeCategories, setActiveCategories, favs } =
-    useCommerceContext()
   const [filterCategorie, setFilterCategorie] = useState('todos')
 
   const [currentAddCategory, setCurrentAddCategory] = useState('')
   const [currentDeleteCategory, setCurrentDeleteCategory] = useState('')
 
-  const history = useHistory()
-
-  const handleUpdateMenu = () => {
-    // IMPLEMENT
-    console.log('UPDATED MENU')
-  }
-
   const handleDeleteCategory = async () => {
     if (currentDeleteCategory) {
-      console.log(currentDeleteCategory)
       const response = await deleteCategory(commerceName, currentDeleteCategory)
 
       if (response) {
@@ -46,11 +42,6 @@ export const EditMenu = () => {
         setActiveCategories(response.categorias)
       }
     }
-  }
-
-  const handleAddProduct = () => {
-    // IMPLEMENT
-    console.log('ADDING PRODUCT')
   }
 
   const handleTypingCategory = (e) => {

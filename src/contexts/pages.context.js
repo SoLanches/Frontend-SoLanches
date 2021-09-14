@@ -7,16 +7,12 @@ import React, {
 } from 'react'
 
 import { Categories } from '../pages/Categories'
-import { EditMenu } from '../pages/EditMenu'
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
-import { CommerceProvider } from './commerce.context'
+import { EditPage } from '../pages/EditPage'
 
 const PagesContext = createContext()
 
-const EditPage = () => {
-  return(<CommerceProvider><EditMenu/></CommerceProvider>)
-}
 
 export function PagesProvider({ children }) {
   const [pathname, setPathname] = useState(window.location.pathname)
