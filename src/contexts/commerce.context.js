@@ -19,10 +19,7 @@ export function CommerceProvider({ children }) {
   useEffect(() => {
     async function getDadosProdutos() {
       const response = await getProdutos(commerceName)
-
-      !response ? 
-      history.push('/categorias') :
-      setProducts(response) 
+      !response ? history.push('/categorias') : setProducts(response) 
     }
 
     async function getDadosCardapio() {
