@@ -21,10 +21,11 @@ export const EditModal = (props) => {
 
   const handleClick = useCallback(() => {
     setIsActive(!isActive)
+
     if (props.setActive) {
       props.setActive(false)
     }
-  }, [setIsActive, isActive])
+  }, [setIsActive, isActive, props])
 
   const clearProperties = () => {
     setName('')

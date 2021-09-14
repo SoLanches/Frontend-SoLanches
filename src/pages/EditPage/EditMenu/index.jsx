@@ -1,6 +1,5 @@
 import { Button } from '../../../Components/Button'
-import { useHistory, useParams } from 'react-router'
-import { useEffect, useState } from 'react/cjs/react.development'
+import { useState } from 'react/cjs/react.development'
 import { CategoryTags } from '../../../Components/CategoryTags'
 import { ProductCard } from '../../../Components/ProductCard'
 
@@ -16,7 +15,7 @@ export const EditMenu = () => {
     products,
     activeCategories,
     setActiveCategories,
-    favs,
+    favProductIds,
   } = useCommerceContext()
 
   const [filterCategorie, setFilterCategorie] = useState('todos')
@@ -44,11 +43,6 @@ export const EditMenu = () => {
     }
   }
 
-  const handleTypingCategory = (e) => {
-    console.log(currentAddCategory)
-    setCurrentAddCategory(e.target.value)
-  }
-
   return (
     products && (
       <div className={style.wrapper}>
@@ -74,7 +68,7 @@ export const EditMenu = () => {
             <div className={style.categoryAddContainer}>
               <input
                 placeholder='Ex: Sobremesas'
-                onChange={handleTypingCategory}
+                onChange={(event) => setCurrentAddCategory(event.target.value)}
               />
               <Button title='Adicionar' handleClick={handleAddCategory} />
             </div>
@@ -106,32 +100,30 @@ export const EditMenu = () => {
               />
             </div>
             <div className={style.productsContainer}>
-              {filterCategorie in products || filterCategorie === 'todos'
-                ? filterCategorie === 'todos'
-                  ? [].concat
-                      .apply([], Object.values(products))
-                      .map((product, index) => {
-                        console.log(product._id)
-                        return (
-                          <ProductCard
-                            id={product._id}
-                            {...product.attributes}
-                            favorited={favs.includes(product._id)}
-                            key={index}
-                          />
-                        )
-                      })
-                  : products[filterCategorie].map((product, index) => {
+              {filterCategorie === 'todos'
+                ? [].concat
+                    .apply([], Object.values(products))
+                    .map((product, index) => {
+                      console.log(product._id)
                       return (
                         <ProductCard
                           id={product._id}
                           {...product.attributes}
+                          favorited={favProductIds.includes(product._id)}
                           key={index}
-                          favorited={favs.includes(product._id)}
                         />
                       )
                     })
-                : null}
+                : products[filterCategorie].map((product, index) => {
+                    return (
+                      <ProductCard
+                        id={product._id}
+                        {...product.attributes}
+                        key={index}
+                        favorited={favProductIds.includes(product._id)}
+                      />
+                    )
+                  })}
             </div>
           </div>
         </section>

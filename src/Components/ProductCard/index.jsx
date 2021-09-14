@@ -6,9 +6,7 @@ import {
   StarOutlined,
   StarFilled,
   DeleteOutlined,
-  DeleteFilled,
   EditOutlined,
-  EditFilled,
 } from '@ant-design/icons'
 import { useState } from 'react/cjs/react.development'
 import { EditModal } from '../EditModal'
@@ -34,7 +32,7 @@ export const ProductCard = ({
 }) => {
   const [faved, setFav] = useState(favorited)
   const [activeModal, setActiveModal] = useState(false)
-  const { commerceName, setProducts, products, activeCategories, setFavs } =
+  const { commerceName, setProducts, activeCategories, setFavProductIds } =
     useCommerceContext()
 
   const handleFavorite = async () => {
@@ -47,7 +45,7 @@ export const ProductCard = ({
     }
 
     if (response) {
-      setFavs(response.destaques)
+      setFavProductIds(response.destaques)
       setFav(!faved)
     }
   }

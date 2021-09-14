@@ -13,7 +13,7 @@ const CommerceContext = createContext()
 export function CommerceProvider({ children }) {
   const { commerceName } = useParams()
   const [activeCategories, setActiveCategories] = useState([])
-  const [favs, setFavs] = useState([])
+  const [favProductIds, setFavProductIds] = useState([])
   const [products, setProducts] = useState([])
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export function CommerceProvider({ children }) {
     async function getDadosCardapio() {
       const response = await getCardapio(commerceName)
       setActiveCategories(response.categorias)
-      setFavs(response.destaques)
+      setFavProductIds(response.destaques)
     }
 
     getDadosProdutos()
@@ -37,8 +37,8 @@ export function CommerceProvider({ children }) {
     commerceName,
     products,
     setProducts,
-    favs,
-    setFavs,
+    favProductIds,
+    setFavProductIds,
     activeCategories,
     setActiveCategories,
   }
