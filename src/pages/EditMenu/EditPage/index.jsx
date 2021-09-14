@@ -9,7 +9,7 @@ import { EditModal } from '../../../Components/EditModal'
 import { addCategory, deleteCategory } from '../../../services/api'
 import useCommerceContext from '../../../contexts/commerce.context'
 
-export const EditMenu = () => {
+export const EditPage = () => {
   const {
     commerceName,
     products,

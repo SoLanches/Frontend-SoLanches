@@ -1,10 +1,10 @@
 import { CommerceProvider } from '../../contexts/commerce.context'
-import { EditMenu } from './EditMenu'
+import { EditPage } from './EditPage'
 
-export const EditPage = () => {
+export const EditMenu = () => {
   return (
     <CommerceProvider>
-      <EditMenu />
+      <EditPage />
     </CommerceProvider>
   )
 }

@@ -9,7 +9,7 @@ import React, {
 import { Categories } from '../pages/Categories'
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
-import { EditPage } from '../pages/EditPage'
+import { EditMenu } from '../pages/EditMenu'
 
 const PagesContext = createContext()
 
@@ -46,7 +46,7 @@ export function PagesProvider({ children }) {
       name: 'editMenu',
       text: 'Edit Menu',
       path: '/:commerceName/edit',
-      component: EditPage,
+      component: EditMenu,
       header: false,
       private: true
     },
