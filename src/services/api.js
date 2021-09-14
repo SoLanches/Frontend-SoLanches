@@ -100,3 +100,21 @@ export const addCategory = async (commerceName, category) => {
   }
 }
 
+export const deleteCategory = async (commerceName, category) => {
+  try {
+    const response = await api.delete(`/comercio/${commerceName}/categoria`, { data: {categoria: category}})
+    openNotification(
+      commerceName, 
+      'Categoria removida com sucesso', 
+      )
+    return response.data
+  } catch (e) {
+    console.log(e)
+    openNotification(
+      commerceName, 
+      `Ouve um problema ao remover a categoria com nome: ${category}`, 
+    )
+    return null
+  }
+}
+

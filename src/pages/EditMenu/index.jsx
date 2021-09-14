@@ -7,7 +7,7 @@ import { ProductCard } from '../../Components/ProductCard'
 import style from './style.module.css'
 import { Select } from '../../Components/Select'
 import { EditModal } from '../../Components/EditModal'
-import { addCategory, getproducts } from '../../services/api'
+import { addCategory, deleteCategory } from '../../services/api'
 import useCommerceContext from '../../contexts/commerce.context'
 
 export const EditMenu = () => {
@@ -18,6 +18,7 @@ export const EditMenu = () => {
   const [filterCategorie, setFilterCategorie] = useState('todos')
 
   const [currentAddCategory, setCurrentAddCategory] = useState('')
+  const [currentDeleteCategory, setCurrentDeleteCategory] = useState('')
 
   const history = useHistory()
 
@@ -26,18 +27,25 @@ export const EditMenu = () => {
     console.log('UPDATED MENU')
   }
 
-  const handleDeleteCategory = () => {
-    // IMPLEMENT
-    console.log('DELETING CATEGORY')
+  const handleDeleteCategory = async () => {
+    if (currentDeleteCategory) {
+      console.log(currentDeleteCategory)
+      const response = await deleteCategory(commerceName, currentDeleteCategory)
+
+      if (response) {
+        setActiveCategories(response.categorias)
+      }
+    }
   }
 
   const handleAddCategory = async () => {
     if (currentAddCategory) {
       const response = await addCategory(commerceName, currentAddCategory)
-      console.log(response)
-      setActiveCategories(response.categorias)
+
+      if (response) {
+        setActiveCategories(response.categorias)
+      }
     }
-    console.log('ADDING CATEGORY')
   }
 
   const handleAddProduct = () => {
@@ -64,9 +72,9 @@ export const EditMenu = () => {
         <section className={style.categoriesContainer}>
           <h2 className={style.sectionTitle}>Categorias</h2>
           <div className={style.sectionBody}>
-            <h3>Categorias existentes</h3>
+            <h3>Categorias ativas</h3>
             <div className={style.categories}>
-              {Object.keys(products).map((categorie, index) => {
+              {activeCategories.map((categorie, index) => {
                 return <CategoryTags title={categorie} key={index} />
               })}
             </div>
@@ -82,7 +90,10 @@ export const EditMenu = () => {
 
             <h3>Deletar categoria</h3>
             <div className={style.categoryDeleteContainer}>
-              <Select options={activeCategories} />
+              <Select
+                options={activeCategories}
+                setValue={setCurrentDeleteCategory}
+              />
               <Button title='Deletar' handleClick={handleDeleteCategory} />
             </div>
           </div>
@@ -100,7 +111,7 @@ export const EditMenu = () => {
               />
               <EditModal
                 buttonTitle='Adicionar produto'
-                categoryList={Object.keys(products)}
+                categoryList={activeCategories}
               />
             </div>
             <div className={style.productsContainer}>
