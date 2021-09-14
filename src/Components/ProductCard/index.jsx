@@ -34,7 +34,8 @@ export const ProductCard = ({
 }) => {
   const [faved, setFav] = useState(favorited)
   const [activeModal, setActiveModal] = useState(false)
-  const { commerceName, setProducts, products, setFavs } = useCommerceContext()
+  const { commerceName, setProducts, products, activeCategories, setFavs } =
+    useCommerceContext()
 
   const handleFavorite = async () => {
     let response
@@ -95,7 +96,7 @@ export const ProductCard = ({
                 title={title}
                 price={price}
                 category={category}
-                categoryList={Object.keys(products)}
+                categoryList={activeCategories}
                 image={image}
                 description={description}
                 icon={false}
