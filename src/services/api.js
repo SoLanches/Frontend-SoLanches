@@ -2,7 +2,7 @@ import axios from 'axios';
 import { openNotification } from '../util/notification'
 
 export const api = axios.create({
-  baseURL: 'http://solanches.herokuapp.com/'
+  baseURL: 'https://solanches.herokuapp.com/'
 })
 
 /**
