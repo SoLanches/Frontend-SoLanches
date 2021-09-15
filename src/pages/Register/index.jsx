@@ -3,8 +3,7 @@ import * as yup from 'yup';
 
 import styles from './styles.module.css';
 import NumberFormat from 'react-number-format';
-import { useState } from 'react';
-export function Register1() {
+export function Register() {
 
     const validationSchema = yup.object().shape({
         name: yup.string().required("campo obrigatório"),
