@@ -1,6 +1,6 @@
 import { Button } from '../../../Components/Button'
-import { useState } from 'react/cjs/react.development'
 import { CategoryTags } from '../../../Components/CategoryTags'
+import { useState } from 'react'
 import { ProductCard } from '../../../Components/ProductCard'
 
 import style from './style.module.css'
@@ -9,7 +9,7 @@ import { EditModal } from '../../../Components/EditModal'
 import { addCategory, deleteCategory } from '../../../services/api'
 import useCommerceContext from '../../../contexts/commerce.context'
 
-export const EditPage = () => {
+const EditPage = () => {
   const {
     commerceName,
     products,
@@ -130,3 +130,5 @@ export const EditPage = () => {
     )
   )
 }
+
+export default EditPage

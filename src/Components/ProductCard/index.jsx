@@ -8,7 +8,7 @@ import {
   DeleteOutlined,
   EditOutlined,
 } from '@ant-design/icons'
-import { useState } from 'react/cjs/react.development'
+import { useState } from 'react'
 import { EditModal } from '../EditModal'
 import { formatPrice } from '../../util/format'
 import {
