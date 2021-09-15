@@ -2,8 +2,8 @@ import React, { useState, useCallback } from 'react';
 import style from'./style.module.css'
 import { IoChevronDownOutline as Dropdown } from 'react-icons/io5'
 
-export const CategoryCard = ({title, imageUrl}) => {
-    const [active, setActive] = useState(false);
+export const CategoryCard = ({title, imageUrl, isActive}) => {
+    const [active, setActive] = useState(isActive);
 
     const handleClick = useCallback(
         () => {
