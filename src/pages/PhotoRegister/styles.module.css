@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 70vh;
+}
+
+.header {
+    margin-bottom: 2.25rem;
+}
+
+.header h1 {
+    margin-bottom: 0.675rem;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-text);
+    margin-bottom: 0.95rem;
+}
+
+.header span {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.01rem;
+    color: var(--primary-text);
+}
+
+.inputField {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputField span {
+    max-width: 75%;
+    font-size: 0.8rem;
+    margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.01rem;
+    text-align: center;
+    color: var(--primary-text);
+}

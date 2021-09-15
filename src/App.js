@@ -7,6 +7,7 @@ import { RegisterSchedule } from './pages/RegisterSchedule';
 
 import './styles/App.css';
 import { EditModal } from './Components/EditModal'
+import { PhotoRegister } from './pages/PhotoRegister';
 
 function App() {
     const { pages } = usePagesContext()
@@ -22,9 +23,7 @@ function App() {
                 <Redirect to='/inicio' />
               </Route>
             </Switch>
-            {/* <Register /> */}
-            <RegisterSchedule />
-            {/* <EditModal/> */}
+            <PhotoRegister/>
           </div>
         </BrowserRouter>
       </div>

@@ -1,5 +1,6 @@
 import { ProfileImage } from '../../Components/ProfileImage';
 import { Button } from '../../Components/Button';
+import styles from './styles.module.css';
 
 export function PhotoRegister() {
     return (
