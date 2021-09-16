@@ -85,21 +85,6 @@ export const ProductCard = ({
               />
             )}
             <EditOutlined onClick={handleEdit} style={{ fontSize: '20px' }} />
-            {activeModal && (
-              <EditModal
-                buttonActive={false}
-                active={true}
-                setActive={setActiveModal}
-                productId={id}
-                title={title}
-                price={price}
-                category={category}
-                categoryList={activeCategories}
-                image={image}
-                description={description}
-                icon={false}
-              />
-            )}
             <DeleteOutlined
               onClick={handleDelete}
               style={{ fontSize: '20px' }}
@@ -107,6 +92,20 @@ export const ProductCard = ({
           </div>
         </div>
       </div>
+      {activeModal && (
+        <EditModal
+          buttonActive={false}
+          active={true}
+          setActive={setActiveModal}
+          productId={id}
+          title={title}
+          price={price}
+          category={category}
+          categoryList={activeCategories}
+          image={image}
+          description={description}
+        />
+      )}
     </>
   )
 }
