@@ -7,8 +7,7 @@
 .container select {
   display: inline-block;
   position: relative;
-  padding: 0.825rem;
-  margin-top: 0.25rem;
+  padding: 0.75rem 2rem 0.75rem 0.825rem;
   border-radius: 10px;
   border: 0;
   cursor: pointer;
@@ -27,7 +26,8 @@
 
 .container i {
   position: absolute;
-  right: 20px;
+  right: 12px;
+  top: 12px;
   width: 10px;
   height: 10px;
   border-left: 2.75px solid var(--primary-text);
