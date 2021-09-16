@@ -262,11 +262,9 @@ https://user-images.githubusercontent.com/50140883/133529232-747057c8-357d-430f-
 
 <p align=center >
 
-  https://user-images.githubusercontent.com/50140883/133528944-b53d7439-c37a-4f11-9780-e83bdea0fcf5.mp4
+https://user-images.githubusercontent.com/50140883/133529707-b983fcd9-3bf8-4652-aa58-002833cfe0ff.mp4
 
   
-  
-
 ## Modal Time Listing Card
 
 O componente `ServiceHours` tem como objetivo listar os horários de atendimento de um comércio.
