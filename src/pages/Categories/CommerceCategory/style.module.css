@@ -1,0 +1,27 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: repeat(5, 0fr);
+    gap: 1rem
+}
+
+.title {
+    align-items: left;
+    text-align: left;
+    padding: 56px 24px 48px 164px;
+}
+
+.card{
+    display: grid;
+    grid-template-columns: repeat(4, 0fr);
+    gap: 1rem
+    
+
+}
