@@ -7,20 +7,20 @@ import { getCategories } from "../services/api";
 const CategoryContext = createContext()
 
 export function CategoryProvider({ children }) {
-    const [category, setCategory] = useState([])
+    const [commerces, setCommerces] = useState([])
     const [currentFilter, setCurrentFilter] = useState('')
     
 
     useEffect(() => {
         async function getDadosCategories() {
             const response = await (await getCategories()).data
-            setCategory(response)
+            setCommerces(response)
             
         }
         getDadosCategories()
     }, [])
 
-    const values = { category, setCategory, currentFilter, setCurrentFilter }
+    const values = { commerces, setCommerces, currentFilter, setCurrentFilter }
 
     return (
         <>

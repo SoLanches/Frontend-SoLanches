@@ -14,7 +14,7 @@ export const CategoryCard = ({title, imageUrl, isActive}) => {
         },
     )
 
-    
+    console.log(currentFilter)
 
     return (
 
