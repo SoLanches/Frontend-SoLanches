@@ -112,9 +112,6 @@ export function RegisterSchedule() {
                                             <td className={styles.closes}>
                                                 <input type="time" id="closes" />
                                             </td>
-                                            <td className={styles.discard}>
-                                                <button><span>Excluir</span></button>
-                                            </td>
                                         </tr>
                                     );
                                 })

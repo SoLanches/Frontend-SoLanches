@@ -86,16 +86,16 @@ export const EditModal = (props) => {
                   <option value="none" disabled>
                     Selecione
                   </option>
-                  {props.categoryList.map((category) => {
+                  {/* {props.categoryList.map((category) => {
                     return (
                       <option
-                        value={category.toLowerCase()}
-                        key={category.toLowerCase()}
+                        value={category}
+                        key={category}
                       >
                         {category}
                       </option>
                     )
-                  })}
+                  })} */}
                 </select>
                 <i></i>
               </div>

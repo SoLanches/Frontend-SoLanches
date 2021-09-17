@@ -3,7 +3,13 @@ import * as yup from 'yup';
 
 import styles from './styles.module.css';
 import NumberFormat from 'react-number-format';
+import { useContext, useEffect } from 'react';
+import RegisterData from '../../contexts/register.context';
+
+
 export function Register() {
+
+    const {commerce, setCommerce} = useContext(RegisterData);
 
     const validationSchema = yup.object().shape({
         name: yup.string().required("campo obrigatório"),
@@ -24,8 +30,22 @@ export function Register() {
     })
 
     let { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
-        onSubmit: async (values, form) => {
-            console.log(values)
+        onSubmit: async (values) => {
+            setCommerce(prevState => {
+                prevState.name = values.name;
+                prevState.phone = values.phone;
+                prevState.cnpj = values.cnpj;
+                prevState.social_medias.email = values.email;
+                prevState.social_medias.instagram = values.instagram;
+                prevState.social_medias.facebook = values.facebook;
+                prevState.address.city = values.city;
+                prevState.address.district = values.district;
+                prevState.address.street = values.street;
+                prevState.address.number = values.number;
+                prevState.password = values.password;
+            })
+
+            console.log(commerce)
         },
         validationSchema: () => validationSchema,
         initialValues: {
@@ -43,6 +63,10 @@ export function Register() {
             passwordConfirm: '',
         }
     })
+
+    useEffect(() => {
+        console.log(commerce)
+    }, [])
 
     return (
         <div className={styles.container}>
