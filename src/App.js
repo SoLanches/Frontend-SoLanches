@@ -1,15 +1,9 @@
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-import { Header } from "./Components/Header";
-import usePagesContext from "./contexts/pages.context";
-import { RegisterSchedule } from "./pages/RegisterSchedule";
-import {Register} from "./pages/Register";
-
-import {useState, useEffect} from "react";
-
-import "./styles/App.css";
-import { PhotoRegister } from "./pages/PhotoRegister"
-import RegisterData from "./contexts/register.context";
+import { Header } from './Components/Header';
+import usePagesContext from './contexts/pages.context';
+import './styles/App.css';
+import 'antd/lib/notification/style/index.css'
 
 function App() {
   const { pages } = usePagesContext()
@@ -45,10 +39,10 @@ function App() {
         <Header />
         <div className="body">
           <Switch>
-            {pages.map((page, index) => <Route key={index} path={page.path} component={page.component} />)}
-            <Route path="*">
-              <Redirect to="/inicio" />
-            </Route>
+            {pages.map((page, index) => (
+              <Route key={index} path={page.path} component={page.component}/>
+            ))}
+            <Route path='*'><Redirect to='/inicio' /></Route>
           </Switch>
           {/* <RegisterData.Provider value={{commerce, setCommerce}}>
             <Register />

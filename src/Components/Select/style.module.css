@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.container select {
+  display: inline-block;
+  position: relative;
+  padding: 0.75rem 2rem 0.75rem 0.825rem;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+  background-color: var(--color-base);
+  color: var(--primary-text);
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.container i {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 10px;
+  height: 10px;
+  border-left: 2.75px solid var(--primary-text);
+  border-bottom: 2.75px solid var(--primary-text);
+  transform: rotate(-45deg);
+}
