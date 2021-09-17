@@ -8,7 +8,7 @@ const CategoryContext = createContext()
 
 export function CategoryProvider({ children }) {
     const [commerces, setCommerces] = useState([])
-    const [currentFilter, setCurrentFilter] = useState('')
+    const [currentFilter, setCurrentFilter] = useState('Todas')
     
 
     useEffect(() => {

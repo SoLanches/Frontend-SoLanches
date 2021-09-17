@@ -3,12 +3,13 @@ import style from './style.module.css'
 import { Link } from 'react-router-dom'
 import { IoMdTime as Time } from "react-icons/io";
 import { IoLocationOutline as Location } from "react-icons/io5";
+import user from '../../assets/images/user.svg'
 
 export const CardCommerce = (props) => {
     return (
         <div className={style.container}>
             <Link to={props.router}>
-                <img className={style.icon} src={props.icon} alt="Logo do comercio"/>
+                <img className={style.icon} src={user} alt="Logo do comercio"/>
                 <p className={style.title}>{props.title}</p>
                 <hr className={style.line}></hr>
                 <div className={style.containerInfos}>
@@ -30,7 +31,6 @@ export const CardCommerce = (props) => {
         </div>
     )
 }
-
 CardCommerce.defaultProps = {
     times: [
         { days_hours: 'Seg, ter : 14h - 23h' },
