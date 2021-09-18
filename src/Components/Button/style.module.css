@@ -1,10 +1,11 @@
 .container {
   background-color: var(--primary-color);
   filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
-  height: 2.8rem;
+  width: fit-content;
+  height: fit-content;
   border: none;
-  padding: 0px 18px;
-  border-radius: 0.6rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
   outline: none;
   align-items: center;
   display: inline-flex;
@@ -30,7 +31,7 @@ img:not([src]) {
   margin-right: 0.3rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 550px) {
   .container {
     height: 2rem;
     padding: 0px 1rem;
@@ -38,7 +39,7 @@ img:not([src]) {
   }
 
   .title {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
