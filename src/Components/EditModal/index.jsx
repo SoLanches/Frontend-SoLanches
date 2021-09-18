@@ -111,40 +111,12 @@ export const EditModal = (props) => {
             </div>
 
             <div className={styles.category}>
-<<<<<<< HEAD
-              <label htmlFor="edit-category">Categoria</label>
-              <div>
-                <select
-                  id="edit-category"
-                  defaultValue="none"
-                  onChange={(e) => {
-                    setCategory(e.target.value)
-                  }}
-                >
-                  <option value="none" disabled>
-                    Selecione
-                  </option>
-                  {/* {props.categoryList.map((category) => {
-                    return (
-                      <option
-                        value={category}
-                        key={category}
-                      >
-                        {category}
-                      </option>
-                    )
-                  })} */}
-                </select>
-                <i></i>
-              </div>
-=======
               <label htmlFor='edit-category'>Categoria</label>
               <Select
                 options={props.categoryList}
                 defaultValue={category}
                 setValue={setCategory}
               />
->>>>>>> 89df2975fa6cb7a34e202adf0cce155f840d648f
             </div>
 
             <div className={styles.image}>

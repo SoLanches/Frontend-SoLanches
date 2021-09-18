@@ -1,7 +1,16 @@
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  useEffect,
+} from 'react'
+
 import { Categories } from '../pages/Categories'
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
 import { EditMenu } from '../pages/EditMenu'
+import { RegisterMenu } from '../pages/Register'
 
 const PagesContext = createContext()
 
@@ -10,6 +19,7 @@ export function PagesProvider({ children }) {
   const [pathname, setPathname] = useState(window.location.pathname)
   const pages = [
     {
+      name: 'Home',
       text: 'Página Inicial',
       path: '/inicio',
       component: Home,
@@ -41,5 +51,38 @@ export function PagesProvider({ children }) {
       header: false,
       private: true
     },
+    {
+      name: 'Register',
+      text: 'Registrar',
+      path: '/registrar',
+      component: RegisterMenu,
+      header: true,
+      private: false
+    }
   ]
+
+  useEffect(() => {
+    setPathname(window.location.pathname)
+  }, [setPathname, pathname])
+
+  const handlePathname = useCallback(() => {
+    setPathname(window.location.pathname)
+  }, [setPathname])
+
+  const values = {
+    pathname,
+    setPathname,
+    pages,
+    handlePathname,
+  }
+
+  return (
+    <PagesContext.Provider value={values}>{children}</PagesContext.Provider>
+  )
+}
+
+export default function usePagesContext() {
+  const context = useContext(PagesContext)
+
+  return { ...context }
 }
