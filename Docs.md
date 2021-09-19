@@ -144,7 +144,22 @@ ele irá clicar no card que há a opção "Pizza" e assim as pizzarias serão li
 ## Commerce Category Card
   
 ## Check Category
+
+O componente é usado para que o usuário consiga selecionar quais cateogorias o comércio se identifica.
   
+### :page_facing_up: Forma de uso:
+  
+```jsx
+<CheckCategory categoryName="Pizza" />
+```
+  
+| Nome    | Tipo     | Descrição                |
+| ------- | -------- | ------------------------ |
+| `categoryName` | `string` | Título da label. |
+
+<p align=center >
+<img src="https://user-images.githubusercontent.com/50140883/133528357-c087e24b-68b2-47ab-95b4-723fc12df5d7.png"/>
+
 ## Header
 
 O Header é utilizado para que o usuário consiga navegar no site. O componente possui três links para as páginas principais do sistema: `Página inicial`, `categorias` e `Login` ou `Meu perfil`.
@@ -161,14 +176,95 @@ A ideia é que uma vez logado, o header do usuário (comércio) não possui mais
 
 https://user-images.githubusercontent.com/42751604/127779934-86192da4-7a44-4980-86f0-651c7d03be15.mp4
 
-## Infos Commerce
+## CommerceInfo
 
+O componente exibe as informações do comércio selecionado, contendo redes sociais, telefone e horários
+  
+### :page_facing_up: Forma de uso:
+  
+```jsx
+<CommerceInfo 
+    name="Exemplo" 
+    image="./assets/icons/example.svg" 
+    social_medias={{instagram: "instagram.com", facebook: "facebook.com", email: "email.example@hotmail.com"}} 
+    address="Beco do timbú" 
+    phone="83994116317" 
+    hours={
+              [
+                { day: 'Segunda-feira', opens: '08:00', closes: '18:00' }, 
+                { day: 'Terça-feira', opens: '08:00', closes: '18:00' }
+              ]
+          }
+/> 
+```
+  
+| Nome    | Tipo     | Descrição                |
+| ------- | -------- | ------------------------ |
+| `name` | `string` | Nome do estabelecimento |
+| `image` | `string` | Endereço da imagem |
+| `social_medias` | `object` | Links para redes sociais |
+| `address` | `string` | Endereço |
+| `phone` | `string` | Número do whatsapp |
+| `hours` | `array` | Lista de horários |
+
+  
+### :movie_camera: vídeo demonstrativo
+
+<p align=center >
+
+  https://user-images.githubusercontent.com/50140883/133528944-b53d7439-c37a-4f11-9780-e83bdea0fcf5.mp4
+
+  
 ## Image Perfil
 
 ## Modal Card Login
 
-## Modal Edit Product
+  Componente responsável por efetuar login do usuário no sistema
+  
+  ### :page_facing_up: Forma de uso:
+  
+```jsx
+  <LoginCard />
+```
+  
+### :movie_camera: vídeo demonstrativo
 
+<p align=center >
+
+  
+
+https://user-images.githubusercontent.com/50140883/133529232-747057c8-357d-430f-a8c3-bef646512c3e.mp4
+  
+  
+## Modal Edit Product
+  
+  Componente responsável por cadastrar e editar informações a respeito de um produto
+  
+  ### :page_facing_up: Forma de uso:
+  
+```jsx
+<EditModal 
+           categoryList={ 
+              [ 
+                  {  name: "Hamburguer" }, { name: "Tapioca" } 
+              ] 
+           } 
+/>
+
+```
+  
+| Nome    | Tipo     | Descrição                |
+| ------- | -------- | ------------------------ |
+| `categoryList` | `object` | Lista de categorias selecionáveis |
+
+  
+### :movie_camera: vídeo demonstrativo
+
+<p align=center >
+
+https://user-images.githubusercontent.com/50140883/133529707-b983fcd9-3bf8-4652-aa58-002833cfe0ff.mp4
+
+  
 ## Modal Time Listing Card
 
 O componente `ServiceHours` tem como objetivo listar os horários de atendimento de um comércio.
