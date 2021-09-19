@@ -20,9 +20,9 @@ export default function RegisterProvider({ children }) {
             "number": "",
         },
         "password": "",
-        "schedule": {},
+        "schedule": [],
         "profileImage": "",
-        "category": {}
+        "category": []
     })
 
     return (

@@ -136,7 +136,6 @@
 @media (min-width: 901px) {
     .container {
         margin: 0;
-        height: calc(100vh - 10rem);
     };
 }
 
@@ -313,7 +312,6 @@ form .name, .phone, .email, .cnpj, .instagram, .facebook, .city, .street, .distr
 
 .buttons a:first-child button {
     border: none;
-    /* background: transparent; */
     color: var(--primary-text);
     font-weight: 600;
 }

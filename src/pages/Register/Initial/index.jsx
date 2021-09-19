@@ -33,6 +33,7 @@ export function RegisterInitial() {
     let { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
         onSubmit: async (values) => {
             setNewCommerce(prevState => {
+                console.log("O prevState é: ", prevState)
                 prevState.name = values.name;
                 prevState.phone = values.phone;
                 prevState.cnpj = values.cnpj;
@@ -43,19 +44,15 @@ export function RegisterInitial() {
                 prevState.address.district = values.district;
                 prevState.address.street = values.street;
                 prevState.address.number = values.number;
+                prevState.profileImage = "../../../assets/images/coxinha.png"
                 prevState.password = values.password;
             })
-
             console.log(newCommerce)
         },
 
         validationSchema: () => validationSchema,
         initialValues: schemaGeneralInformation
     })
-
-    useEffect(() => {
-        console.log(newCommerce)
-    }, [newCommerce])
 
     return (
         <div className={styles.container}>
@@ -229,5 +226,4 @@ export function RegisterInitial() {
             </section >
         </div >
     );
-
 }
