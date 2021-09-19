@@ -32,22 +32,24 @@ export function RegisterInitial() {
 
     let { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
         onSubmit: async (values) => {
-            setNewCommerce(prevState => {
-                console.log("O prevState é: ", prevState)
-                prevState.name = values.name;
-                prevState.phone = values.phone;
-                prevState.cnpj = values.cnpj;
-                prevState.social_medias.email = values.email;
-                prevState.social_medias.instagram = values.instagram;
-                prevState.social_medias.facebook = values.facebook;
-                prevState.address.city = values.city;
-                prevState.address.district = values.district;
-                prevState.address.street = values.street;
-                prevState.address.number = values.number;
-                prevState.profileImage = "../../../assets/images/coxinha.png"
-                prevState.password = values.password;
+            setNewCommerce({
+                ...newCommerce,
+                name: values.name,
+                phone: values.phone,
+                cnpj: values.cnpj,
+                password: values.password,
+                social_medias: {
+                    email: values.email,
+                    instagram: values.instagram,
+                    facebook: values.facebook,
+                },
+                address: {
+                    city: values.city,
+                    street: values.street,
+                    district: values.district,
+                    number: values.number,
+                }
             })
-            console.log(newCommerce)
         },
 
         validationSchema: () => validationSchema,

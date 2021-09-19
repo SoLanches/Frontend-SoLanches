@@ -1,11 +1,21 @@
 import { ProfileImage } from '../../../Components/ProfileImage';
 import styles from './styles.module.css';
 import { useRegister } from '../../../contexts/register.context';
+import Coxinha from '../../../assets/images/coxinha.png'
 import { useEffect } from 'react';
 
 export function PhotoRegister() {
 
     const { newCommerce, setNewCommerce } = useRegister()
+
+    function handleSubmitImage() {
+        setNewCommerce({
+            ...newCommerce,
+            profileImage: Coxinha
+        })
+
+        console.log(newCommerce)
+    }
 
     useEffect(() => {
         console.log("Estado recebido: ", newCommerce)
@@ -26,7 +36,7 @@ export function PhotoRegister() {
                     Voltar
                 </a>
                 <a href="#">
-                    <button type="submit" className={styles.button}><span>Avançar</span></button>
+                    <button type="submit" className={styles.button} onClick={handleSubmitImage}><span>Avançar</span></button>
                 </a>
             </div>
         </div>
