@@ -1,6 +1,11 @@
+import { CheckCategory } from '../../../Components/CheckCategory';
+import { useState } from 'react';
+import { Button } from '../../../Components/Button';
+
+
 export function RegisterCategory() {
 
-    const [selectedCategories] = useState([])
+    const [selectedCategories, setSelectedCategories] = useState([])
 
     const categories = [
         { id: 0, name: "Pizza" },
@@ -16,7 +21,17 @@ export function RegisterCategory() {
                 <span>Adicione informações do seu estabelecimento</span>
             </div>
             <div className="categoryList">
-
+                {categories.map((category, index) => {
+                    return (
+                        <CheckCategory categoryName={category.name} />
+                    )
+                })}
+            </div>
+            <div className="buttons">
+                <a href="">
+                    Cancelar
+                </a>
+                <Button title="Cadastrar" />
             </div>
         </div>
     );
