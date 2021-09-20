@@ -1,6 +1,6 @@
 import style from './style.module.css'
 
-export const Select = ({ options, defaultValue, setValue }) => {
+export const Select = ({ options, defaultValue, setValue, name, ...rest }) => {
   const handleChange = (e) => {
     if (setValue) {
       console.log(e.target.value)
@@ -10,9 +10,9 @@ export const Select = ({ options, defaultValue, setValue }) => {
 
   return (
     <div className={style.container}>
-      <select defaultValue={defaultValue} onChange={handleChange}>
+      <select defaultValue={defaultValue} id={name} onChange={handleChange}>
         <option value='default' className={style.option} disabled>
-          selecione
+          Selecione
         </option>
         {options.map((option, index) => {
           return (

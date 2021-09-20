@@ -3,13 +3,14 @@ import * as yup from 'yup';
 
 import styles from './styles.module.css';
 import NumberFormat from 'react-number-format';
-import { useEffect, useContext } from 'react';
 
 import { requiredInfoAlert, schemaGeneralInformation } from '../constants';
 import { useRegister } from '../../../contexts/register.context';
+import { useHistory } from 'react-router-dom';
 
 export function RegisterInitial() {
 
+    const history = useHistory();
     const { newCommerce, setNewCommerce } = useRegister();
 
     const validationSchema = yup.object().shape({
@@ -30,7 +31,7 @@ export function RegisterInitial() {
         passwordConfirm: yup.string().oneOf([yup.ref('password'), null], "As senhas devem ser iguais.")
     })
 
-    let { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
+    const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useFormik({
         onSubmit: async (values) => {
             setNewCommerce({
                 ...newCommerce,
@@ -216,14 +217,18 @@ export function RegisterInitial() {
                 </form >
                 <div className={styles.buttons}>
                     <a href="/inicio">
-                        <button>Cancelar</button>
-                    </a>
-                    <a href="#">
-                        <button type="submit" className={styles.button} onClick={(e) => {
+                        <button onClick={(e) => {
                             e.preventDefault()
-                            handleSubmit()
-                        }}><span>Avançar</span></button>
+                            history.push('/inicio')
+                        }}>
+                            Voltar
+                        </button>
                     </a>
+                    <button type="submit" className={styles.button} onClick={(e) => {
+                        e.preventDefault()
+                        handleSubmit()
+                        history.push('/registrarHorario')
+                    }}><span>Avançar</span></button>
                 </div>
             </section >
         </div >

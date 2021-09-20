@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto;
+    margin-top: 5rem !important;
 }
 
 .header {
@@ -21,6 +21,7 @@
     justify-content: center;
     font-size: 2rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .header span {
@@ -30,6 +31,7 @@
     font-weight: 600;
     color: var(--primary-text);
     letter-spacing: 0.05rem;
+    text-align: center;
 }
 
 .upload {
@@ -102,7 +104,7 @@
 
 @media (max-width: 728px) {
     .header h1 {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .header span {

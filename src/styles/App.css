@@ -71,6 +71,7 @@ h3 {
 }
 
 input {
+  height: 40px !important;
   display: inline-block;
   background-color: var(--color-base);
   position: relative;
@@ -90,6 +91,7 @@ input {
 }
 
 select {
+  height: 40px !important;
   display: inline-block;
   background-color: var(--color-base);
   position: relative;

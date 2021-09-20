@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto;
+    margin-top: 5rem !important;
 }
 
 .header {
@@ -16,6 +16,7 @@
 
 .header h1 {
     margin-bottom: 0.675rem;
+    text-align: center;
     margin: 0 1rem;
     display: flex;
     justify-content: center;
@@ -36,6 +37,10 @@
     color: red;
     margin-right: 0.4rem;
     font-weight: 600;
+}
+
+.header .description span:last-child {
+    text-align: center;
 }
 
 .container section {

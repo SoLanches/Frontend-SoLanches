@@ -18,7 +18,7 @@ export function PhotoRegister() {
     }
 
     useEffect(() => {
-        console.log("Estado recebido: ", newCommerce)
+        console.log("Estado recebido no PhotoRegister: ", newCommerce)
     }, [newCommerce])
 
     return (

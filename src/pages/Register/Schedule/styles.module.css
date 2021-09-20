@@ -3,15 +3,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    
-}
-
-.subcontainer {
-    width: 60%;
+    margin-top: 5rem;
 }
 
 .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     margin-bottom: 1rem;
 }
 
@@ -20,86 +19,140 @@
     margin: 0 1rem;
     display: flex;
     justify-content: center;
-    font-size: 1.5rem;
-    color: var(--primary-text);
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
-.header .description {
+.header span {
     display: flex;
     justify-content: center;
-    max-width: 100%;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.01rem;
+    font-size: 0.75rem;
+    font-weight: 600;
     color: var(--primary-text);
+    letter-spacing: 0.05rem;
+    text-align: center;
 }
 
-.inputGroup {
-    margin-top: 3rem;
-}
-
-table {
+.container .scheduleList thead {
     width: 100%;
 }
 
-table thead tr th{
+.container .scheduleList tr > td{
+    padding-bottom: 1.5rem;
+    
+}
+
+.container .scheduleList th {
     text-align: left;
+    padding-left: 0.525rem;
     font-weight: 500;
-    font-size: 0.775rem;
+    font-size: 0.825rem;
     text-transform: uppercase;
-    padding: 0 0 0.5rem 0.425rem;
     letter-spacing: 0.05rem;
+    padding-bottom: 0.75rem;
 }
 
-table tbody tr:not(:first-child) {
-    display: grid;
-    grid-template-columns: 40% 20% 20% 10%;
+table {
+    margin-top: 2rem;
+    padding: 2rem;
+    width: 100%;
 }
 
-table select {
-    width: 75%;
+.container .scheduleList td {
+    width: 100%;
+    padding-right: 1rem;
 }
 
-table input {
-    width: 75%;
+.container .scheduleList td input {
+    width: 100%;
+    border-radius: 10px;
 }
 
-table .discard button {
-    border: none;
+.container .scheduleList td select {
+    width: 100%;
+    border-radius: 10px;
 }
 
-table .discard button span {
-    transition: all .225s;
+.container .scheduleList select {
+    font-size: 0.8rem;
 }
 
-table .discard button span:hover {
-    color: red;
-    cursor: pointer;
-} 
-
-.addSchedule {
-    text-align: right;
-}
-
-.addSchedule button {
+.container .addScheduleButton {
+    width: 100%;
     display: flex;
-    background-color: #e2e2e2;
+    justify-content: center;
+    margin-top: 0.675rem;
+}
+
+.container .addScheduleButton button {
+    display: flex;
+    height: 40px;
     align-items: center;
-    justify-content: space-evenly;
-    padding: 0.55rem 0.9rem;
+    padding: 0.5rem 1.15rem;
     border-radius: 10px;
     border: none;
-    transition: all .35s;
-}
-
-.addSchedule button:hover {
+    background-color: #eBeBeB;
+    color: #8D8D8D;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    background-color: #cfcfcf;
+    font-size: 0.825rem;
+    transition: all .175s;
 }
 
-.addSchedule button span {
-    margin-left: 0.2rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.05rem;
+.container .addScheduleButton button:hover {
+    background-color: #e1e1e1;
+}
+
+.container .addScheduleButton button span {
+    display: flex;
+    font-size: 1.65rem;
+    font-weight: 300;
+    padding-right: 0.35rem;
+    padding-bottom: 0.2rem;
+    height: fit-content;
+}
+
+.buttons {
+    display: flex;
+    width: 75%;
+    align-items: baseline;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    justify-content: flex-end;
+}
+
+.buttons a:first-child {
+    margin-right: 1.25rem;
+}
+
+.buttons a:first-child button {
+    border: none;
+    color: var(--primary-text);
+    font-weight: 600;
+}
+
+
+.button {
+    background-color: var(--primary-color);
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
+    height: 2.8rem;
+    border: none;
+    padding: 0px 18px;
+    border-radius: 0.6rem;
+    outline: none;
+    align-items: center;
+    display: inline-flex;
+    color: var(--color-base);
+    font-weight: 500;
+    transition: all .25s;
+}
+
+.button:hover {
+    background-color: var(--color-effect);
+}
+
+.button span {
+    color: white;
+    font-size: 16px;
+    white-space: nowrap;
 }

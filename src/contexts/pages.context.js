@@ -11,6 +11,9 @@ import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
 import { EditMenu } from '../pages/EditMenu'
 import { RegisterMenu } from '../pages/Register'
+import { RegisterInitial } from '../pages/Register/Initial'
+import { RegisterSchedule } from '../pages/Register/Schedule'
+import { PhotoRegister } from '../pages/Register/Logo'
 
 const PagesContext = createContext()
 
@@ -57,6 +60,22 @@ export function PagesProvider({ children }) {
       path: '/registrar',
       component: RegisterMenu,
       header: true,
+      private: false
+    },
+    {
+      name: 'RegisterSchedule',
+      text: 'Registrar Horários',
+      path: '/registrarHorario',
+      component: RegisterSchedule,
+      header: false,
+      private: false
+    },
+    {
+      name: 'PhotoRegister',
+      text: 'Registrar Foto',
+      path: '/registrarFoto',
+      component: PhotoRegister,
+      header: false,
       private: false
     }
   ]
