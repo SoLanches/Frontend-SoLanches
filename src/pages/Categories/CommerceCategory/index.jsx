@@ -8,7 +8,7 @@ import style from './style.module.css'
 
 export const CommerceCategory = () => {
   const { commerces, currentFilter } = useCategoryContext()
-  console.log(commerces);
+
   return (
     <>
       <h1 className={style.title}>Categorias</h1>
@@ -28,7 +28,6 @@ export const CommerceCategory = () => {
             commerces.filter(item => item.attributes.categoria.includes(currentFilter)).map(commerce =>
               <CardCommerce
                 key= {commerces._id}
-                route="About"
                 title={commerce.nome}
                 adress={commerce.attributes.endereco}
                 time={commerce.attributes.horarios}
@@ -37,7 +36,6 @@ export const CommerceCategory = () => {
           ) : (commerces.map(commerce =>
             <CardCommerce
               key= {commerces._id}
-              route="About"
               title={commerce.nome}
               adress={commerce.attributes.endereco}
               hours={commerce.attributes.horarios}

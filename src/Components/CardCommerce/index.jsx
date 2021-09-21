@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom'
 import { IoMdTime as Time } from "react-icons/io";
 import { IoLocationOutline as Location } from "react-icons/io5";
 import user from '../../assets/images/user.svg'
+import { formatRoute } from '../../util/format';
 
 export const CardCommerce = (props) => {
     return (
-        <Link to={props.router}>
+        <Link to={`/${formatRoute(props.title)}`}>
         <div className={style.container}>
                 <img className={style.icon} src={user} alt="Logo do comercio" />
                 <p className={style.title}>{props.title}</p>
