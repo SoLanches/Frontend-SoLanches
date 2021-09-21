@@ -112,16 +112,6 @@
     text-align: center;
   }
 
-  /* .title {
-    font-size: 24px;
-    font-weight: bold;
-    justify-content: center;
-  }
-
-  .text {
-    font-size: 16px;
-  } */
-
   .shoppingImage {
     width: 100%;
     max-width: 550px;
@@ -133,9 +123,4 @@
     margin-top: 1rem;
     padding: 0.5rem 2rem;
   }
-
-  /* 
-  .buttonContainer span {
-    font-size: 1rem;
-  } */
 }

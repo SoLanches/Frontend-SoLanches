@@ -26,7 +26,7 @@ export function Home() {
         </p>
         <div
           className={style.buttonContainer}
-          onClick={() => history.push('/categorias')}
+          onClick={() => history.push('/registrar')}
         >
           <span>Cadastre-se</span>
         </div>
