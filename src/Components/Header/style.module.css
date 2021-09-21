@@ -24,9 +24,10 @@
   display: flex;
   gap: 2rem;
   font-size: 20px;
+  align-items: center;
 }
 
-.paginas li {
+.paginas a {
   font-weight: bold;
 }
 
