@@ -6,21 +6,47 @@
 }
 
 .category {
-    display: grid;
-    grid-template-columns: repeat(5, 0fr);
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
 }
 
 .title {
     align-items: left;
     text-align: left;
-    padding: 56px 24px 48px 164px;
+    padding: 66px 24px 48px 164px;
 }
 
-
 .card{
-    display: grid;
-    grid-template-columns: repeat(4, 0fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1600px;
     gap: 1rem
 
+}
+
+@media screen and (max-width: 1024px) {
+
+    .category {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .title {
+        align-items: center;
+        text-align: center;
+        padding: 64px 10px 64px ;
+    }
+
+    .card{
+
+        grid-template-columns: repeat(2, 0fr);
+        gap: 0;
+        max-width: 1000px;
+    
+    }
 }

@@ -8,7 +8,7 @@
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
     border-radius: 50px ;
     background-color: var(--color-base);
-    margin: 20px;
+    margin: 16px;
 
     transition: ease-in-out 0.3s;
     outline: none;
@@ -41,9 +41,6 @@
     width: 4rem ;
     height: 3.5rem;
 
-
-
-
 }
 
 .container{
@@ -69,7 +66,6 @@
     color: var(--color-base);
 }
 
-
 .rotate{
     transform: rotate(180deg);
     transition:ease-in-out 0.4s;
@@ -82,14 +78,15 @@
 @media screen and (max-width: 550px) {
 
     .categoryCard{
-        width: 9.4rem;
-        height: 13.12rem;
+        width: 8.5rem;
+        height: 12.4rem;
         border-radius: 35px;
+        margin: 12px;
     }
 
     .active.categoryCard{
-        width: 9.4rem;
-        height: 13.12rem;
+        width: 8.5rem;
+        height: 12.4rem;
         border-radius: 35px;
     }
 
@@ -102,13 +99,10 @@
         font-size: 18px;
         top: 8rem;
     }
-    
-   
+
     .icon{
         width: 2.8rem ;
         height: 2.8rem;
-        margin-top: 12px;
-
     }
 
     .rotate{

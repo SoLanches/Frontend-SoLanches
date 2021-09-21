@@ -7,47 +7,46 @@ import categoriesData from '../categories.data'
 import style from './style.module.css'
 
 export const CommerceCategory = () => {
-  const { commerces, setCommerces, currentFilter, setCurrentFilter } = useCategoryContext()
-
+  const { commerces, currentFilter } = useCategoryContext()
+  console.log(commerces);
   return (
     <>
       <h1 className={style.title}>Categorias</h1>
-
-      <div className={style.container}>
+      <section className={style.container}>
         <div className={style.category}>
           {categoriesData.map(category =>
-            <CategoryCard title={category.title} imageUrl={category.image} />
+            <CategoryCard title={category.title} imageUrl={category.image} alt={category.de} />
 
           )}
         </div>
-      </div>
+      </section>
 
       <h2 className={style.title}>{currentFilter}</h2>
-      <div className={style.container}>
-      <div className={style.card}>
-        {currentFilter !== "Todas" ? (
-          commerces.filter(item => item.attributes.categoria.includes(currentFilter)).map(commerce =>
+      <section className={style.container}>
+        <div className={style.card}>
+          {currentFilter !== "Todas" ? (
+            commerces.filter(item => item.attributes.categoria.includes(currentFilter)).map(commerce =>
+              <CardCommerce
+                key= {commerces._id}
+                route="About"
+                title={commerce.nome}
+                adress={commerce.attributes.endereco}
+                time={commerce.attributes.horarios}
+              />
+            )
+          ) : (commerces.map(commerce =>
             <CardCommerce
+              key= {commerces._id}
               route="About"
               title={commerce.nome}
               adress={commerce.attributes.endereco}
-              time={commerce.attributes.horarios}
+              hours={commerce.attributes.horarios}
             />
-          )
-        ) : (commerces.map(commerce =>
-          <CardCommerce
-            route="About"
-            title={commerce.nome}
-            adress={commerce.attributes.endereco}
-            time={commerce.attributes.horarios}
-          />
-        ))
-        }
-      </div>
-      </div>
 
+          ))
+          }
+        </div>
+      </section>
     </>
-
   )
 }
-
