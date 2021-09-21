@@ -57,6 +57,33 @@
   max-width: 800px;
 }
 
+@media screen and (max-width: 1400px) {
+  .wrapper {
+    flex-direction: column-reverse;
+    padding: 0rem;
+    gap: 5rem;
+  }
+
+  .infoContainer {
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .shoppingImage {
+    width: 100%;
+    max-width: 550px;
+    align-self: center;
+  }
+
+  .buttonContainer {
+    margin-right: 2rem;
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .wrapper {
     flex-direction: column-reverse;
@@ -95,32 +122,5 @@
 
   .buttonContainer span {
     font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .wrapper {
-    flex-direction: column-reverse;
-    padding: 0rem;
-    gap: 5rem;
-  }
-
-  .infoContainer {
-    max-width: 100%;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .shoppingImage {
-    width: 100%;
-    max-width: 550px;
-    align-self: center;
-  }
-
-  .buttonContainer {
-    margin-right: 2rem;
-    margin-top: 1rem;
-    padding: 0.5rem 2rem;
   }
 }
