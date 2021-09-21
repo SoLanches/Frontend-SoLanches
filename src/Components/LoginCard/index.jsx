@@ -52,7 +52,7 @@ export const LoginCard = ({ handleClose }) => {
         <Button title='Entrar' handleClick={handleLogin} />
         <div className={styles.registerNow}>
           <span>Novo(a) no SoLanches?</span>
-          <a href='#'>Cadastre-se</a>
+          <a href='/inicio'>Cadastre-se</a>
         </div>
       </div>
     </div>
