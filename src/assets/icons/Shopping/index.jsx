@@ -1,5 +1,3 @@
-import style from './style.module.css'
-
 export const Shopping = ({ className, width = 800 }) => {
   return (
     <svg

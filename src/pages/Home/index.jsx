@@ -2,9 +2,6 @@ import React from 'react'
 import { useHistory } from 'react-router'
 import { Shopping } from '../../assets/icons/Shopping'
 import { Smile } from '../../assets/icons/Smile'
-import { Button } from '../../Components/Button'
-
-// import { ReactComponent as Shopping } from '../../assets/icons/shopping.svg'
 
 import style from './style.module.css'
 
