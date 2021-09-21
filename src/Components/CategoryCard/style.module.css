@@ -1,0 +1,127 @@
+.categoryCard{
+    width: 12.5rem;
+    height: 16rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
+    border-radius: 50px ;
+    background-color: var(--color-base);
+    margin: 100px;
+
+    transition: ease-in-out 0.3s;
+    outline: none;
+    cursor: pointer;
+
+}
+/*Configuração para que os itens não sejam selecionados ou arrastados*/
+
+.categoryCard{
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.active.categoryCard{
+    background-color: var(--primary-color);
+}
+
+
+.dropdownIcon{
+    margin-top: 24px;
+}
+
+
+.icon {
+    width: 6rem ;
+    height: 4rem;
+    margin-top: 20px;
+}
+
+.container{
+    width: 90px;
+    height: 90px;
+    margin-top: 34px;
+    border-radius: 100%;
+    background-color: var(--color-base);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.title {
+    color: var(--primary-text);
+    font-size: 20px;
+    margin-top: 2.2rem;
+}
+
+.active .title {
+    color: var(--color-base);
+}
+
+
+.rotate{
+    transform: rotate(180deg);
+    transition:ease-in-out 0.4s;
+}
+
+.active .rotate{
+    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 550px) {
+
+    .categoryCard{
+        width: 9.4rem;
+        height: 13.12rem;
+        border-radius: 35px;
+    }
+
+    .active.categoryCard{
+        width: 9.4rem;
+        height: 13.12rem;
+        border-radius: 35px;
+    }
+
+    .container{
+        width: 60px;
+        height: 60px;
+    }
+
+    .title {
+        font-size: 18px;
+        top: 8rem;
+    }
+    
+   
+    .icon{
+        width: 2.8rem ;
+        height: 2.8rem;
+        margin-top: 12px;
+
+    }
+
+    .rotate{
+
+        transform: rotate(180deg);
+        transition:ease-in-out 0.4s;
+    
+    }
+    
+    .active.rotate{
+    
+        transform: rotate(360deg);
+        transition:ease-in-out 0.4s;
+    
+    }
+    .dropdownIcon{
+        margin-top: 14px;
+    }
+
+}
