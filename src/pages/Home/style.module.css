@@ -1,0 +1,64 @@
+.wrapper {
+  height: 100%;
+  display: flex;
+  padding: 0 5rem;
+  justify-content: center;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: flex-start;
+
+  max-width: 50%;
+}
+
+.titleContainer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: bold;
+}
+
+.titleContainer svg {
+  margin-bottom: 0.75rem;
+}
+
+.text {
+  font-size: 24px;
+  color: #454545;
+}
+
+.buttonContainer {
+  align-self: center;
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  margin-right: 14rem;
+  margin-top: 3rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.buttonContainer span {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.shoppingImage {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  max-width: 800px;
+}
+
+@media screen and (max-width: 1025px) {
+  .wrapper {
+    display: block;
+  }
+}
