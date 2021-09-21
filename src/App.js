@@ -1,6 +1,6 @@
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { Header } from './Components/Header';
+import Header from './Components/Header';
 import usePagesContext from './contexts/pages.context';
 import './styles/App.css';
 import 'antd/lib/notification/style/index.css'
@@ -10,7 +10,6 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
         <Header />
         <div className='body'>
           <Switch>
@@ -20,7 +19,6 @@ function App() {
             <Route path='*'><Redirect to='/inicio' /></Route>
           </Switch>
         </div>
-      </BrowserRouter>
     </div>
   );
 }

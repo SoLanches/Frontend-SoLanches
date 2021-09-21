@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import usePagesContext from '../../contexts/pages.context'
 
@@ -7,7 +8,7 @@ import { ReactComponent as Logo } from '../../assets/icons/logo.svg'
 
 import style from './style.module.css'
 
-export const Header = () => {
+const Header = () => {
   const { pathname, handlePathname, pages } = usePagesContext()
   const [lastScrollTop, setScrollTop] = useState(window.pageYOffset)
   const [retracted, setRetract] = useState(false)
@@ -59,3 +60,5 @@ export const Header = () => {
     </div>
   )
 }
+
+export default withRouter(Header)

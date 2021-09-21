@@ -38,14 +38,22 @@
 @media screen and (max-width: 600px) {
   .container {
     padding: 1rem 1rem;
+    justify-content: center;
   }
 
   .logo {
     max-width: 100px;
+    display: none;
   }
 
   .paginas {
     font-size: 12px;
-    gap: 0.5rem;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .paginas {
+    gap: 1rem;
   }
 }
