@@ -28,8 +28,8 @@
 
 /* Essa passa a ser nossa checkbox personalizada*/
 .check {
-    width: 19px;
-    height: 100%;
+    width: 18px;
+    height: 18px;
     position: absolute;
     left: 0;
     top: 0;
@@ -41,7 +41,7 @@
 .categoryName {
     font-weight: 600;
     color: var(--primary-text);
-    margin-left: 1.75rem;
+    margin-left: 1.25rem;
 }
 
 .checkbox {
@@ -67,7 +67,7 @@
     content: "";
     position: absolute;
     display: none;
-    top: -2.75px;
+    top: -3.75px;
     left: 4.75px;
     width: 6px;
     height: 11.5px;

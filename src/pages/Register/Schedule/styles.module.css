@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
 .header {
@@ -79,9 +79,9 @@ table {
 }
 
 .container .addScheduleButton {
-    width: 100%;
+    width: 75%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin-top: 0.675rem;
 }
 
@@ -121,38 +121,35 @@ table {
     justify-content: flex-end;
 }
 
-.buttons a:first-child {
+.buttons button:first-child {
     margin-right: 1.25rem;
-}
-
-.buttons a:first-child button {
     border: none;
+    font-size: 0.775rem;
+    letter-spacing: 0.08rem;
     color: var(--primary-text);
     font-weight: 600;
-}
-
-
-.button {
-    background-color: var(--primary-color);
-    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
-    height: 2.8rem;
-    border: none;
-    padding: 0px 18px;
-    border-radius: 0.6rem;
-    outline: none;
-    align-items: center;
-    display: inline-flex;
-    color: var(--color-base);
-    font-weight: 500;
-    transition: all .25s;
 }
 
 .button:hover {
     background-color: var(--color-effect);
 }
 
-.button span {
-    color: white;
-    font-size: 16px;
-    white-space: nowrap;
+@media (max-width: 600px) {
+    .container table {
+        padding: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .container table td {
+        padding-right: 0.2rem !important;
+    }
+
+    .container .addScheduleButton {
+        width: 100%;
+    }
+
+    .container .buttons {
+        width: 100%;
+    }
 }

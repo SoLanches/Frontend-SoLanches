@@ -62,22 +62,6 @@ export function PagesProvider({ children }) {
       header: true,
       private: false
     },
-    {
-      name: 'RegisterSchedule',
-      text: 'Registrar Horários',
-      path: '/registrarHorario',
-      component: RegisterSchedule,
-      header: false,
-      private: false
-    },
-    {
-      name: 'PhotoRegister',
-      text: 'Registrar Foto',
-      path: '/registrarFoto',
-      component: PhotoRegister,
-      header: false,
-      private: false
-    }
   ]
 
   useEffect(() => {

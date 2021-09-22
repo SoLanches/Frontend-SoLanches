@@ -41,6 +41,5 @@ export default function RegisterProvider({ children }) {
 export function useRegister() {
     const context = useContext(RegisterContext);
     const { newCommerce, setNewCommerce } = context;
-    console.log("Olá, eu sou o contexto e fui renderizado. Meu estado atual é\n", context)
     return { newCommerce, setNewCommerce }
 }
