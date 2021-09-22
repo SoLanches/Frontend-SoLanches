@@ -226,13 +226,11 @@ export const addCommerce = async (nome, password, attributes) => {
       password,
       attributes
     });
-    openNotification(nome, "Comércio cadastrado com sucesso");
     return response.data;
   } catch (e) {
-    console.log(e)
     openNotification(
       nome,
-      `Ocorreu um problema ao cadastrar o comércio com nome: ${nome}`
+      `Ocorreu um problema ao cadastrar o comércio com nome: ${nome}`,
     );
     return null;
   }

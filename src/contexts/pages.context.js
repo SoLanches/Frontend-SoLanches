@@ -11,9 +11,6 @@ import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
 import { EditMenu } from '../pages/EditMenu'
 import { RegisterMenu } from '../pages/Register'
-import { RegisterInitial } from '../pages/Register/Initial'
-import { RegisterSchedule } from '../pages/Register/Schedule'
-import { PhotoRegister } from '../pages/Register/Logo'
 
 const PagesContext = createContext()
 

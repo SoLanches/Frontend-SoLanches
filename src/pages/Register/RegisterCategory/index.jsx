@@ -1,48 +1,68 @@
-import { CheckCategory } from "../../../Components/CheckCategory";
-import { useState, useEffect, useCallback } from "react";
-import { Button } from "../../../Components/Button";
-
 import { useRegister } from "../../../contexts/register.context";
 import { useStep } from "../../../contexts/steps.context";
 import { addCommerce } from "../../../services/api";
+import { CheckCategory } from "../../../Components/CheckCategory";
+import { Button } from "../../../Components/Button";
+import { openNotification } from "../../../util/notification";
+import Check from "../../../assets/icons/check.svg";
 
-import Check from '../../../assets/icons/check.svg';
+import { useState, useEffect, useCallback } from "react";
+import { useHistory } from "react-router-dom";
 
 import styles from "./styles.module.css";
 
 export function RegisterCategory() {
+  const history = useHistory();
+
   const { newCommerce, setNewCommerce } = useRegister();
   const { previousStep } = useStep();
 
   const [selectedCategories, setSelectedCategories] = useState([]);
 
-  const [modalIsActive, setModalIsActive] = useState(true);
+  const [modalIsActive, setModalIsActive] = useState(false);
 
   const showModal = useCallback(() => {
-    setModalIsActive(!modalIsActive);
+    if (!modalIsActive) {
+      setModalIsActive(!modalIsActive);
+    } else {
+      setModalIsActive(!modalIsActive);
+      history.push('/inicio')
+    }
   }, [setModalIsActive, modalIsActive]);
 
   const handleRegisterCommerce = async () => {
-    if (newCommerce) {
-      const reqBody = {
-        nome: newCommerce.name,
-        password: newCommerce.password,
-        attributes: {
-          endereco: `${newCommerce.address.street}, ${newCommerce.address.number}`,
-          horarios: newCommerce.schedule,
-          categoria: newCommerce.category,
-          cnpj: newCommerce.cnpj,
-          phone: newCommerce.phone,
-          social_media: newCommerce.social_media,
-          profileImage: newCommerce.profileImage,
-        },
-      };
-      
-      await addCommerce(
-        reqBody.nome,
-        reqBody.password,
-        reqBody.attributes
+    if (!selectedCategories.length) {
+      openNotification(
+        "empty-categories",
+        "Erro ao cadastrar comércio",
+        "Por favor, adicione ao menos uma categoria."
       );
+    } else {
+      if (newCommerce) {
+        const reqBody = {
+          nome: newCommerce.name,
+          password: newCommerce.password,
+          attributes: {
+            endereco: `${newCommerce.address.street}, ${newCommerce.address.number}`,
+            horarios: newCommerce.schedule,
+            categoria: newCommerce.category,
+            cnpj: newCommerce.cnpj,
+            phone: newCommerce.phone,
+            social_media: newCommerce.social_media,
+            profileImage: newCommerce.profileImage,
+          },
+        };
+
+        const response = await addCommerce(
+          reqBody.nome,
+          reqBody.password,
+          reqBody.attributes
+        );
+
+        if (response) {
+          showModal();
+        }
+      }
     }
   };
 
@@ -69,12 +89,17 @@ export function RegisterCategory() {
 
   return (
     <>
-      <div className={modalIsActive ? styles.modal : styles.inactive} onClick={showModal}>
+      <div
+        className={modalIsActive ? styles.modal : styles.inactive}
+        onClick={showModal}
+      >
         <h1>Cadastro realizado com sucesso!</h1>
         <span>
           <img src={Check} />
         </span>
-        <span>O próximo passo será adicionar os produtos a cada categoria criada.</span>
+        <span>
+          O próximo passo será adicionar os produtos a cada categoria criada.
+        </span>
       </div>
       <div className={modalIsActive ? styles.inactive : styles.container}>
         <div className={styles.header}>
@@ -91,7 +116,7 @@ export function RegisterCategory() {
           })}
         </div>
         <div className={styles.buttons}>
-          <button onClick={() => previousStep()}>Cancelar</button>
+          <button onClick={() => previousStep()}>Voltar</button>
           <Button
             title="Cadastrar"
             handleClick={() => {

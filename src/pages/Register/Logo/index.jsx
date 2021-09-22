@@ -4,8 +4,6 @@ import { useRegister } from "../../../contexts/register.context";
 import { useStep } from "../../../contexts/steps.context";
 import Coxinha from "../../../assets/images/coxinha.png";
 
-import { useEffect } from "react";
-
 import styles from "./styles.module.css";
 
 export function PhotoRegister() {

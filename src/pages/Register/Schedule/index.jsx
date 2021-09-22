@@ -1,5 +1,5 @@
 import { Button } from "../../../Components/Button";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRegister } from "../../../contexts/register.context";
 import { useStep } from "../../../contexts/steps.context";
 

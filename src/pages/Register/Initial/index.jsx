@@ -1,6 +1,7 @@
 import { Button } from "../../../Components/Button";
-import { requiredInfoAlert, schemaGeneralInformation } from "../constants";
+import { requiredInfoAlert } from "../constants";
 import { useRegister } from "../../../contexts/register.context";
+import { useStep } from "../../../contexts/steps.context";
 
 import { useHistory } from "react-router-dom";
 
@@ -9,7 +10,6 @@ import * as yup from "yup";
 import NumberFormat from "react-number-format";
 
 import styles from "./styles.module.css";
-import { useStep } from "../../../contexts/steps.context";
 
 export function RegisterInitial() {
   const history = useHistory();

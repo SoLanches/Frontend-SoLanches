@@ -115,4 +115,14 @@
   .container .buttons {
     width: 100%;
   }
+
+  .categoryList {
+    grid-template-columns: repeat(auto-fill, 200px);
+  }
+}
+
+@media (max-width: 650px) {
+  .categoryList {
+    grid-template-columns: repeat(auto-fill, 186px);
+  }
 }

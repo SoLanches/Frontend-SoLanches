@@ -4,8 +4,6 @@ import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';
 import './styles/App.css';
 import 'antd/lib/notification/style/index.css'
-import EditPage from './pages/EditMenu/EditPage';
-import { EditMenu } from './pages/EditMenu';
 
 function App() {
   const { pages } = usePagesContext()
