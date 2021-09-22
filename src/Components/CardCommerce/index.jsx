@@ -9,7 +9,7 @@ import { formatRoute } from '../../util/format';
 export const CardCommerce = (props) => {
     return (
         <Link to={`/${formatRoute(props.title)}`}>
-        <div className={style.container}>
+            <div className={style.container}>
                 <img className={style.icon} src={user} alt="Logo do comercio" />
                 <p className={style.title}>{props.title}</p>
                 <hr className={style.line}></hr>
@@ -19,17 +19,16 @@ export const CardCommerce = (props) => {
                 </div>
                 <div className={style.containerInfos}>
                     <span className={style.infos}><Time size="1.15rem" color="#FF983B" /></span>
-                    <div>{props.hours.map((hours) => {
+                    <div>{props.hours.map((hours, index) => {
                         return (
-                            <p className={style.times}>
+                            <p key={index} className={style.times}>
                                 {hours.day}
                             </p>
-                        )
-                    }
+                        )}
                     )}
                     </div>
                 </div>
-        </div>
+            </div>
         </Link>
     )
 }
