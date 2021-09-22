@@ -59,7 +59,7 @@ export function PagesProvider({ children }) {
       private: false,
     },
   ];
-
+  
   useEffect(() => {
     setPathname(window.location.pathname);
   }, [setPathname, pathname]);
