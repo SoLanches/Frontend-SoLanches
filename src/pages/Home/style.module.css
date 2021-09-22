@@ -1,5 +1,5 @@
 .wrapper {
-  height: 100vh;
+  min-height: 100%;
   display: flex;
   padding: 0 5rem;
   justify-content: center;
@@ -87,7 +87,7 @@
 @media screen and (max-width: 600px) {
   .wrapper {
     flex-direction: column-reverse;
-    padding: 0rem;
+    padding: 2rem 0rem;
     gap: 2rem;
   }
 
