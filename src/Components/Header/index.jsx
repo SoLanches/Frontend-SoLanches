@@ -7,18 +7,26 @@ import usePagesContext from '../../contexts/pages.context'
 
 import { ReactComponent as Logo } from '../../assets/icons/logo.svg'
 
+import { useHistory } from 'react-router-dom'
+
 import style from './style.module.css'
 import { LoginCard } from '../LoginCard'
 
 const Header = () => {
+  const history = useHistory()
   const { pathname, handlePathname } = usePagesContext()
   const [lastScrollTop, setScrollTop] = useState(window.pageYOffset)
   const [retracted, setRetract] = useState(false)
   // TODO: Mudar para quando tiver login adaptando código para o componente saber se o usuario está logado.
   // eslint-disable-next-line no-unused-vars
-  const [logged, setLogged] = useState(false)
+  const [logged, setLogged] = useState(true)
 
   const [activeLoginModal, setActiveLoginModal] = useState(false)
+
+  const handleLogout = () => {
+    setLogged(false)
+    history.push('/inicio')
+  }
 
   const handleScroll = useCallback(() => {
     const currentScrolTop = window.pageYOffset
@@ -57,15 +65,18 @@ const Header = () => {
           </Link>
 
           {logged ? (
-            <Link
-              to={'/categorias'}
-              className={pathname === '/perfil' ? style.active : ''}
-            >
-              {'Meu perfil'}
-            </Link>
+            <>
+              <Link
+                to={'/categorias'}
+                className={pathname === '/perfil' ? style.active : ''}
+              >
+                {'Meu perfil'}
+              </Link>
+              <Button title='Sair' handleClick={handleLogout} />
+            </>
           ) : (
             <Button
-              title='Login'
+              title='Entrar'
               handleClick={() => setActiveLoginModal(true)}
             />
           )}
