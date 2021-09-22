@@ -31,7 +31,7 @@ export const CommerceCategory = () => {
                   key={commerce._id}
                   title={commerce.nome}
                   adress={commerce.attributes.endereco}
-                  time={commerce.attributes.horarios}
+                  hours={commerce.attributes.horarios}
                 />
       
             )) : (commerces.map(commerce =>
