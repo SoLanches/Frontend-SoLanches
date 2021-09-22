@@ -1,4 +1,3 @@
-import Item from 'antd/lib/list/Item'
 import React from 'react'
 import { CardCommerce } from '../../../Components/CardCommerce'
 import { CategoryCard } from '../../../Components/CategoryCard'
@@ -27,20 +26,20 @@ export const CommerceCategory = () => {
         <div className={style.card}>
           {currentFilter !== "Todas" ? (
             commerces.filter(item => item.attributes.categoria.includes(currentFilter)).map(commerce =>
-                <CardCommerce
-                  key={commerce._id}
-                  title={commerce.nome}
-                  adress={commerce.attributes.endereco}
-                  hours={commerce.attributes.horarios}
-                />
-      
+              <CardCommerce
+                key={commerce._id}
+                title={commerce.nome}
+                adress={commerce.attributes.endereco}
+                hours={commerce.attributes.horarios}
+              />
+
             )) : (commerces.map(commerce =>
-                <CardCommerce
-                  key={commerce._id}
-                  title={commerce.nome}
-                  adress={commerce.attributes.endereco}
-                  hours={commerce.attributes.horarios}
-                />
+              <CardCommerce
+                key={commerce._id}
+                title={commerce.nome}
+                adress={commerce.attributes.endereco}
+                hours={commerce.attributes.horarios}
+              />
             ))
           }
         </div>
