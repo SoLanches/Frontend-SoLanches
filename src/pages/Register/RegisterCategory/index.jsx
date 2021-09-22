@@ -108,6 +108,7 @@ export function RegisterCategory() {
         </div>
         <div className={styles.categoryList}>
           {categories.map((category, index) => {
+            console.log("Oi")
             return (
               <div key={category} onClick={() => toggleSelect(category)}>
                 <CheckCategory key={category} categoryName={category} />
