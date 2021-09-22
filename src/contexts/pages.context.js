@@ -10,7 +10,6 @@ import { Categories } from '../pages/Categories'
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
 import { EditMenu } from '../pages/EditMenu'
-import { RegisterMenu } from '../pages/Register'
 
 const PagesContext = createContext()
 
@@ -50,14 +49,6 @@ export function PagesProvider({ children }) {
       component: EditMenu,
       header: false,
       private: true
-    },
-    {
-      name: 'Register',
-      text: 'Registrar',
-      path: '/registrar',
-      component: RegisterMenu,
-      header: true,
-      private: false
     },
   ]
 
