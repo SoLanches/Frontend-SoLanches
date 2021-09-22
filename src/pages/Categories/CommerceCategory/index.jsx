@@ -1,3 +1,4 @@
+import Item from 'antd/lib/list/Item'
 import React from 'react'
 import { CardCommerce } from '../../../Components/CardCommerce'
 import { CategoryCard } from '../../../Components/CategoryCard'
@@ -15,7 +16,7 @@ export const CommerceCategory = () => {
       <section className={style.container}>
         <div className={style.category}>
           {categoriesData.map(category =>
-            <CategoryCard title={category.title} imageUrl={category.image} alt={category.de} />
+            <CategoryCard key={category.id} title={category.title} imageUrl={category.image} alt={category.descricao} />
 
           )}
         </div>
@@ -26,22 +27,21 @@ export const CommerceCategory = () => {
         <div className={style.card}>
           {currentFilter !== "Todas" ? (
             commerces.filter(item => item.attributes.categoria.includes(currentFilter)).map(commerce =>
-              <CardCommerce
-                key= {commerces._id}
-                title={commerce.nome}
-                adress={commerce.attributes.endereco}
-                time={commerce.attributes.horarios}
-              />
-            )
-          ) : (commerces.map(commerce =>
-            <CardCommerce
-              key= {commerces._id}
-              title={commerce.nome}
-              adress={commerce.attributes.endereco}
-              hours={commerce.attributes.horarios}
-            />
-
-          ))
+                <CardCommerce
+                  key={commerce._id}
+                  title={commerce.nome}
+                  adress={commerce.attributes.endereco}
+                  time={commerce.attributes.horarios}
+                />
+      
+            )) : (commerces.map(commerce =>
+                <CardCommerce
+                  key={commerce._id}
+                  title={commerce.nome}
+                  adress={commerce.attributes.endereco}
+                  hours={commerce.attributes.horarios}
+                />
+            ))
           }
         </div>
       </section>
