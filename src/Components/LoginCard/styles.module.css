@@ -90,7 +90,7 @@ input {
 }
 
 ::-webkit-input-placeholder {
-  color: #909090;
+  color: var(--gray-base);
   font-weight: 500;
   font-style: italic;
 }
