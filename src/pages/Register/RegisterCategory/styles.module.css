@@ -12,25 +12,29 @@
   z-index: 100;
 }
 
-.modal h1, .modal span {
-    color: var(--color-base);
+.modal h1,
+.modal span {
+  color: var(--color-base);
+  padding: 0 1rem;
 }
 
 .modal h1 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .modal span img {
-    width: 75px;
+  width: 75px;
 }
 
 .modal span {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .inactive {
-    display: none;
+  display: none;
 }
 
 .categoryList button {
@@ -119,10 +123,38 @@
   .categoryList {
     grid-template-columns: repeat(auto-fill, 200px);
   }
+
+  .modal h1 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .modal span {
+    font-size: 0.7rem;
+  }
+
+  .modal span img {
+    width: 50px;
+  }
 }
 
 @media (max-width: 650px) {
   .categoryList {
     grid-template-columns: repeat(auto-fill, 186px);
+  }
+
+  .modal h1 {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .modal span {
+    font-size: 0.8rem;
+  }
+
+  .modal span img {
+    width: 60px;
   }
 }
