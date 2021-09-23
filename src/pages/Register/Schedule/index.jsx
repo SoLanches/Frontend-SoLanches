@@ -19,11 +19,11 @@ export function RegisterSchedule() {
     "Todos os dias",
     "Domingo",
     "Segunda-feira",
-    "Terça-feira",
+    "Terca-feira",
     "Quarta-feira",
     "Quinta-feira",
     "Sexta-feira",
-    "Sábado",
+    "Sabado",
   ];
 
   function addNewScheduleItem() {

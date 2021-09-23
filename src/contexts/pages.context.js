@@ -55,7 +55,7 @@ export function PagesProvider({ children }) {
       text: "Registrar",
       path: "/registrar",
       component: RegisterMenu,
-      header: true,
+      header: false,
       private: false,
     },
   ];
