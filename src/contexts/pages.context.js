@@ -35,7 +35,7 @@ export function PagesProvider({ children }) {
     },
     {
       name: 'Login',
-      text: 'Login',
+      text: 'Fazer login',
       path: '/login',
       component: Login,
       logged: false,
