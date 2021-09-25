@@ -12,6 +12,7 @@ export const Header = () => {
   const [lastScrollTop, setScrollTop] = useState(window.pageYOffset)
   const [retracted, setRetract] = useState(false)
   // TODO: Mudar para quando tiver login adaptando código para o componente saber se o usuario está logado.
+  // eslint-disable-next-line no-unused-vars
   const [logged, setLogged] = useState(false)
 
   const handleScroll = useCallback(() => {
@@ -30,13 +31,16 @@ export const Header = () => {
     >
       <div className={style.container}>
         <div onClick={handlePathname}>
-          <Link to="/inicio">
+          <Link to='/inicio'>
             <Logo onClick={handlePathname} className={style.logo} />
           </Link>
         </div>
         <ul className={style.paginas}>
           {pages.map((page, index) => {
-            if (page.logged === undefined || logged === page.logged) {
+            if (
+              (page.logged === undefined || logged === page.logged) &&
+              page.header
+            ) {
               return (
                 <li key={index} onClick={handlePathname}>
                   <Link
@@ -48,6 +52,7 @@ export const Header = () => {
                 </li>
               )
             }
+            return null
           })}
         </ul>
       </div>

@@ -8,7 +8,7 @@ export const Button = (props) => {
       className={style.container}
       onClick={props.handleClick}
     >
-      <img className={style.icon} src={props.icon} />
+      <img className={style.icon} src={props.icon} alt='' />
       <p className={style.title}>{props.title}</p>
     </button>
   )
