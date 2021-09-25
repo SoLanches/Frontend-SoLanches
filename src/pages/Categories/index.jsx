@@ -1,12 +1,10 @@
-import React from 'react'
-import style from './style.module.css'
+import { CategoryProvider } from '../../contexts/categoryCommerce.context'
+import { CommerceCategory } from './CommerceCategory'
 
-export function Categories() {
+export const Categories = () => {
   return (
-    <div className={style.container}>
-      <div className={style.title}>
-        <h1>Página de categorias</h1>
-      </div>
-    </div>
+    <CategoryProvider>
+    <CommerceCategory/>
+    </CategoryProvider>
   )
 }
