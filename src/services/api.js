@@ -5,6 +5,16 @@ export const api = axios.create({
   baseURL: 'https://solanches.herokuapp.com/'
 })
 
+export const getCategories = async () => {
+    try {
+      const response = await api.get(`/comercios?categories=`)
+      return response
+      
+    } catch (e) {
+        return null
+    }
+  }
+
 /**
  * Route that returns the menu of a commerce
  * 
@@ -214,3 +224,4 @@ export const removeFavorite = async (commerceName, productId) => {
     return null
   }
 }
+

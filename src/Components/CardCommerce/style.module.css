@@ -3,7 +3,8 @@
     height: fit-content;
     border-radius: 40px;
     background-color: var(--color-base);
-    margin: 60px;
+    margin: 20px;
+
     display: flex;
     flex-direction: column;    
     align-items: center;
