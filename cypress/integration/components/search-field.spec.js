@@ -15,6 +15,6 @@ cy.get('.styles_container__IveJR input').type('alá rodrigo do lindo olhar', {de
     
     it("Testa apagando a entrada se realmente fica vazia", () => {
         cy.get('.styles_container__IveJR input').clear()
-        cy.get('.styles_container__IveJR input').should('not.have.value', 'alá rodrigo do lindo olhar')
+cy.get('.styles_container__IveJR input').should('be.empty')
     })
 })
