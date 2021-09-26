@@ -4,7 +4,7 @@ import hamburguer from '../../assets/images/hamburguer.svg'
 import sorvete from '../../assets/images/sorvete.svg'
 import lanche from '../../assets/images/lanche.svg'
 
-export default [
+export const categories =  [
 
     {
         id:1,
@@ -42,3 +42,5 @@ export default [
         
     }
 ];
+
+export default categories

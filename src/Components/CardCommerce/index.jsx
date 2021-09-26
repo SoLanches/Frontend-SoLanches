@@ -22,23 +22,15 @@ export const CardCommerce = (props) => {
                     <div>{props.hours.map((hours, index) => {
                         return (
                             <p key={index} className={style.times}>
-                                {hours.day}
+                                {hours.week_day}
                             </p>
                         )}
                     )}
                     </div>
-                </div>
+                        </div>
             </div>
         </Link>
     )
 }
 
-CardCommerce.defaultProps = {
-    hours: [
-        { day: 'Segunda-feira', opens: '08:00', closes: '18:00' },
-        { day: 'Terça-feira', opens: '18:00', closes: '18:00' },
-        { day: 'Quarta-feira', opens: '12:00', closes: '18:00' },
-        { day: 'Quinta-feira', opens: '11:00', closes: '18:00' },
-        { day: 'Sexta-feira', opens: '08:00', closes: '18:00' },
-    ]
-}
+
