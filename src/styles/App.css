@@ -110,9 +110,23 @@ select {
   height: fit-content;
 }
 
+.body {
+  height: 100vh;
+}
+
+.iconPadding {
+  position: fixed;
+  right: -16px;
+  bottom: -16px;
+  z-index: -2;
+}
+
 @media screen and (max-width: 600px) {
+  .App {
+  }
+
   .body {
-    padding: 5rem 1rem;
+    padding: 3rem 1rem;
   }
 
   select {

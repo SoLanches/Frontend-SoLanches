@@ -5,6 +5,16 @@ export const api = axios.create({
   baseURL: "https://solanches.herokuapp.com/",
 });
 
+export const getCategories = async () => {
+    try {
+      const response = await api.get(`/comercios?categories=`)
+      return response
+      
+    } catch (e) {
+        return null
+    }
+  }
+
 /**
  * Route that returns the menu of a commerce
  *
@@ -106,7 +116,6 @@ export const addProduct = async (commerceName, newProduct) => {
     });
     openNotification(commerceName, "Produto cadastrado com sucesso");
   } catch (e) {
-    console.log(e);
     openNotification(
       commerceName,
       `Ocorreu um problema ao alterar o novo produto com nome: ${newProduct.title}`
@@ -152,7 +161,6 @@ export const deleteCategory = async (commerceName, category) => {
     openNotification(commerceName, "Categoria removida com sucesso");
     return response.data;
   } catch (e) {
-    console.log(e);
     openNotification(
       commerceName,
       `Ocorreu um problema ao remover a categoria com nome: ${category}`
@@ -179,7 +187,6 @@ export const addFavorite = async (commerceName, productId) => {
     );
     return response.data;
   } catch (e) {
-    console.log(e);
     openNotification(
       commerceName,
       `Ocorreu um problema ao adicionar o produto com id ${productId} aos destaques`
@@ -206,7 +213,6 @@ export const removeFavorite = async (commerceName, productId) => {
     );
     return response.data;
   } catch (e) {
-    console.log(e);
     openNotification(
       commerceName,
       `Ocorreu um problema ao remover o produto com id ${productId} aos destaques`
@@ -234,4 +240,4 @@ export const addCommerce = async (nome, password, attributes) => {
     );
     return null;
   }
-};
+}

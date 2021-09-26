@@ -1,11 +1,13 @@
 import { Button } from "../../../Components/Button";
-import { useState } from "react";
 import { useRegister } from "../../../contexts/register.context";
 import { useStep } from "../../../contexts/steps.context";
+import { openNotification } from "../../../util/notification";
+import { Select } from "../../../Components/Select";
+
+import { useState } from "react";
+import { BiErrorAlt } from "react-icons/bi";
 
 import styles from "./styles.module.css";
-import { Select } from "../../../Components/Select";
-import { openNotification } from "../../../util/notification";
 
 export function RegisterSchedule() {
   const { newCommerce, setNewCommerce } = useRegister();
@@ -19,11 +21,11 @@ export function RegisterSchedule() {
     "Todos os dias",
     "Domingo",
     "Segunda-feira",
-    "Terca-feira",
+    "Terça-feira",
     "Quarta-feira",
     "Quinta-feira",
     "Sexta-feira",
-    "Sabado",
+    "Sábado",
   ];
 
   function addNewScheduleItem() {
@@ -39,13 +41,26 @@ export function RegisterSchedule() {
           },
         ]);
       } else {
-        openNotification("schedule-limit", "Erro ao adicionar horário", "Você já adicionou o número máximo de horários permitidos.")
+        openNotification(
+          "schedule-limit",
+          "Erro ao adicionar horário",
+          "Você já adicionou o número máximo de horários permitidos.",
+          <BiErrorAlt/>,
+          {
+            color: 'red'
+          }
+        );
       }
     } else {
       openNotification(
-        "empty-schedule", 
-        "Erro ao adiconar horário", 
-        "Por favor, preencha os campos de horário antes de adicionar um novo.");
+        "empty-schedule",
+        "Erro ao adicionar horário",
+        "Por favor, preencha os campos de horário antes de adicionar um novo.",
+        <BiErrorAlt/>,
+          {
+            color: 'red'
+          }
+      );
     }
   }
 
@@ -59,13 +74,33 @@ export function RegisterSchedule() {
     setScheduleItems(updateScheduleItems);
   }
 
+  function hasEmptyScheduleItem() {
+    const filtered = scheduleItems.filter(item => {
+      return !item.closes || !item.opens
+    })
+    return filtered.length > 0;
+  }
+  
   function handleSubmit() {
-    setNewCommerce({
-      ...newCommerce,
-      schedule: scheduleItems,
-    });
-
-    nextStep();
+    
+    if (hasEmptyScheduleItem()) {
+      openNotification(
+        "empty-schedule-item",
+        "Erro ao adicionar horário",
+        "Preencha todos os horários antes de avançar.",
+        <BiErrorAlt/>,
+        {
+          color: 'red'
+        }
+      );
+    } else {
+      setNewCommerce({
+        ...newCommerce,
+        schedule: scheduleItems,
+      });
+  
+      nextStep();
+    }
   }
 
   return (
@@ -74,7 +109,7 @@ export function RegisterSchedule() {
         <h1>Construa seu perfil no SoLanches!</h1>
         <span>
           Adicione informações sobre os horários de funcionamento do seu
-          estabelecimento
+          estabelecimento.
         </span>
       </div>
       <div className={styles.scheduleList}>

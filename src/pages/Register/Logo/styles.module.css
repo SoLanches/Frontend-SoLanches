@@ -1,90 +1,96 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
 }
 
 .header h1 {
-    margin-bottom: 0.675rem;
-    margin: 0 1rem;
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
+  margin-bottom: 0.675rem;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .header span {
-    display: flex;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--primary-text);
-    letter-spacing: 0.05rem;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  letter-spacing: 0.05rem;
+  text-align: center;
 }
 
 .upload {
-    display: flex;
-    margin-top: 1rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .upload #description {
-    width: 60%;
-    text-align: center;
-    font-weight: 300;
-    margin-top: 2rem;
-    font-size: 0.75rem;
-
+  width: 60%;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 2rem;
+  font-size: 0.75rem;
 }
 
 .buttons {
-    display: flex;
-    width: 75%;
-    align-items: baseline;
-    margin-top: 3.5rem;
-    margin-bottom: 1.5rem;
-    justify-content: flex-end;
+  display: flex;
+  width: 75%;
+  align-items: baseline;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: flex-end;
 }
 
 .buttons button:first-child {
-    margin-right: 1.25rem;
-    border: none;
-    font-size: 0.775rem;
-    letter-spacing: 0.08rem;
-    color: var(--primary-text);
-    font-weight: 600;
+  margin-right: 1.25rem;
+  border: none;
+  font-size: 0.775rem;
+  letter-spacing: 0.08rem;
+  color: var(--primary-text);
+  font-weight: 600;
 }
 
 .button:hover {
-    background-color: var(--color-effect);
+  background-color: var(--color-effect);
+}
+
+@media (max-width: 680px) {
+  .buttons {
+    justify-content: center !important;
+    margin-bottom: 3rem !important;
+  }
 }
 
 @media (max-width: 728px) {
-    .header h1 {
-        font-size: 1.3rem;
-    }
+  .header h1 {
+    font-size: 1.3rem;
+  }
 
-    .header span {
-        font-size: 0.6rem;
-    }
+  .header span {
+    font-size: 0.6rem;
+  }
 }
 
 @media (max-width: 400px) {
-    .container .buttons {
-        width: 100%;
-    }
+  .container .buttons {
+    width: 100%;
+  }
 }

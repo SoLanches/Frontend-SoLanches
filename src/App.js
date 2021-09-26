@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        {/* <Header /> */}
         <div className='body'>
           <Switch>
             {pages.map((page, index) => (

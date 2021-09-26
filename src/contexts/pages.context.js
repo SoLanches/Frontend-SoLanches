@@ -6,16 +6,18 @@ import React, {
   useEffect,
 } from "react";
 
-import { Categories } from "../pages/Categories";
-import { Home } from "../pages/Home";
-import { Login } from "../pages/Login";
-import { EditMenu } from "../pages/EditMenu";
-import { RegisterMenu } from "../pages/Register/index";
+import { Categories } from '../pages/Categories'
+import { Home } from '../pages/Home'
+import { Login } from '../pages/Login'
+import { EditMenu } from '../pages/EditMenu'
+import { RegisterMenu } from '../pages/Register/index'
+import { useHistory } from 'react-router-dom'
 
-const PagesContext = createContext();
+const PagesContext = createContext()
 
 export function PagesProvider({ children }) {
-  const [pathname, setPathname] = useState(window.location.pathname);
+  const history = useHistory()
+  const [pathname, setPathname] = useState(window.location.pathname)
   const pages = [
     {
       name: "Home",
@@ -34,9 +36,9 @@ export function PagesProvider({ children }) {
       private: false,
     },
     {
-      name: "Login",
-      text: "Login",
-      path: "/login",
+      name: 'Login',
+      text: 'Fazer login',
+      path: '/login',
       component: Login,
       logged: false,
       header: true,
@@ -61,8 +63,10 @@ export function PagesProvider({ children }) {
   ];
   
   useEffect(() => {
-    setPathname(window.location.pathname);
-  }, [setPathname, pathname]);
+    history.listen((location) => {
+      setPathname(location.pathname)
+    })
+  }, [history, setPathname])
 
   const handlePathname = useCallback(() => {
     setPathname(window.location.pathname);

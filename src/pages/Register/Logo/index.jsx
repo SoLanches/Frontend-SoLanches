@@ -19,18 +19,16 @@ export function PhotoRegister() {
     nextStep();
   }
 
-  
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <h1>Construa seu perfil no SoLanches!</h1>
-        <span>Adicione informações sobre seu estabelecimento</span>
+        <span>Adicione informações sobre seu estabelecimento.</span>
       </div>
       <div className={styles.upload}>
         <ProfileImage />
         <span id={styles.description}>
-          Clique no ícone para fazer o envio de uma foto da sua logo
+          Clique no ícone para fazer o envio de uma foto da sua logo.
         </span>
       </div>
       <div className={styles.buttons}>

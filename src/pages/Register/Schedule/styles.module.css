@@ -1,155 +1,163 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
 }
 
 .header h1 {
-    margin-bottom: 0.675rem;
-    margin: 0 1rem;
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
+  margin-bottom: 0.675rem;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .header span {
-    display: flex;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--primary-text);
-    letter-spacing: 0.05rem;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  letter-spacing: 0.05rem;
+  text-align: center;
 }
 
 .container .scheduleList thead {
-    width: 100%;
+  width: 100%;
 }
 
-.container .scheduleList tr > td{
-    padding-bottom: 1.5rem;
-    
+.container .scheduleList tr > td {
+  padding-bottom: 1.5rem;
 }
 
 .container .scheduleList th {
-    text-align: left;
-    padding-left: 0.525rem;
-    font-weight: 500;
-    font-size: 0.825rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-    padding-bottom: 0.75rem;
+  text-align: left;
+  padding-left: 0.525rem;
+  font-weight: 500;
+  font-size: 0.825rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  padding-bottom: 0.75rem;
 }
 
 table {
-    margin-top: 2rem;
-    padding: 2rem;
-    width: 100%;
+  margin-top: 2rem;
+  padding: 2rem;
+  width: 100%;
 }
 
 .container .scheduleList td {
-    width: 100%;
-    padding-right: 1rem;
+  width: 100%;
+  padding-right: 1rem;
 }
 
 .container .scheduleList td input {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .container .scheduleList td select {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .container .scheduleList select {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .container .addScheduleButton {
-    width: 75%;
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 0.675rem;
+  width: 75%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.675rem;
 }
 
 .container .addScheduleButton button {
-    display: flex;
-    height: 40px;
-    align-items: center;
-    padding: 0.5rem 1.15rem;
-    border-radius: 10px;
-    border: none;
-    background-color: #eBeBeB;
-    color: #8D8D8D;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 0.825rem;
-    transition: all .175s;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  padding: 0.5rem 1.15rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #ebebeb;
+  color: #8d8d8d;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 0.825rem;
+  transition: all 0.175s;
 }
 
 .container .addScheduleButton button:hover {
-    background-color: #e1e1e1;
+  background-color: #e1e1e1;
 }
 
 .container .addScheduleButton button span {
-    display: flex;
-    font-size: 1.65rem;
-    font-weight: 300;
-    padding-right: 0.35rem;
-    padding-bottom: 0.2rem;
-    height: fit-content;
+  display: flex;
+  font-size: 1.65rem;
+  font-weight: 300;
+  padding-right: 0.35rem;
+  padding-bottom: 0.2rem;
+  height: fit-content;
 }
 
 .buttons {
-    display: flex;
-    width: 75%;
-    align-items: baseline;
-    margin-top: 3.5rem;
-    margin-bottom: 1.5rem;
-    justify-content: flex-end;
+  display: flex;
+  width: 75%;
+  align-items: baseline;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: flex-end;
 }
 
 .buttons button:first-child {
-    margin-right: 1.25rem;
-    border: none;
-    font-size: 0.775rem;
-    letter-spacing: 0.08rem;
-    color: var(--primary-text);
-    font-weight: 600;
+  margin-right: 1.25rem;
+  border: none;
+  font-size: 0.775rem;
+  letter-spacing: 0.08rem;
+  color: var(--primary-text);
+  font-weight: 600;
 }
 
 .button:hover {
-    background-color: var(--color-effect);
+  background-color: var(--color-effect);
 }
 
-@media (max-width: 600px) {
-    .container table {
-        padding: 0;
-    }
+@media (max-width: 680px) {
+  .container table {
+    padding: 0;
+  }
+
+  .container .addScheduleButton {
+    justify-content: center;
+  }
+
+  .buttons {
+    justify-content: center !important;
+    margin-bottom: 3rem !important;
+  }
 }
 
 @media (max-width: 400px) {
-    .container table td {
-        padding-right: 0.2rem !important;
-    }
+  .container table td {
+    padding-right: 0.2rem !important;
+  }
 
-    .container .addScheduleButton {
-        width: 100%;
-    }
+  .container .addScheduleButton {
+    width: 100%;
+  }
 
-    .container .buttons {
-        width: 100%;
-    }
+  .container .buttons {
+    width: 100%;
+  }
 }

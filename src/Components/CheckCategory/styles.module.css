@@ -5,6 +5,7 @@
     align-items: center;
     text-align: center;
     padding: 0.5rem;
+    height: fit-content;
 }
 
 /* Isso impede o usuário de selecionar e/ou arrastar o conteúdo de texto */
@@ -24,15 +25,18 @@
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    left: 0;
+    height: 20px !important;
 }
 
 /* Essa passa a ser nossa checkbox personalizada*/
 .check {
-    width: 18px;
-    height: 18px;
+    width: 17.5px;
+    height: 17.5px;
     position: absolute;
     left: 0;
     top: 0;
+    z-index: -1;
     border: 2.25px solid var(--primary-text);
     border-radius: 5px;
     background-color: var(--color-background);
@@ -42,10 +46,6 @@
     font-weight: 600;
     color: var(--primary-text);
     margin-left: 1.15rem;
-}
-
-.checkbox {
-    margin-right: 0.4rem;
 }
 
 .container .isChecked ~ .check {
@@ -76,8 +76,4 @@
 
 .container .isChecked ~ .check:after{
     display: block;
-}
-
-.container input[type=checkbox] {
-    width: 100%;
 }

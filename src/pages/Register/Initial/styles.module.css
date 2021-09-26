@@ -69,6 +69,10 @@
   justify-content: center;
 }
 
+.container section form label > span {
+  color: red;
+}
+
 .name {
   grid-column-start: 1;
   grid-column-end: 6;
@@ -251,6 +255,11 @@
   .container .header h1 {
     font-size: 1.5rem;
   }
+
+  .buttons {
+    justify-content: center !important;
+    margin-bottom: 3rem !important;
+  }
 }
 
 form .name,
@@ -283,7 +292,7 @@ form .name,
   cursor: pointer;
 }
 
-.container form input {
+.container .inputGroup form input {
   border: none;
   width: 100% !important;
   padding: 0.65rem 1.1rem;

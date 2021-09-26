@@ -96,7 +96,7 @@ export function RegisterInitial() {
       <section className={styles.inputGroup}>
         <form onSubmit={() => handleSubmit()}>
           <div className={styles.name}>
-            <label htmlFor="name">Nome</label>
+            <label htmlFor="name">Nome <span id={styles.required}>*</span></label>
             <input
               type="text"
               id="name"
@@ -111,7 +111,7 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.phone}>
-            <label htmlFor="phone">Telefone</label>
+            <label htmlFor="phone">Telefone  <span id={styles.required}>*</span></label>
             <NumberFormat
               id="phone"
               placeholder="Digite o Telefone"
@@ -128,7 +128,7 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.email}>
-            <label htmlFor="email">E-mail</label>
+            <label htmlFor="email">E-mail <span id={styles.required}>*</span></label>
             <input
               type="email"
               id="email"
@@ -143,7 +143,7 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.cnpj}>
-            <label htmlFor="cnpj">CNPJ</label>
+            <label htmlFor="cnpj">CNPJ <span id={styles.required}>*</span></label>
             <NumberFormat
               id="cnpj"
               placeholder="Digite o CNPJ"
@@ -164,7 +164,7 @@ export function RegisterInitial() {
               type="text"
               id="instagram"
               value={values.instagram}
-              placeholder="intragram.com/SoLanches"
+              placeholder="instragram.com/SoLanches"
               onChange={handleChange}
               onBlur={handleBlur}
             />
@@ -181,7 +181,7 @@ export function RegisterInitial() {
             />
           </div>
           <div className={styles.city}>
-            <label htmlFor="city">Cidade</label>
+            <label htmlFor="city">Cidade <span id={styles.required}>*</span></label>
             <input
               type="text"
               id="city"
@@ -196,7 +196,7 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.street}>
-            <label htmlFor="street">Rua</label>
+            <label htmlFor="street">Rua <span id={styles.required}>*</span></label>
             <input
               type="text"
               id="street"
@@ -222,7 +222,7 @@ export function RegisterInitial() {
             />
           </div>
           <div className={styles.number}>
-            <label htmlFor="number">Número</label>
+            <label htmlFor="number">Número <span id={styles.required}>*</span></label>
             <input
               type="number"
               id="number"
@@ -239,7 +239,7 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.password}>
-            <label htmlFor="password">Senha</label>
+            <label htmlFor="password">Senha <span id={styles.required}>*</span></label>
             <input
               type="password"
               id="password"
@@ -254,7 +254,7 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.passwordConfirm}>
-            <label htmlFor="passwordConfirm">Repita a senha</label>
+            <label htmlFor="passwordConfirm">Repita a senha <span id={styles.required}>*</span></label>
             <input
               type="password"
               id="passwordConfirm"

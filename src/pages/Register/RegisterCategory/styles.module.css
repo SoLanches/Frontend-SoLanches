@@ -139,7 +139,7 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 680px) {
   .categoryList {
     grid-template-columns: repeat(auto-fill, 186px);
   }
@@ -156,5 +156,10 @@
 
   .modal span img {
     width: 60px;
+  }
+
+  .buttons {
+    justify-content: center !important;
+    margin-bottom: 3rem !important;
   }
 }

@@ -8,6 +8,7 @@ import Check from "../../../assets/icons/check.svg";
 
 import { useState, useEffect, useCallback } from "react";
 import { useHistory } from "react-router-dom";
+import { BiErrorAlt } from "react-icons/bi";
 
 import styles from "./styles.module.css";
 
@@ -35,7 +36,11 @@ export function RegisterCategory() {
       openNotification(
         "empty-categories",
         "Erro ao cadastrar comércio",
-        "Por favor, adicione ao menos uma categoria."
+        "Por favor, adicione ao menos uma categoria.",
+        <BiErrorAlt />,
+        {
+          color: "red",
+        }
       );
     } else {
       if (newCommerce) {
@@ -95,7 +100,7 @@ export function RegisterCategory() {
       >
         <h1>Cadastro realizado com sucesso!</h1>
         <span>
-          <img src={Check} alt="Imagem de cadastro concluído"/>
+          <img src={Check} alt="Imagem de cadastro concluído" />
         </span>
         <span>
           O próximo passo será adicionar os produtos a cada categoria criada.
@@ -104,10 +109,10 @@ export function RegisterCategory() {
       <div className={modalIsActive ? styles.inactive : styles.container}>
         <div className={styles.header}>
           <h1>Construa seu perfil no SoLanches!</h1>
-          <span>Adicione informações sobre seu estabelecimento</span>
+          <span>Adicione informações sobre seu estabelecimento.</span>
         </div>
         <div className={styles.categoryList}>
-          {categories.map((category, index) => {
+          {categories.map((category) => {
             return (
               <div key={category} onClick={() => toggleSelect(category)}>
                 <CheckCategory key={category} categoryName={category} />
