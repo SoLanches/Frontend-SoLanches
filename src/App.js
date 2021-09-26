@@ -23,7 +23,6 @@ function App() {
       <div className='iconPadding'>
         <IconPadding />
       </div>
-      </BrowserRouter>
     </div>
   );
 }
