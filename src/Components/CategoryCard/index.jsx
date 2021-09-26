@@ -1,4 +1,5 @@
-import React, { useCallback } from 'react';
+import React from 'react';
+import { useCallback } from 'react'
 import style from './style.module.css'
 import { IoChevronDownOutline as Dropdown } from 'react-icons/io5'
 import useCategoryContext from '../../contexts/categoryCommerce.context'
@@ -10,6 +11,7 @@ export const CategoryCard = ({ title, imageUrl, alt }) => {
         () => {
             setCurrentFilter(title)
         },
+        [title, setCurrentFilter]
     )
 
     return (
