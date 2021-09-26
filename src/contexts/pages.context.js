@@ -10,11 +10,13 @@ import { Categories } from '../pages/Categories'
 import { Home } from '../pages/Home'
 import { Login } from '../pages/Login'
 import { EditMenu } from '../pages/EditMenu'
+import { useHistory } from 'react-router-dom'
 
 const PagesContext = createContext()
 
 
 export function PagesProvider({ children }) {
+  const history = useHistory()
   const [pathname, setPathname] = useState(window.location.pathname)
   const pages = [
     {
@@ -53,8 +55,10 @@ export function PagesProvider({ children }) {
   ]
 
   useEffect(() => {
-    setPathname(window.location.pathname)
-  }, [setPathname, pathname])
+    history.listen((location) => {
+      setPathname(location.pathname)
+    })
+  }, [history, setPathname])
 
   const handlePathname = useCallback(() => {
     setPathname(window.location.pathname)

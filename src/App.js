@@ -1,6 +1,6 @@
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { Header } from './Components/Header';
+import Header from './Components/Header';
 import usePagesContext from './contexts/pages.context';
 import { ReactComponent as IconPadding } from './assets/icons/iconPadding.svg'
 import './styles/App.css';
@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
         <Header />
         <div className='body'>
           <Switch>

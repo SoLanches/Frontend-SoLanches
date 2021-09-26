@@ -33,8 +33,7 @@ img:not([src]) {
 
 @media screen and (max-width: 550px) {
   .container {
-    height: 2rem;
-    padding: 0px 1rem;
+    padding: 0.25rem 0.75rem;
     border-radius: 0.5rem;
   }
 
