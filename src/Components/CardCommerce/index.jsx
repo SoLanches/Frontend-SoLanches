@@ -24,10 +24,11 @@ export const CardCommerce = (props) => {
                             <p key={index} className={style.times}>
                                 {hours.week_day}
                             </p>
-                        )}
+                        )
+                    }
                     )}
                     </div>
-                        </div>
+                </div>
             </div>
         </Link>
     )
