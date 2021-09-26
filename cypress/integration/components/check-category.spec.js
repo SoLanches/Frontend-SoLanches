@@ -13,6 +13,6 @@ describe("Testa comportamento do componente Check Category", () => {
 
     it("Retorna se, após clicar no botão, a classe isChecked some", () => {
         cy.get('.styles_container__MnfE_ label').click()
-        cy.get('.styles_isChecked__m-a4l').should('not.exist')
+cy.get('.styles_container__MnfE_ label').should('not.have.class', 'styles_isChecked__m-a4l')
     })
 })
