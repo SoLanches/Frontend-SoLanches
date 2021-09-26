@@ -32,5 +32,13 @@ export const CardCommerce = (props) => {
         </Link>
     )
 }
-
+CardCommerce.defaultProps = {
+    hours: [
+        { week_day: 'Segunda-feira', opens: '08:00', closes: '18:00' },
+        { week_day: 'Terça-feira', opens: '18:00', closes: '18:00' },
+        { week_day: 'Quarta-feira', opens: '12:00', closes: '18:00' },
+        { week_day: 'Quinta-feira', opens: '11:00', closes: '18:00' },
+        { week_day: 'Sexta-feira', opens: '08:00', closes: '18:00' },
+    ]
+}
 
