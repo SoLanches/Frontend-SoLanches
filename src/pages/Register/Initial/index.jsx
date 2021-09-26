@@ -116,7 +116,7 @@ export function RegisterInitial() {
               id="phone"
               placeholder="Digite o Telefone"
               onValueChange={(val) => {
-                const { _, value } = val;
+                const { value } = val;
                 values.phone = value;
               }}
               required
@@ -150,7 +150,7 @@ export function RegisterInitial() {
               mask="_"
               format="###.###.####/####-##"
               onValueChange={(val) => {
-                const { _, value } = val;
+                const { value } = val;
                 values.cnpj = value;
               }}
             />

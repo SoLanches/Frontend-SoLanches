@@ -26,9 +26,9 @@ export function RegisterCategory() {
       setModalIsActive(!modalIsActive);
     } else {
       setModalIsActive(!modalIsActive);
-      history.push('/inicio')
+      history.push("/inicio");
     }
-  }, [setModalIsActive, modalIsActive]);
+  }, [setModalIsActive, modalIsActive, history]);
 
   const handleRegisterCommerce = async () => {
     if (!selectedCategories.length) {
@@ -95,7 +95,7 @@ export function RegisterCategory() {
       >
         <h1>Cadastro realizado com sucesso!</h1>
         <span>
-          <img src={Check} />
+          <img src={Check} alt="Imagem de cadastro concluído"/>
         </span>
         <span>
           O próximo passo será adicionar os produtos a cada categoria criada.

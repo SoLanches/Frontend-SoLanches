@@ -28,7 +28,7 @@ export function ProfileImage (props) {
             <div className={styles.imageContainer} onClick={handleImageClick}>
                 {image.preview === '' 
                     ? <span>Imagem</span>
-                    : <img src={image.preview}/>
+                    : <img src={image.preview} alt="Logo"/>
                 }
             </div>   
         </div>

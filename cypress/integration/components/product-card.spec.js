@@ -9,7 +9,5 @@ describe("Testa comportamento do componente ProductCard", () => {
         cy.get('.style_title__8C9Ec').should('be.visible')
         cy.get('.style_description__10VE8').should('be.visible')
         cy.get('.style_price__1Atyp').should('be.visible')
-        
-        // TODO: falta o teste, quando for implementado o botão, para ver se está removendo corretamente.
     })
 })

@@ -41,14 +41,10 @@
 .categoryName {
     font-weight: 600;
     color: var(--primary-text);
-    margin-left: 1.25rem;
+    margin-left: 1.15rem;
 }
 
 .checkbox {
-    margin-right: 0.4rem;
-}
-
-.container input {
     margin-right: 0.4rem;
 }
 
@@ -80,4 +76,8 @@
 
 .container .isChecked ~ .check:after{
     display: block;
+}
+
+.container input[type=checkbox] {
+    width: 100%;
 }
