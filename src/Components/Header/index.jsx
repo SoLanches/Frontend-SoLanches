@@ -13,9 +13,10 @@ import style from './style.module.css'
 import { LoginCard } from '../LoginCard'
 import useLoginContext from '../../contexts/login.context'
 import { formatRoute } from '../../util/format'
+import { logout } from '../../services/api'
 
 export const Header = () => {
-  const { token, user } = useLoginContext()
+  const { token, user, updateInfo } = useLoginContext()
   console.log(user)
   const history = useHistory()
   const { pathname, handlePathname } = usePagesContext()
@@ -30,7 +31,12 @@ export const Header = () => {
   const [activeLoginModal, setActiveLoginModal] = useState(false)
 
   const handleLogout = async () => {
-    history.push('/inicio')
+    const response = await logout()
+
+    if (response) {
+      updateInfo()
+      history.push('/inicio')
+    }
   }
 
   const handleScroll = useCallback(() => {

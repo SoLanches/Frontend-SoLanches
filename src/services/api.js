@@ -19,6 +19,29 @@ export const login = async (user, password) => {
   }
 }
 
+export const logout = async () => {
+  try {
+    const response = await api.delete(`/logout`, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }})
+
+    localStorage.removeItem('@solanches/loginToken')
+    localStorage.removeItem('@solanches/user')
+    openNotification(
+      'logout',
+      'Logout feito com sucesso!' 
+    )
+    return response
+  } catch (e) {
+    console.log(e)
+    openNotification(
+      'logout',
+      `Ocorreu um problema ao fazer o logout ${e}`, 
+    )
+    return null
+  }
+}
+
 export const getCategories = async () => {
     try {
       const response = await api.get(`/comercios?categories=`)
