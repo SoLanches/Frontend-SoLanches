@@ -11,20 +11,19 @@ import { useHistory } from 'react-router-dom'
 
 import style from './style.module.css'
 import { LoginCard } from '../LoginCard'
+import useLoginContext from '../../contexts/login.context'
 
 export const Header = () => {
+  const { token } = useLoginContext()
   const history = useHistory()
   const { pathname, handlePathname } = usePagesContext()
   const [lastScrollTop, setScrollTop] = useState(window.pageYOffset)
   const [retracted, setRetract] = useState(false)
-  // TODO: Mudar para quando tiver login adaptando código para o componente saber se o usuario está logado.
-  // eslint-disable-next-line no-unused-vars
-  const [logged, setLogged] = useState(true)
+  const [logged, setLogged] = useState(token !== null)
 
   const [activeLoginModal, setActiveLoginModal] = useState(false)
 
-  const handleLogout = () => {
-    setLogged(false)
+  const handleLogout = async () => {
     history.push('/inicio')
   }
 

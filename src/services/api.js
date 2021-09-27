@@ -5,6 +5,20 @@ export const api = axios.create({
   baseURL: "https://solanches.herokuapp.com/",
 });
 
+export const login = async (user, password) => {
+  try {
+    const response = await api.post(`/login`, { nome: user, password: password })
+    return response
+  } catch (e) {
+    console.log(e)
+    openNotification(
+      user, 
+      `Ocorreu um problema ao fazer o login do comércio com o usuário ${user}`, 
+    )
+    return null
+  }
+}
+
 export const getCategories = async () => {
     try {
       const response = await api.get(`/comercios?categories=`)

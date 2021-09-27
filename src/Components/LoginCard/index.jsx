@@ -4,18 +4,27 @@ import Logo from '../../assets/icons/logo.svg'
 import { IoCloseOutline } from 'react-icons/io5'
 
 import styles from './styles.module.css'
+import { useHistory } from 'react-router'
+import { formatRoute, normalize } from '../../util/format'
+import { login } from '../../services/api'
 
 export const LoginCard = ({ handleClose }) => {
-  const emailRef = useRef(null)
+  const history = useHistory()
+  const userRef = useRef(null)
   const passwordRef = useRef(null)
 
-  const handleLogin = () => {
-    alert(
-      `${emailRef.current.value} - Esse é meu email - ${passwordRef.current.value} - Essa é minha senha`
+  const handleLogin = async () => {
+    const response = await login(
+      normalize(userRef.current.value),
+      passwordRef.current.value
     )
-    emailRef.current.value = ''
-    passwordRef.current.value = ''
-    handleClose()
+
+    if (response) {
+      history.push(`/${formatRoute(userRef.current.value)}`)
+      localStorage.setItem('@solanches/loginToken', response.data.token)
+      localStorage.setItem('@solanches/user', normalize(userRef.current.value))
+      handleClose()
+    }
   }
 
   return (
@@ -31,12 +40,12 @@ export const LoginCard = ({ handleClose }) => {
         </header>
         <div className={styles.input_field}>
           <div id={styles.email}>
-            <label for='loginEmail'>Endereço de Email</label>
+            <label for='loginUser'>Usuário</label>
             <input
               type='text'
-              id='loginEmail'
-              placeholder='Digite seu email'
-              ref={emailRef}
+              id='loginUser'
+              placeholder='Digite seu usuário'
+              ref={userRef}
             />
           </div>
           <div id={styles.password}>
@@ -52,7 +61,7 @@ export const LoginCard = ({ handleClose }) => {
         <Button title='Entrar' handleClick={handleLogin} />
         <div className={styles.registerNow}>
           <span>Novo(a) no SoLanches?</span>
-          <a href='/inicio'>Cadastre-se</a>
+          <a href='/registrar'>Cadastre-se</a>
         </div>
       </div>
     </div>
