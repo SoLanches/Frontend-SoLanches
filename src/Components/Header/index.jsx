@@ -12,14 +12,20 @@ import { useHistory } from 'react-router-dom'
 import style from './style.module.css'
 import { LoginCard } from '../LoginCard'
 import useLoginContext from '../../contexts/login.context'
+import { formatRoute } from '../../util/format'
 
 export const Header = () => {
-  const { token } = useLoginContext()
+  const { token, user } = useLoginContext()
+  console.log(user)
   const history = useHistory()
   const { pathname, handlePathname } = usePagesContext()
   const [lastScrollTop, setScrollTop] = useState(window.pageYOffset)
   const [retracted, setRetract] = useState(false)
   const [logged, setLogged] = useState(token !== null)
+
+  useEffect(() => {
+    setLogged(token !== null)
+  }, [token])
 
   const [activeLoginModal, setActiveLoginModal] = useState(false)
 
@@ -66,7 +72,8 @@ export const Header = () => {
           {logged ? (
             <>
               <Link
-                to={'/categorias'}
+                to={`/${formatRoute(user)}`}
+                params={{ commerceName: formatRoute(user) }}
                 className={pathname === '/perfil' ? style.active : ''}
               >
                 {'Meu perfil'}

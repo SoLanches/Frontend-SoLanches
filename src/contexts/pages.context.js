@@ -36,13 +36,10 @@ export function PagesProvider({ children }) {
       private: false,
     },
     {
-      name: 'Login',
-      text: 'Fazer login',
-      path: '/login',
+      name: 'Menu',
+      text: 'Meu Perfil',
+      path: '/:commerceName',
       component: Login,
-      logged: false,
-      header: true,
-      private: false,
     },
     {
       name: "editMenu",

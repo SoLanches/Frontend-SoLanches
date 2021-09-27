@@ -7,8 +7,10 @@ import styles from './styles.module.css'
 import { useHistory } from 'react-router'
 import { formatRoute, normalize } from '../../util/format'
 import { login } from '../../services/api'
+import useLoginContext from '../../contexts/login.context'
 
 export const LoginCard = ({ handleClose }) => {
+  const { updateInfo } = useLoginContext()
   const history = useHistory()
   const userRef = useRef(null)
   const passwordRef = useRef(null)
@@ -24,6 +26,7 @@ export const LoginCard = ({ handleClose }) => {
       localStorage.setItem('@solanches/loginToken', response.data.token)
       localStorage.setItem('@solanches/user', normalize(userRef.current.value))
       handleClose()
+      updateInfo()
     }
   }
 

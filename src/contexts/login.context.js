@@ -10,20 +10,21 @@ const LoginContext = createContext()
 
 export function LoginProvider({ children }) {
   const [token, setToken] = useState(localStorage.getItem('@solanches/loginToken'))
-  const [user, setUser] = useState('')
+  const [user, setUser] = useState(localStorage.getItem('@solanches/user'))
   const [password, setPassword] = useState('')
 
-  useEffect(() => {
-    setToken(localStorage.getItem('@solanches/loginToken'))
-    setToken(localStorage.getItem('@solanches/user'))
-  }, [localStorage, setToken])
 
+  const updateInfo = () => {
+    setToken(localStorage.getItem('@solanches/loginToken'))
+    setUser(localStorage.getItem('@solanches/user'))
+  }
   const values = {
     token,
     user,
     setUser,
     password,
-    setPassword
+    setPassword,
+    updateInfo
   }
 
   return (
