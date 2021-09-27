@@ -199,11 +199,13 @@
     grid-column-start: 2;
     grid-column-end: 3;
   }
+
   .district {
     grid-row-start: 8;
     grid-column-start: 1;
     grid-column-end: 2;
   }
+  
   .number {
     grid-row-start: 8;
     grid-column-start: 2;
