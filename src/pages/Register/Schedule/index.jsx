@@ -2,9 +2,8 @@ import { Button } from "../../../Components/Button";
 import { useRegister } from "../../../contexts/register.context";
 import { useStep } from "../../../contexts/steps.context";
 import { openNotification } from "../../../util/notification";
-import { Select } from "../../../Components/Select";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BiErrorAlt } from "react-icons/bi";
 
 import styles from "./styles.module.css";
@@ -102,10 +101,6 @@ export function RegisterSchedule() {
     }
   }
 
-  useEffect(() => {
-    console.log(scheduleItems)
-  }, [scheduleItems])
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -129,14 +124,39 @@ export function RegisterSchedule() {
               return (
                 <tr key={index} className={styles.scheduleItem}>
                   <td className={styles.dayOfWeek}>
-                    <Select
-                      options={dayOfWeek}
-                      name="week_day"
-                      defaultValue={scheduleItem.week_day}
-                      onChange={e => {
-                        console.log(e.target.value)
-                      }}
-                    />
+                    <div className={styles.selectDay}>
+                      <select
+                        defaultValue={scheduleItem.week_day}
+                        id="week_day"
+                        onChange={(e) =>
+                          setScheduleItemValue(
+                            index,
+                            "week_day",
+                            e.target.value
+                          )
+                        }
+                      >
+                        <option
+                          value="default"
+                          className={styles.option}
+                          disabled
+                        >
+                          Selecione
+                        </option>
+                        {dayOfWeek.map((option, index) => {
+                          return (
+                            <option
+                              key={index}
+                              value={option}
+                              className={styles.option}
+                            >
+                              {option}
+                            </option>
+                          );
+                        })}
+                      </select>
+                      <i></i>
+                    </div>
                   </td>
                   <td className={styles.opensAt}>
                     <input
