@@ -1,0 +1,354 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem !important;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.header h1 {
+  margin-bottom: 0.675rem;
+  text-align: center;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.header .description {
+  display: flex;
+  justify-content: center;
+  max-width: 90%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+.header .description span:first-child {
+  color: red;
+  margin-right: 0.4rem;
+  font-weight: 600;
+}
+
+.header .description span:last-child {
+  text-align: center;
+}
+
+.container section {
+  width: 100%;
+}
+
+.container .inputGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 2rem;
+}
+
+.container section form {
+  display: grid;
+  max-width: 75%;
+  grid-template-columns: repeat(8, 12.5%);
+  height: fit-content;
+  margin-top: 1.5rem;
+  grid-gap: 15px 17.5px;
+  border: none;
+  grid-auto-flow: row;
+  margin: 1.5rem 2rem 0.75rem 2rem;
+  justify-content: center;
+}
+
+.container section form label > span {
+  color: red;
+}
+
+.name {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+}
+
+.phone {
+  grid-column-start: 6;
+  grid-column-end: 9;
+  grid-row-start: 1;
+}
+
+.cnpj {
+  grid-column-start: 6;
+  grid-column-end: 9;
+  grid-row-start: 2;
+}
+
+.email {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 2;
+}
+
+.instagram {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 3;
+}
+.facebook {
+  grid-column-start: 5;
+  grid-column-end: 9;
+  grid-row-start: 3;
+}
+
+.city {
+  grid-row-start: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.district {
+  grid-row-start: 4;
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+.street {
+  grid-row-start: 4;
+  grid-column-start: 5;
+  grid-column-end: 7;
+}
+.number {
+  grid-row-start: 4;
+  grid-column-start: 7;
+  grid-column-end: 9;
+}
+
+.password {
+  grid-row-start: 5;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.passwordConfirm {
+  grid-row-start: 5;
+  grid-column-start: 5;
+  grid-column-end: 9;
+}
+
+@media (min-width: 901px) {
+  .container {
+    margin: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .container section form {
+    max-width: 80%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(10, 1fr);
+  }
+
+  .name {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+  }
+
+  .phone {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+  }
+
+  .cnpj {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+  }
+
+  .email {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+  }
+
+  .instagram {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 5;
+  }
+  .facebook {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 6;
+  }
+
+  .city {
+    grid-row-start: 7;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .street {
+    grid-row-start: 7;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .district {
+    grid-row-start: 8;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  
+  .number {
+    grid-row-start: 8;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .password {
+    grid-row-start: 9;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .passwordConfirm {
+    grid-row-start: 10;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .buttons {
+    width: 100%;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.2rem !important;
+  }
+
+  .description {
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .header h1 {
+    font-size: 1rem !important;
+  }
+
+  .description {
+    font-size: 0.65rem !important;
+  }
+  .container .buttons {
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .container .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .buttons {
+    justify-content: center !important;
+    margin-bottom: 3rem !important;
+  }
+}
+
+form .name,
+.phone,
+.email,
+.cnpj,
+.instagram,
+.facebook,
+.city,
+.street,
+.district,
+.number,
+.password,
+.passwordConfirm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: stretch;
+  align-items: left;
+}
+
+.container form label {
+  font-size: 0.725rem;
+  color: var(--primary-text);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-left: 0.415rem;
+  margin-bottom: 0.275rem;
+  cursor: pointer;
+}
+
+.container .inputGroup form input {
+  border: none;
+  width: 100% !important;
+  padding: 0.65rem 1.1rem;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--color-tertiary);
+  background-color: var(--color-base);
+  letter-spacing: 0.02em;
+  font-style: normal;
+  transition: all 0.25s;
+  margin-bottom: 0.35rem;
+  box-shadow: none !important;
+}
+
+::-webkit-input-placeholder {
+  color: #909090;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 0.7rem;
+}
+
+.container form input:focus {
+  outline: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  border: none;
+}
+
+.buttons {
+  display: flex;
+  width: 75%;
+  align-items: baseline;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: flex-end;
+}
+
+.buttons button:first-child {
+  margin-right: 1.25rem;
+  border: none;
+  font-size: 0.775rem;
+  letter-spacing: 0.08rem;
+  color: var(--primary-text);
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: var(--color-effect);
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+  margin-left: 0.45rem;
+  font-weight: 400;
+}

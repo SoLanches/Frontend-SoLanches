@@ -5,6 +5,7 @@
     align-items: center;
     text-align: center;
     padding: 0.5rem;
+    height: fit-content;
 }
 
 /* Isso impede o usuário de selecionar e/ou arrastar o conteúdo de texto */
@@ -24,15 +25,18 @@
     position: absolute;
     opacity: 0;
     cursor: pointer;
+    left: 0;
+    height: 20px !important;
 }
 
 /* Essa passa a ser nossa checkbox personalizada*/
 .check {
-    width: 19px;
-    height: 100%;
+    width: 17.5px;
+    height: 17.5px;
     position: absolute;
     left: 0;
     top: 0;
+    z-index: -1;
     border: 2.25px solid var(--primary-text);
     border-radius: 5px;
     background-color: var(--color-background);
@@ -41,15 +45,7 @@
 .categoryName {
     font-weight: 600;
     color: var(--primary-text);
-    margin-left: 1.75rem;
-}
-
-.checkbox {
-    margin-right: 0.4rem;
-}
-
-.container input {
-    margin-right: 0.4rem;
+    margin-left: 1.15rem;
 }
 
 .container .isChecked ~ .check {
@@ -67,7 +63,7 @@
     content: "";
     position: absolute;
     display: none;
-    top: -2.75px;
+    top: -3.75px;
     left: 4.75px;
     width: 6px;
     height: 11.5px;

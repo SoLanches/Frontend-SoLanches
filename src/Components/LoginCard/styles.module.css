@@ -65,7 +65,7 @@
   flex-direction: column;
 }
 
-label {
+.container label {
   padding: 0 0 0.5rem 0.5rem;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -75,7 +75,7 @@ label {
   cursor: pointer;
 }
 
-input {
+.container input {
   border: none;
   padding: 0.75rem 1.1rem;
   border-radius: 10px;

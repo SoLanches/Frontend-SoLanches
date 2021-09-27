@@ -1,0 +1,165 @@
+.modal {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.74);
+  z-index: 100;
+}
+
+.modal h1,
+.modal span {
+  color: var(--color-base);
+  padding: 0 1rem;
+}
+
+.modal h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.modal span img {
+  width: 75px;
+}
+
+.modal span {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.inactive {
+  display: none;
+}
+
+.categoryList button {
+  background: none;
+  border: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.header h1 {
+  margin-bottom: 0.675rem;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.header span {
+  display: flex;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-text);
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+
+.categoryList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.buttons {
+  display: flex;
+  width: 75%;
+  align-items: baseline;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  justify-content: flex-end;
+}
+
+.buttons button:first-child {
+  margin-right: 1.25rem;
+  border: none;
+  font-size: 0.775rem;
+  letter-spacing: 0.08rem;
+  color: var(--primary-text);
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: var(--color-effect);
+}
+
+.button span {
+  color: white;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+@media (max-width: 400px) {
+  .container .buttons {
+    width: 100%;
+  }
+
+  .categoryList {
+    grid-template-columns: repeat(auto-fill, 200px);
+  }
+
+  .modal h1 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .modal span {
+    font-size: 0.7rem;
+  }
+
+  .modal span img {
+    width: 50px;
+  }
+}
+
+@media (max-width: 680px) {
+  .categoryList {
+    grid-template-columns: repeat(auto-fill, 186px);
+  }
+
+  .modal h1 {
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .modal span {
+    font-size: 0.8rem;
+  }
+
+  .modal span img {
+    width: 60px;
+  }
+
+  .buttons {
+    justify-content: center !important;
+    margin-bottom: 3rem !important;
+  }
+}

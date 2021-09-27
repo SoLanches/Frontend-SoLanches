@@ -6,12 +6,12 @@
 }
 
 .titleContainer {
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
   text-align: center;
-  margin-top: 2rem;
 }
 
 .subTitle {
