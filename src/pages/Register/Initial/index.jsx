@@ -164,7 +164,7 @@ export function RegisterInitial() {
               type="text"
               id="instagram"
               value={values.instagram}
-              placeholder="instragram.com/SoLanches"
+              placeholder="instagram.com/SoLanches"
               onChange={handleChange}
               onBlur={handleBlur}
             />

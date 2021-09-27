@@ -12,7 +12,7 @@ import { useHistory } from 'react-router-dom'
 import style from './style.module.css'
 import { LoginCard } from '../LoginCard'
 
-const Header = () => {
+export const Header = () => {
   const history = useHistory()
   const { pathname, handlePathname } = usePagesContext()
   const [lastScrollTop, setScrollTop] = useState(window.pageYOffset)

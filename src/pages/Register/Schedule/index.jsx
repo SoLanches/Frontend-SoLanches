@@ -4,7 +4,7 @@ import { useStep } from "../../../contexts/steps.context";
 import { openNotification } from "../../../util/notification";
 import { Select } from "../../../Components/Select";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiErrorAlt } from "react-icons/bi";
 
 import styles from "./styles.module.css";
@@ -45,9 +45,9 @@ export function RegisterSchedule() {
           "schedule-limit",
           "Erro ao adicionar horário",
           "Você já adicionou o número máximo de horários permitidos.",
-          <BiErrorAlt/>,
+          <BiErrorAlt />,
           {
-            color: 'red'
+            color: "red",
           }
         );
       }
@@ -56,10 +56,10 @@ export function RegisterSchedule() {
         "empty-schedule",
         "Erro ao adicionar horário",
         "Por favor, preencha os campos de horário antes de adicionar um novo.",
-        <BiErrorAlt/>,
-          {
-            color: 'red'
-          }
+        <BiErrorAlt />,
+        {
+          color: "red",
+        }
       );
     }
   }
@@ -75,22 +75,21 @@ export function RegisterSchedule() {
   }
 
   function hasEmptyScheduleItem() {
-    const filtered = scheduleItems.filter(item => {
-      return !item.closes || !item.opens
-    })
+    const filtered = scheduleItems.filter((item) => {
+      return !item.closes || !item.opens;
+    });
     return filtered.length > 0;
   }
-  
+
   function handleSubmit() {
-    
     if (hasEmptyScheduleItem()) {
       openNotification(
         "empty-schedule-item",
         "Erro ao adicionar horário",
         "Preencha todos os horários antes de avançar.",
-        <BiErrorAlt/>,
+        <BiErrorAlt />,
         {
-          color: 'red'
+          color: "red",
         }
       );
     } else {
@@ -98,10 +97,14 @@ export function RegisterSchedule() {
         ...newCommerce,
         schedule: scheduleItems,
       });
-  
+
       nextStep();
     }
   }
+
+  useEffect(() => {
+    console.log(scheduleItems)
+  }, [scheduleItems])
 
   return (
     <div className={styles.container}>
@@ -130,9 +133,9 @@ export function RegisterSchedule() {
                       options={dayOfWeek}
                       name="week_day"
                       defaultValue={scheduleItem.week_day}
-                      handleChange={(e) =>
-                        setScheduleItemValue(index, "week_day", e.target.value)
-                      }
+                      onChange={e => {
+                        console.log(e.target.value)
+                      }}
                     />
                   </td>
                   <td className={styles.opensAt}>

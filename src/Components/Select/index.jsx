@@ -1,6 +1,6 @@
 import style from './style.module.css'
 
-export const Select = ({ options, defaultValue, setValue, name, ...rest }) => {
+export const Select = ({ options, defaultValue, setValue, name }) => {
   const handleChange = (e) => {
     if (setValue) {
       console.log(e.target.value)
