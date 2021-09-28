@@ -18,6 +18,7 @@ import {
   removeFavorite,
 } from '../../services/api'
 import useCommerceContext from '../../contexts/commerce.context'
+import useLoginContext from '../../contexts/login.context'
 
 export const ProductCard = ({
   id,
@@ -31,6 +32,7 @@ export const ProductCard = ({
   categoria: category,
 }) => {
   const [faved, setFav] = useState(favorited)
+  const { updateInfo } = useLoginContext()
   const [activeModal, setActiveModal] = useState(false)
   const { commerceName, setProducts, activeCategories, setFavProductIds } =
     useCommerceContext()
@@ -48,6 +50,8 @@ export const ProductCard = ({
       setFavProductIds(response.destaques)
       setFav(!faved)
     }
+
+    updateInfo()
   }
 
   const handleEdit = () => {
@@ -59,6 +63,7 @@ export const ProductCard = ({
 
     const products = await getProdutos(commerceName)
     setProducts(products)
+    updateInfo()
   }
 
   return (

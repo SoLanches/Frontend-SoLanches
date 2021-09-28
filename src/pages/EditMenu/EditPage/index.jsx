@@ -8,6 +8,7 @@ import { Select } from '../../../Components/Select'
 import { EditModal } from '../../../Components/EditModal'
 import { addCategory, deleteCategory } from '../../../services/api'
 import useCommerceContext from '../../../contexts/commerce.context'
+import useLoginContext from '../../../contexts/login.context'
 
 const EditPage = () => {
   const {
@@ -17,6 +18,7 @@ const EditPage = () => {
     setActiveCategories,
     favProductIds,
   } = useCommerceContext()
+  const { updateInfo } = useLoginContext()
 
   const [filterCategorie, setFilterCategorie] = useState('todos')
 
@@ -31,6 +33,8 @@ const EditPage = () => {
         setActiveCategories(response.categorias)
       }
     }
+
+    updateInfo()
   }
 
   const handleAddCategory = async () => {
@@ -41,6 +45,7 @@ const EditPage = () => {
         setActiveCategories(response.categorias)
       }
     }
+    updateInfo()
   }
 
   return (
