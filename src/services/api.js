@@ -105,7 +105,9 @@ export const getProdutos = async (commerceName, categories = true) => {
  */
 export const deleteProduct = async (commerceName, idProduct) => {
   try {
-    await api.delete(`/comercio/${commerceName}/produto/${idProduct}`);
+    await api.delete(`/comercio/${commerceName}/produto/${idProduct}`, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }});
 
     openNotification(commerceName, "Produto removido com sucesso");
   } catch (e) {
@@ -129,7 +131,9 @@ export const editProduct = async (commerceName, idProduct, newProduct) => {
   try {
     await api.patch(`/comercio/${commerceName}/produto/${idProduct}`, {
       attributes: newProduct,
-    });
+    }, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }});
     openNotification(commerceName, "Produto alterado com sucesso");
   } catch (e) {
     openNotification(
@@ -150,7 +154,9 @@ export const addProduct = async (commerceName, newProduct) => {
     await api.post(`/comercio/${commerceName}/produto`, {
       nome: newProduct.title,
       attributes: newProduct,
-    });
+    }, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }});
     openNotification(commerceName, "Produto cadastrado com sucesso");
   } catch (e) {
     openNotification(
@@ -171,7 +177,9 @@ export const addCategory = async (commerceName, category) => {
   try {
     const response = await api.post(`/comercio/${commerceName}/categoria`, {
       categoria: category,
-    });
+    }, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }});
     openNotification(commerceName, "Categoria cadastrada com sucesso");
     return response.data;
   } catch (e) {
@@ -194,7 +202,9 @@ export const deleteCategory = async (commerceName, category) => {
   try {
     const response = await api.delete(`/comercio/${commerceName}/categoria`, {
       data: { categoria: category },
-    });
+    }, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }});
     openNotification(commerceName, "Categoria removida com sucesso");
     return response.data;
   } catch (e) {
@@ -216,7 +226,9 @@ export const deleteCategory = async (commerceName, category) => {
 export const addFavorite = async (commerceName, productId) => {
   try {
     const response = await api.post(
-      `/comercio/${commerceName}/destaques/${productId}`
+      `/comercio/${commerceName}/destaques/${productId}`, { headers: {
+        'authorization': localStorage.getItem('@solanches/loginToken')
+      }}
     );
     openNotification(
       commerceName,
@@ -242,7 +254,9 @@ export const addFavorite = async (commerceName, productId) => {
 export const removeFavorite = async (commerceName, productId) => {
   try {
     const response = await api.delete(
-      `/comercio/${commerceName}/destaques/${productId}`
+      `/comercio/${commerceName}/destaques/${productId}`, { headers: {
+        'authorization': localStorage.getItem('@solanches/loginToken')
+      }}
     );
     openNotification(
       commerceName,
