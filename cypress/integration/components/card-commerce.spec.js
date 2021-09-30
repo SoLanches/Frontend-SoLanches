@@ -14,7 +14,6 @@ describe("Testa comportamento do componente CardCommerce", () => {
         cy.get('.style_adress__kS-nl').should('be.visible')
         cy.get('.style_containerInfos__2y533').should('be.visible')
         cy.get('.style_times__yY4i5').should('be.visible')
-
     })
 
     it("Retorna true se o componente e seus elementos estão visíveis após ser clicado", () => {
