@@ -69,7 +69,7 @@ describe('testa a tela de cadastro de comercio', () => {
         cy.get('@registrationForm').should('be.visible'); 
     });
 
-    it.only('não permite avançar a tela de cadastro se as duas senhas não coincidirem', () => {
+    it('não permite avançar a tela de cadastro se as duas senhas não coincidirem', () => {
         cy.get('.styles_inputGroup__1__Ht').as('registrationForm').should('be.visible');
         cy.fillRegistrationForm();
         cy.get('#passwordConfirm')
@@ -81,7 +81,11 @@ describe('testa a tela de cadastro de comercio', () => {
         cy.get('@registrationForm').should('be.visible'); 
     });
 
-    it.skip('avança para a próxima tela se os campos estiverem preenchidos', () => {
+    it.only('avança para a próxima tela se os campos estiverem preenchidos', () => {
+        cy.get('.styles_inputGroup__1__Ht').should('be.visible');
+        cy.fillRegistrationForm();
+        cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
 
     });
 
