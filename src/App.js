@@ -2,6 +2,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';
+import { ReactComponent as IconPadding } from './assets/icons/iconPadding.svg'
 import './styles/App.css';
 import 'antd/lib/notification/style/index.css';
 

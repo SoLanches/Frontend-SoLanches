@@ -1,0 +1,14 @@
+{
+    "name": "Comercio teste",
+    "phone": "83999999999",
+    "email": "teste@hotmail.com",
+    "cnpj": "9999999999999999",
+    "instagram": "",
+    "facebook": "",
+    "city": "cidade teste",
+    "street": "rua teste",
+    "district": "bairro teste",
+    "number": "3",
+    "password": "12345678",
+    "passwordConfirm": "12345678"    
+}
