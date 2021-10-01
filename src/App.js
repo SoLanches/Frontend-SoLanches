@@ -5,6 +5,8 @@ import usePagesContext from './contexts/pages.context';
 import './styles/App.css';
 import 'antd/lib/notification/style/index.css';
 
+import { ReactComponent as IconPadding } from './assets/icons/iconPadding.svg'
+
 function App() {
   const { pages } = usePagesContext();
 

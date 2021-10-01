@@ -12,6 +12,7 @@ import { Login } from '../pages/Login'
 import { EditMenu } from '../pages/EditMenu'
 import { RegisterMenu } from '../pages/Register/index'
 import { useHistory } from 'react-router-dom'
+import { MenuPage } from "../pages/Categories/Menu";
 
 const PagesContext = createContext()
 
@@ -59,6 +60,14 @@ export function PagesProvider({ children }) {
       component: RegisterMenu,
       header: false,
       private: false,
+    },
+    {
+      name: 'cardapio',
+      text: 'Cardápio',
+      path: '/:commerceName',
+      component: MenuPage,
+      header: true,
+      private: false
     },
   ];
   

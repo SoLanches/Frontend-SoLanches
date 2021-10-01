@@ -241,3 +241,19 @@ export const addCommerce = async (nome, password, attributes) => {
     return null;
   }
 }
+
+/**
+ * Route that allows the frontend to get the commerce name
+ * 
+ * @param {string} commerceName 
+ * @returns commerce data
+ */
+ export const getCommerce = async (commerceName) => {
+  try {
+    const response = await api.get(`/comercio/${commerceName}`)
+    return response.data
+    
+  } catch (e) {
+      return null
+  }
+}
