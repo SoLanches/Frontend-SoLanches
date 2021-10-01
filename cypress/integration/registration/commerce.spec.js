@@ -81,7 +81,7 @@ describe('testa a tela de cadastro de comercio', () => {
         cy.get('@registrationForm').should('be.visible'); 
     });
 
-    it.only('avança para a próxima tela se os campos estiverem preenchidos', () => {
+    it('avança para a próxima tela se os campos estiverem preenchidos', () => {
         cy.get('.styles_inputGroup__1__Ht').should('be.visible');
         cy.fillRegistrationForm();
         cy.contains('Avançar').should('be.visible').click();
