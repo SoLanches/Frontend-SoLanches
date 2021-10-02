@@ -6,7 +6,7 @@ import React, {
   useEffect,
 } from 'react'
 import { useHistory, useParams } from 'react-router'
-import { getProdutos, getCardapio } from '../services/api'
+import { fetchProdutos, getCardapio } from '../services/api'
 
 const CommerceContext = createContext()
 
@@ -19,7 +19,7 @@ export function CommerceProvider({ children }) {
 
   useEffect(() => {
     async function getDadosProdutos() {
-      const response = await getProdutos(commerceName)
+      const response = await fetchProdutos(commerceName)
       !response ? history.push('/categorias') : setProducts(response) 
     }
 

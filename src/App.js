@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { Header } from './Components/Header';
 import usePagesContext from './contexts/pages.context';

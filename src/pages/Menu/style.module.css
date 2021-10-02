@@ -1,0 +1,15 @@
+.menu {
+}
+
+section {
+  padding: 3rem 0;
+  border-top: 2px solid #95959545;
+}
+
+.sectionTitle {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: fit-content;
+  margin: 1rem auto;
+}

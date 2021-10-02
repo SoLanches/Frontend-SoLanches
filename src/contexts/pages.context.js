@@ -12,7 +12,7 @@ import { Login } from '../pages/Login'
 import { EditMenu } from '../pages/EditMenu'
 import { RegisterMenu } from '../pages/Register/index'
 import { useHistory } from 'react-router-dom'
-import { MenuPage } from "../pages/Categories/Menu";
+import { MenuPage } from "../pages/Menu";
 
 const PagesContext = createContext()
 

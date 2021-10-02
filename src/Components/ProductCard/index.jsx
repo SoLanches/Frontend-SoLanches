@@ -14,7 +14,7 @@ import { formatPrice } from '../../util/format'
 import {
   addFavorite,
   deleteProduct,
-  getProdutos,
+  fetchProdutos,
   removeFavorite,
 } from '../../services/api'
 import useCommerceContext from '../../contexts/commerce.context'
@@ -57,7 +57,7 @@ export const ProductCard = ({
   const handleDelete = async () => {
     await deleteProduct(commerceName, id)
 
-    const products = await getProdutos(commerceName)
+    const products = await fetchProdutos(commerceName)
     setProducts(products)
   }
 
