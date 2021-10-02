@@ -24,7 +24,7 @@ export const CategorySection = ({ productsData, category }) => {
 export const Menu = ({ menu = {}, activeCategories = [] }) => {
   console.log(menu, activeCategories)
   return (
-    <section>
+    <section className={style.sectionMenu}>
       <div className={style.sectionTitle}>
         <MenuIcon />
         <h2>Cardápio</h2>

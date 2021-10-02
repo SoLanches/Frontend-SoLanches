@@ -1,3 +1,7 @@
+.sectionMenu {
+  border-top: 2px solid #95959545;
+}
+
 .sectionCategoryTitle {
   font-size: 32px;
   margin: 2rem 0 3rem 0;

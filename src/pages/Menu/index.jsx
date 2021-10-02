@@ -29,7 +29,10 @@ export function MenuPage() {
     menu && (
       <div className={style.menu}>
         <CommerceInfo commerceName={commerceName} />
-        <FavProducts products={products} favedIds={menu.destaques} />
+        <FavProducts
+          products={products ? Object.values(products) : []}
+          favedIds={menu.destaques}
+        />
         <MenuComponent menu={products} activeCategories={menu.categorias} />
       </div>
     )
