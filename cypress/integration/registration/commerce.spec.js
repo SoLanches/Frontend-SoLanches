@@ -89,15 +89,49 @@ describe('testa a tela de cadastro de comercio', () => {
 
     });
 
-    it.skip('não permite avançar a tela de horários se não tiver nenhum preenchido', () => {
-
+    it('não permite avançar a tela de horários se não tiver nenhum preenchido', () => {
+        cy.get('.styles_inputGroup__1__Ht').should('be.visible');
+        cy.fillRegistrationForm();
+        cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
+        cy.contains('Avançar').should('be.visible').click();
+        cy.get('.ant-notification').should('be.visible');
+        cy.get('.ant-notification-notice-description').should('have.text', 'Preencha todos os horários antes de avançar.');
+        cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
     })
 
-    it.skip('não permite avançar a tela de horários se tiver um horário em branco' , () => {
+    it('não permite adicionar horário se tiver um horário com informação em branco' , () => {
+        cy.get('.styles_inputGroup__1__Ht').should('be.visible');
+        cy.fillRegistrationForm();
+        cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
+        cy.get('#opens').should('be.visible').type('08:00');
+        cy.contains('Adicionar horário').should('be.visible').click();
+        cy.get('.ant-notification').should('be.visible');
+        cy.get('.ant-notification-notice-description')
+          .should('have.text', 'Por favor, preencha os campos de horário antes de adicionar um novo.');
+    })
 
+    it.skip('permite avançar a tela de horários se tiver horário preenchido' , () => {
+        cy.get('.styles_inputGroup__1__Ht').should('be.visible');
+        cy.fillRegistrationForm();
+        cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
+        cy.get('#opens').should('be.visible').type('08:00');
+        // cy.get('#closes').should('be.visible').type('12:00');
+        cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('not.be.visible');
     })
 
     it.skip('permite criacao de comercio', () => {
+        cy.get('.styles_inputGroup__1__Ht').should('be.visible');
+        cy.fillRegistrationForm();
+        cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
+        cy.get('#opens').should('be.visible').type('08:00');
+        cy.get('#closes').should('be.visible').type('12:00');
+        cy.contains('Avançar').should('be.visible').click();
+        cy.contains('Avançar').should('be.visible').click();
 
     })
 
