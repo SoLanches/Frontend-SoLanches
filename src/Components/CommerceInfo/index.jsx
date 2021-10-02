@@ -8,6 +8,7 @@ import styles from './styles.module.css'
 import { useEffect, useState } from 'react'
 import { getCommerce } from '../../services/api'
 import user from '../../assets/images/user.svg'
+import { deformatName } from '../../util/format'
 
 export const CommerceInfo = ({ commerceName }) => {
   const [name, setName] = useState('')
@@ -31,7 +32,7 @@ export const CommerceInfo = ({ commerceName }) => {
         <div className={styles.commerce_image}>
           <img src={user} alt='loja' />
         </div>
-        <h1>{name}</h1>
+        <h1>{deformatName(name)}</h1>
         <div className={styles.social_medias}>
           <a
             href={socialMedia ? socialMedia.instagram : ''}

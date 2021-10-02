@@ -8,7 +8,7 @@ import { ProductCard } from '../ProductCard'
 
 import style from './styles.module.css'
 
-export const FavProducts = ({ products = [], favedIds = [] }) => {
+export const FavProducts = ({ products = [[]], favedIds = [] }) => {
   const { user } = useLoginContext()
   const { commerceName } = useParams()
   const history = useHistory()
@@ -18,7 +18,7 @@ export const FavProducts = ({ products = [], favedIds = [] }) => {
       <div className={style.sectionTitle}>
         <StarFilled style={{ fontSize: '2rem' }} />
         <h2>Destaques</h2>
-        {formatRoute(user) === commerceName ? (
+        {user && formatRoute(user) === commerceName ? (
           <Button
             title='editar cardápio'
             handleClick={() => history.push(`/${commerceName}/edit`)}
@@ -31,8 +31,18 @@ export const FavProducts = ({ products = [], favedIds = [] }) => {
         {favedIds.length > 0 ? (
           <div className={style.products}>
             {products.map((product, index) => {
-              if (favedIds.includes(product._id)) {
-                return <ProductCard key={index} {...product} />
+              console.log('produto', product)
+              if (favedIds && product[0] && favedIds.includes(product[0]._id)) {
+                return (
+                  <ProductCard
+                    key={index}
+                    title={product[0].nome}
+                    category={product[0].attributes.categoria}
+                    description={product[0].attributes.description}
+                    price={product[0].attributes.price}
+                    editable={false}
+                  />
+                )
               }
               return null
             })}

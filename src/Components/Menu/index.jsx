@@ -17,6 +17,8 @@ export const CategorySection = ({ productsData, category }) => {
           <ProductCard
             title={produto.nome}
             category={produto.attributes.categoria}
+            description={produto.attributes.description}
+            price={produto.attributes.price}
             editable={false}
           />
         ))}
@@ -34,7 +36,7 @@ export const Menu = ({ menu = {}, activeCategories = [] }) => {
       <div className={style.sectionTitle}>
         <MenuIcon />
         <h2>Cardápio</h2>
-        {formatRoute(user) === commerceName ? (
+        {user && formatRoute(user) === commerceName ? (
           <Button
             title='editar cardápio'
             handleClick={() => history.push(`/${commerceName}/edit`)}

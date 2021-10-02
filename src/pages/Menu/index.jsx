@@ -30,7 +30,7 @@ export function MenuPage() {
       <div className={style.menu}>
         <CommerceInfo commerceName={commerceName} />
         <FavProducts
-          products={products ? Object.values(products) : []}
+          products={products ? Object.values(products) : [[]]}
           favedIds={menu.destaques}
         />
         <MenuComponent menu={products} activeCategories={menu.categorias} />

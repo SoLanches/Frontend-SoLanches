@@ -17,14 +17,17 @@ export const LoginCard = ({ handleClose }) => {
 
   const handleLogin = async () => {
     const response = await login(
-      normalize(userRef.current.value),
+      formatRoute(userRef.current.value),
       passwordRef.current.value
     )
 
     if (response) {
       history.push(`/${formatRoute(userRef.current.value)}`)
       localStorage.setItem('@solanches/loginToken', response.data.token)
-      localStorage.setItem('@solanches/user', normalize(userRef.current.value))
+      localStorage.setItem(
+        '@solanches/user',
+        formatRoute(userRef.current.value)
+      )
       handleClose()
       updateInfo()
     }

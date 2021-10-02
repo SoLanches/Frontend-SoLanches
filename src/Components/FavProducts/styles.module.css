@@ -17,3 +17,10 @@
   width: fit-content;
   margin: 0 auto;
 }
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}

@@ -1,30 +1,31 @@
-import { Button } from "../../../Components/Button";
-import { requiredInfoAlert } from "../constants";
-import { useRegister } from "../../../contexts/register.context";
-import { useStep } from "../../../contexts/steps.context";
+import { Button } from '../../../Components/Button'
+import { requiredInfoAlert } from '../constants'
+import { useRegister } from '../../../contexts/register.context'
+import { useStep } from '../../../contexts/steps.context'
 
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom'
 
-import { useFormik } from "formik";
-import * as yup from "yup";
-import NumberFormat from "react-number-format";
+import { useFormik } from 'formik'
+import * as yup from 'yup'
+import NumberFormat from 'react-number-format'
 
-import styles from "./styles.module.css";
+import styles from './styles.module.css'
+import { formatRoute } from '../../../util/format'
 
 export function RegisterInitial() {
-  const history = useHistory();
+  const history = useHistory()
 
-  const { newCommerce, setNewCommerce } = useRegister();
-  const { nextStep } = useStep();
+  const { newCommerce, setNewCommerce } = useRegister()
+  const { nextStep } = useStep()
 
   const validationSchema = yup.object().shape({
     name: yup.string().required(requiredInfoAlert),
-    email: yup.string().email("Email inválido.").required(requiredInfoAlert),
+    email: yup.string().email('Email inválido.').required(requiredInfoAlert),
     phone: yup
       .string()
       .required(requiredInfoAlert)
-      .min(11, "Telefone inválido."),
-    cnpj: yup.string().required(requiredInfoAlert).min(16, "CNPJ inválido."),
+      .min(11, 'Telefone inválido.'),
+    cnpj: yup.string().required(requiredInfoAlert).min(16, 'CNPJ inválido.'),
     instagram: yup.string(),
     facebook: yup.string(),
     city: yup.string().required(requiredInfoAlert),
@@ -33,20 +34,20 @@ export function RegisterInitial() {
     number: yup.number().required(requiredInfoAlert),
     password: yup
       .string()
-      .min(6, "Senha muito curta.")
-      .max(18, "Senha muito longa.")
+      .min(6, 'Senha muito curta.')
+      .max(18, 'Senha muito longa.')
       .required(requiredInfoAlert),
     passwordConfirm: yup
       .string()
-      .oneOf([yup.ref("password"), null], "As senhas devem ser iguais."),
-  });
+      .oneOf([yup.ref('password'), null], 'As senhas devem ser iguais.'),
+  })
 
   const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
     useFormik({
       onSubmit: async (values) => {
         setNewCommerce({
           ...newCommerce,
-          name: values.name,
+          name: formatRoute(values.name),
           phone: values.phone,
           cnpj: values.cnpj,
           password: values.password,
@@ -61,8 +62,8 @@ export function RegisterInitial() {
             district: values.district,
             number: values.number,
           },
-        });
-        nextStep();
+        })
+        nextStep()
       },
 
       validationSchema: () => validationSchema,
@@ -77,10 +78,10 @@ export function RegisterInitial() {
         district: newCommerce.address.district,
         street: newCommerce.address.street,
         number: newCommerce.address.number,
-        password: "",
-        passwordConfirm: "",
+        password: '',
+        passwordConfirm: '',
       },
-    });
+    })
 
   return (
     <div className={styles.container}>
@@ -96,11 +97,13 @@ export function RegisterInitial() {
       <section className={styles.inputGroup}>
         <form onSubmit={() => handleSubmit()}>
           <div className={styles.name}>
-            <label htmlFor="name">Nome <span id={styles.required}>*</span></label>
+            <label htmlFor='name'>
+              Nome <span id={styles.required}>*</span>
+            </label>
             <input
-              type="text"
-              id="name"
-              placeholder="Digite o nome do estabelecimento"
+              type='text'
+              id='name'
+              placeholder='Digite o nome do estabelecimento'
               value={values.name}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -111,28 +114,32 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.phone}>
-            <label htmlFor="phone">Telefone  <span id={styles.required}>*</span></label>
+            <label htmlFor='phone'>
+              Telefone <span id={styles.required}>*</span>
+            </label>
             <NumberFormat
-              id="phone"
-              placeholder="Digite o Telefone"
+              id='phone'
+              placeholder='Digite o Telefone'
               onValueChange={(val) => {
-                const { value } = val;
-                values.phone = value;
+                const { value } = val
+                values.phone = value
               }}
               required
-              mask="_"
-              format="(##) #####-####"
+              mask='_'
+              format='(##) #####-####'
             />
             {touched.phone && (
               <span className={styles.error}> {errors.phone} </span>
             )}
           </div>
           <div className={styles.email}>
-            <label htmlFor="email">E-mail <span id={styles.required}>*</span></label>
+            <label htmlFor='email'>
+              E-mail <span id={styles.required}>*</span>
+            </label>
             <input
-              type="email"
-              id="email"
-              placeholder="Digite o email"
+              type='email'
+              id='email'
+              placeholder='Digite o email'
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -143,15 +150,17 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.cnpj}>
-            <label htmlFor="cnpj">CNPJ <span id={styles.required}>*</span></label>
+            <label htmlFor='cnpj'>
+              CNPJ <span id={styles.required}>*</span>
+            </label>
             <NumberFormat
-              id="cnpj"
-              placeholder="Digite o CNPJ"
-              mask="_"
-              format="###.###.####/####-##"
+              id='cnpj'
+              placeholder='Digite o CNPJ'
+              mask='_'
+              format='###.###.####/####-##'
               onValueChange={(val) => {
-                const { value } = val;
-                values.cnpj = value;
+                const { value } = val
+                values.cnpj = value
               }}
             />
             {touched.cnpj && (
@@ -159,34 +168,36 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.instagram}>
-            <label htmlFor="instagram">Instagram</label>
+            <label htmlFor='instagram'>Instagram</label>
             <input
-              type="text"
-              id="instagram"
+              type='text'
+              id='instagram'
               value={values.instagram}
-              placeholder="instagram.com/SoLanches"
+              placeholder='instagram.com/SoLanches'
               onChange={handleChange}
               onBlur={handleBlur}
             />
           </div>
           <div className={styles.facebook}>
-            <label htmlFor="facebook">Facebook</label>
+            <label htmlFor='facebook'>Facebook</label>
             <input
-              type="text"
-              id="facebook"
+              type='text'
+              id='facebook'
               value={values.facebook}
-              placeholder="facebook.com/SoLanches"
+              placeholder='facebook.com/SoLanches'
               onChange={handleChange}
               onBlur={handleBlur}
             />
           </div>
           <div className={styles.city}>
-            <label htmlFor="city">Cidade <span id={styles.required}>*</span></label>
+            <label htmlFor='city'>
+              Cidade <span id={styles.required}>*</span>
+            </label>
             <input
-              type="text"
-              id="city"
+              type='text'
+              id='city'
               value={values.city}
-              placeholder="Digite a cidade"
+              placeholder='Digite a cidade'
               onChange={handleChange}
               onBlur={handleBlur}
               required
@@ -196,12 +207,14 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.street}>
-            <label htmlFor="street">Rua <span id={styles.required}>*</span></label>
+            <label htmlFor='street'>
+              Rua <span id={styles.required}>*</span>
+            </label>
             <input
-              type="text"
-              id="street"
+              type='text'
+              id='street'
               value={values.street}
-              placeholder="Digite a rua"
+              placeholder='Digite a rua'
               onChange={handleChange}
               onBlur={handleBlur}
               required
@@ -211,23 +224,25 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.district}>
-            <label htmlFor="district">Bairro</label>
+            <label htmlFor='district'>Bairro</label>
             <input
-              type="text"
-              id="district"
+              type='text'
+              id='district'
               value={values.district}
-              placeholder="Digite o bairro"
+              placeholder='Digite o bairro'
               onChange={handleChange}
               onBlur={handleBlur}
             />
           </div>
           <div className={styles.number}>
-            <label htmlFor="number">Número <span id={styles.required}>*</span></label>
+            <label htmlFor='number'>
+              Número <span id={styles.required}>*</span>
+            </label>
             <input
-              type="number"
-              id="number"
+              type='number'
+              id='number'
               value={values.number}
-              placeholder="Ex: 109"
+              placeholder='Ex: 109'
               onChange={handleChange}
               onBlur={handleBlur}
               min={0}
@@ -239,12 +254,14 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.password}>
-            <label htmlFor="password">Senha <span id={styles.required}>*</span></label>
+            <label htmlFor='password'>
+              Senha <span id={styles.required}>*</span>
+            </label>
             <input
-              type="password"
-              id="password"
+              type='password'
+              id='password'
               value={values.password}
-              placeholder="Digite uma senha"
+              placeholder='Digite uma senha'
               onChange={handleChange}
               onBlur={handleBlur}
               required
@@ -254,11 +271,13 @@ export function RegisterInitial() {
             )}
           </div>
           <div className={styles.passwordConfirm}>
-            <label htmlFor="passwordConfirm">Repita a senha <span id={styles.required}>*</span></label>
+            <label htmlFor='passwordConfirm'>
+              Repita a senha <span id={styles.required}>*</span>
+            </label>
             <input
-              type="password"
-              id="passwordConfirm"
-              placeholder="Repita a senha"
+              type='password'
+              id='passwordConfirm'
+              placeholder='Repita a senha'
               onChange={handleChange}
               onBlur={handleBlur}
               required
@@ -269,10 +288,10 @@ export function RegisterInitial() {
           </div>
         </form>
         <div className={styles.buttons}>
-          <button onClick={() => history.push("/inicio")}>Cancelar</button>
-          <Button title="Avançar" handleClick={(e) => handleSubmit()} />
+          <button onClick={() => history.push('/inicio')}>Cancelar</button>
+          <Button title='Avançar' handleClick={(e) => handleSubmit()} />
         </div>
       </section>
     </div>
-  );
+  )
 }

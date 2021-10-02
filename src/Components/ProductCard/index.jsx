@@ -28,19 +28,23 @@ export const ProductCard = ({
   description,
   price,
   editable,
-  favorited,
   categoria: category,
 }) => {
-  const [faved, setFav] = useState(favorited)
   const { updateInfo } = useLoginContext()
   const [activeModal, setActiveModal] = useState(false)
-  const { commerceName, setProducts, activeCategories, setFavProductIds } =
-    useCommerceContext()
+  const {
+    commerceName,
+    setProducts,
+    activeCategories,
+    setFavProductIds,
+    favProductIds,
+  } = useCommerceContext()
+  const [faved, setFav] = useState(favProductIds && favProductIds.includes(id))
 
   const handleFavorite = async () => {
     let response
 
-    if (favorited) {
+    if (faved) {
       response = await removeFavorite(commerceName, id)
     } else {
       response = await addFavorite(commerceName, id)
@@ -48,7 +52,7 @@ export const ProductCard = ({
 
     if (response) {
       setFavProductIds(response.destaques)
-      setFav(!faved)
+      setFav((previousState) => !previousState)
     }
 
     updateInfo()
@@ -117,12 +121,4 @@ export const ProductCard = ({
 
 ProductCard.defaultProps = {
   image: Coxinha,
-  title: 'Coxinha de frango',
-  alt: '8 coxinhas dentro laranja em cima de um prato',
-  description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.",
-  price: 8.5,
-  editable: true,
-  category: 'Salgado',
-  favedProduct: false,
 }

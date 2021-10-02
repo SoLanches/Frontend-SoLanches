@@ -115,19 +115,15 @@ export const deleteProduct = async (commerceName, idProduct) => {
 
     if (response.status === 200) {
       openNotification(commerceName, "Produto removido com sucesso");
-    } else if (response.status === 401) {
+    }
+
+  } catch (e) {
+    if (e.response.status === 401) {
       clearLocalStorage()
       openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
     } else {
       openNotification(commerceName, "Ocorreu um problema remover o produto");
     }
-
-  } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema remover o produto com id: ${idProduct}`,
-      e.data
-    );
   }
 };
 
@@ -149,18 +145,15 @@ export const editProduct = async (commerceName, idProduct, newProduct) => {
 
     if (response.status === 200) {
       openNotification(commerceName, "Produto alterado com sucesso");
-    } else if (response.status === 401) {
+    }
+
+  } catch (e) {
+    if (e.response.status === 401) {
       clearLocalStorage()
       openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
     } else {
       openNotification(commerceName, "Não foi possível alterar o produto desejado");
     }
-
-  } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao alterar o produto com id: ${idProduct}`
-    );
   }
 };
 
@@ -181,17 +174,14 @@ export const addProduct = async (commerceName, newProduct) => {
 
     if (response.status === 200) {
       openNotification(commerceName, "Produto cadastrado com sucesso");
-    } else if (response.status === 401) {
+    }
+  } catch (e) {
+    if (e.response.status === 401) {
       clearLocalStorage()
       openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
     } else {
       openNotification(commerceName, "Não foi possível cadastrar o produto desejado");
     }
-  } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao alterar o novo produto com nome: ${newProduct.title}`
-    );
   }
 };
 
@@ -212,19 +202,16 @@ export const addCategory = async (commerceName, category) => {
 
     if (response.status === 201) {
       openNotification(commerceName, "Categoria cadastrada com sucesso");
-    } else if (response.status === 401) {
+    }
+
+    return response.data;
+  } catch (e) {
+    if (e.response.status === 401) {
       clearLocalStorage()
       openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
     } else {
       openNotification(commerceName, "Ocorreu um erro ao tentar cadastrar a categoria, por favor tente novamente.");
     }
-
-    return response.data;
-  } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao cadastrar uma nova categoria com nome: ${category}`
-    );
     return null;
   }
 };
@@ -238,26 +225,21 @@ export const addCategory = async (commerceName, category) => {
  */
 export const deleteCategory = async (commerceName, category) => {
   try {
-    const response = await api.delete(`/comercio/${commerceName}/categoria`, {
-      data: { categoria: category },
-    }, { headers: {
+    const response = await api.delete(`/comercio/${commerceName}/categoria`, { categoria: category }, { headers: {
       'authorization': localStorage.getItem('@solanches/loginToken')
     }});
 
     if (response.status === 200) {
       openNotification(commerceName, "Categoria removida com sucesso");
-    } else if (response.status === 401) {
-      clearLocalStorage()
+    }
+    return response.data;
+  } catch (e) {
+    if (e.response.status === 401) {
+      // clearLocalStorage()
       openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
     } else {
       openNotification(commerceName, "Ocorreu um erro ao tentar remover a categoria, por favor tente novamente.");
     }
-    return response.data;
-  } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao remover a categoria com nome: ${category}`
-    );
     return null;
   }
 };
@@ -272,7 +254,7 @@ export const deleteCategory = async (commerceName, category) => {
 export const addFavorite = async (commerceName, productId) => {
   try {
     const response = await api.post(
-      `/comercio/${commerceName}/destaques/${productId}`, { headers: {
+      `/comercio/${commerceName}/destaques/${productId}`, {},{ headers: {
         'authorization': localStorage.getItem('@solanches/loginToken')
       }}
     );
@@ -282,18 +264,16 @@ export const addFavorite = async (commerceName, productId) => {
         commerceName,
         "Produto adicionado aos destaques com sucesso"
       );
-    } else if (response.status === 401) {
-      clearLocalStorage()
+    }
+    return response.data;
+  } catch (e) {
+    
+    if (e.response.status === 401) {
+      // clearLocalStorage()
       openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
     } else {
       openNotification(commerceName, "Ocorreu um erro ao tentar adicionar o produto aos destaques, por favor tente novamente.");
     }
-    return response.data;
-  } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao adicionar o produto com id ${productId} aos destaques`
-    );
     return null;
   }
 };
@@ -318,18 +298,15 @@ export const removeFavorite = async (commerceName, productId) => {
         commerceName,
         "Produto removido dos destaques com sucesso"
       );
-    } else if (response.status === 401) {
+    }
+    return response.data;
+  } catch (e) {
+    if (e.response.status === 401) {
       clearLocalStorage()
       openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
     } else {
       openNotification(commerceName, "Ocorreu um erro ao tentar remover o produto aos destaques, por favor tente novamente.");
     }
-    return response.data;
-  } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao remover o produto com id ${productId} aos destaques`
-    );
     return null;
   }
 };

@@ -1,6 +1,6 @@
 import { Button } from '../../../Components/Button'
 import { CategoryTags } from '../../../Components/CategoryTags'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ProductCard } from '../../../Components/ProductCard'
 
 import style from './style.module.css'
@@ -9,10 +9,17 @@ import { EditModal } from '../../../Components/EditModal'
 import { addCategory, deleteCategory } from '../../../services/api'
 import useCommerceContext from '../../../contexts/commerce.context'
 import useLoginContext from '../../../contexts/login.context'
+import { useParams } from 'react-router'
 
 const EditPage = () => {
+  const { commerceName } = useParams()
+
+  useEffect(() => {
+    updateData()
+  }, [])
+
   const {
-    commerceName,
+    updateData,
     products,
     activeCategories,
     setActiveCategories,
@@ -109,11 +116,19 @@ const EditPage = () => {
                 ? [].concat
                     .apply([], Object.values(products))
                     .map((product, index) => {
+                      console.log(
+                        products,
+                        product,
+                        index,
+                        favProductIds.includes(product._id)
+                      )
+                      console.log('')
+                      console.log('')
                       return (
                         <ProductCard
                           id={product._id}
                           {...product.attributes}
-                          favorited={favProductIds.includes(product._id)}
+                          editable={true}
                           key={index}
                         />
                       )
@@ -124,7 +139,6 @@ const EditPage = () => {
                         id={product._id}
                         {...product.attributes}
                         key={index}
-                        favorited={favProductIds.includes(product._id)}
                       />
                     )
                   })}
