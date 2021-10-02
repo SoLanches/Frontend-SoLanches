@@ -17,14 +17,13 @@ export const CommerceInfo = ({ commerceName }) => {
   useEffect(() => {
     async function getCommerceProducts() {
       const commerceInfoData = await getCommerce(commerceName)
-      console.log(commerceInfoData)
       setCommerceInfo(commerceInfoData.attributes)
       setName(commerceInfoData.nome)
       setSocialMedia(commerceInfoData.attributes.social_media)
     }
 
     getCommerceProducts()
-  }, [])
+  }, [commerceName])
 
   return (
     commerceInfo && (

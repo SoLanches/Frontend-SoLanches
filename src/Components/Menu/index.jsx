@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { useHistory, useParams } from 'react-router'
 import { MenuIcon } from '../../assets/icons/MenuIcon'
 import useLoginContext from '../../contexts/login.context'
@@ -29,7 +29,6 @@ export const Menu = ({ menu = {}, activeCategories = [] }) => {
   const { user } = useLoginContext()
   const { commerceName } = useParams()
   const history = useHistory()
-  console.log(menu, activeCategories, user)
   return (
     <section className={style.sectionMenu}>
       <div className={style.sectionTitle}>
@@ -55,7 +54,7 @@ export const Menu = ({ menu = {}, activeCategories = [] }) => {
               />
             )
           }
-          return <></>
+          return <Fragment key={index}></Fragment>
         })
       ) : (
         <p className={style.noItens}>Ainda não há itens no cardápio!</p>

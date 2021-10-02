@@ -17,7 +17,6 @@ import { logout } from '../../services/api'
 
 export const Header = () => {
   const { token, user, updateInfo } = useLoginContext()
-  console.log(user)
   const history = useHistory()
   const { pathname, handlePathname } = usePagesContext()
   const [lastScrollTop, setScrollTop] = useState(window.pageYOffset)

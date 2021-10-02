@@ -89,7 +89,6 @@ export const getCardapio = async (commerceName) => {
  */
 export const fetchProdutos = async (commerceName, categories = true) => {
   try {
-    console.log('comercio 2 >>>', commerceName)
     const response = await api.get(`/comercio/${commerceName}/produtos?categories=${categories}`);
     return response.data;
   } catch (e) {
@@ -211,8 +210,6 @@ export const addCategory = async (commerceName, category) => {
       'authorization': localStorage.getItem('@solanches/loginToken')
     }});
 
-    console.log('add category >>> ', response)
-
     if (response.status === 201) {
       openNotification(commerceName, "Categoria cadastrada com sucesso");
     } else if (response.status === 401) {
@@ -246,8 +243,6 @@ export const deleteCategory = async (commerceName, category) => {
     }, { headers: {
       'authorization': localStorage.getItem('@solanches/loginToken')
     }});
-
-    console.log('delete category >>> ', response)
 
     if (response.status === 200) {
       openNotification(commerceName, "Categoria removida com sucesso");

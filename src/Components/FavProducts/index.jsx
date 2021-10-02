@@ -34,6 +34,7 @@ export const FavProducts = ({ products = [], favedIds = [] }) => {
               if (favedIds.includes(product._id)) {
                 return <ProductCard key={index} {...product} />
               }
+              return null
             })}
           </div>
         ) : (
