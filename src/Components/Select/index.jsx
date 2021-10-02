@@ -1,25 +1,38 @@
+import { useRef, useState } from 'react'
 import style from './style.module.css'
 
 export const Select = ({ options, defaultValue, setValue, name }) => {
-  const handleChange = (e) => {
+  console.log()
+  const [selected, setSelected] = useState(defaultValue)
+  const currentValue = useRef()
+
+  const handleChange = () => {
     if (setValue) {
-      setValue(e.target.value)
+      setValue(currentValue.current.value)
     }
+    setSelected(currentValue.current.value)
   }
 
   return (
     <div className={style.container}>
-      <select defaultValue={defaultValue} id={name} onChange={handleChange}>
-        <option value='default' className={style.option} disabled>
+      <select
+        selected={selected}
+        value={selected}
+        ref={currentValue}
+        id={name}
+        onChange={handleChange}
+      >
+        <option value='default' className={style.option}>
           Selecione
         </option>
-        {options.map((option, index) => {
-          return (
-            <option key={index} value={option} className={style.option}>
-              {option}
-            </option>
-          )
-        })}
+        {options.length > 0 &&
+          options.map((option, index) => {
+            return (
+              <option key={index} value={option} className={style.option}>
+                {option}
+              </option>
+            )
+          })}
       </select>
       <i></i>
     </div>

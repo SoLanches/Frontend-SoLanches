@@ -13,7 +13,7 @@ const CommerceContext = createContext()
 export function CommerceProvider({ children }) {
   const { commerceName } = useParams()
   const [activeCategories, setActiveCategories] = useState([])
-  const [favProductIds, setFavProductIds] = useState([])
+  const [favProductIds, setFavProductIds] = useState(null)
   const [products, setProducts] = useState([])
   const history = useHistory()
 

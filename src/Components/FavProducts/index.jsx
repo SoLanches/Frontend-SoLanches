@@ -8,10 +8,22 @@ import { ProductCard } from '../ProductCard'
 
 import style from './styles.module.css'
 
-export const FavProducts = ({ products = [[]], favedIds = [] }) => {
+export const FavProducts = ({
+  products = [[]],
+  favedIds = [],
+  activeCategories = [],
+}) => {
   const { user } = useLoginContext()
   const { commerceName } = useParams()
   const history = useHistory()
+  const favedProducts = products.filter((product) => {
+    return (
+      favedIds &&
+      product[0] &&
+      favedIds.includes(product[0]._id) &&
+      activeCategories.includes(product[0].attributes.categoria)
+    )
+  })
 
   return (
     <section className={style.FavSection}>
@@ -28,23 +40,19 @@ export const FavProducts = ({ products = [[]], favedIds = [] }) => {
         )}
       </div>
       <div>
-        {favedIds.length > 0 ? (
+        {favedProducts.length > 0 ? (
           <div className={style.products}>
-            {products.map((product, index) => {
-              console.log('produto', product)
-              if (favedIds && product[0] && favedIds.includes(product[0]._id)) {
-                return (
-                  <ProductCard
-                    key={index}
-                    title={product[0].nome}
-                    category={product[0].attributes.categoria}
-                    description={product[0].attributes.description}
-                    price={product[0].attributes.price}
-                    editable={false}
-                  />
-                )
-              }
-              return null
+            {favedProducts.map((product, index) => {
+              return (
+                <ProductCard
+                  key={index}
+                  title={product[0].nome}
+                  category={product[0].attributes.categoria}
+                  description={product[0].attributes.description}
+                  price={product[0].attributes.price}
+                  editable={false}
+                />
+              )
             })}
           </div>
         ) : (

@@ -16,6 +16,7 @@ const EditPage = () => {
 
   useEffect(() => {
     updateData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const {
@@ -56,7 +57,8 @@ const EditPage = () => {
   }
 
   return (
-    products && (
+    products &&
+    favProductIds && (
       <div className={style.wrapper}>
         <section className={style.titleContainer}>
           <h1 className={style.title}>Editando o seu cardápio</h1>
@@ -116,14 +118,6 @@ const EditPage = () => {
                 ? [].concat
                     .apply([], Object.values(products))
                     .map((product, index) => {
-                      console.log(
-                        products,
-                        product,
-                        index,
-                        favProductIds.includes(product._id)
-                      )
-                      console.log('')
-                      console.log('')
                       return (
                         <ProductCard
                           id={product._id}

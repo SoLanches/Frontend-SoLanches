@@ -31,6 +31,7 @@ export function MenuPage() {
         <CommerceInfo commerceName={commerceName} />
         <FavProducts
           products={products ? Object.values(products) : [[]]}
+          activeCategories={menu.categorias}
           favedIds={menu.destaques}
         />
         <MenuComponent menu={products} activeCategories={menu.categorias} />

@@ -49,10 +49,10 @@ export const ProductCard = ({
     } else {
       response = await addFavorite(commerceName, id)
     }
-
+    console.log(response)
     if (response) {
       setFavProductIds(response.destaques)
-      setFav((previousState) => !previousState)
+      setFav(response.destaques.includes(id))
     }
 
     updateInfo()

@@ -13,13 +13,14 @@ export const CategorySection = ({ productsData, category }) => {
     <div>
       <h3 className={style.sectionCategoryTitle}>{category}</h3>
       <div className={style.sectionProducts}>
-        {productsData.map((produto) => (
+        {productsData.map((produto, index) => (
           <ProductCard
             title={produto.nome}
             category={produto.attributes.categoria}
             description={produto.attributes.description}
             price={produto.attributes.price}
             editable={false}
+            key={index}
           />
         ))}
       </div>
@@ -31,6 +32,10 @@ export const Menu = ({ menu = {}, activeCategories = [] }) => {
   const { user } = useLoginContext()
   const { commerceName } = useParams()
   const history = useHistory()
+  const filteredCategories = activeCategories.filter((category) =>
+    Object.keys(menu).includes(category)
+  )
+
   return (
     <section className={style.sectionMenu}>
       <div className={style.sectionTitle}>
@@ -45,18 +50,15 @@ export const Menu = ({ menu = {}, activeCategories = [] }) => {
           <></>
         )}
       </div>
-      {Object.keys(menu).length > 0 ? (
-        activeCategories.map((category, index) => {
-          if (menu[category]) {
-            return (
-              <CategorySection
-                key={index}
-                productsData={menu[category]}
-                category={category}
-              />
-            )
-          }
-          return <Fragment key={index}></Fragment>
+      {filteredCategories.length > 0 ? (
+        filteredCategories.map((category, index) => {
+          return (
+            <CategorySection
+              key={index}
+              productsData={menu[category]}
+              category={category}
+            />
+          )
         })
       ) : (
         <p className={style.noItens}>Ainda não há itens no cardápio!</p>

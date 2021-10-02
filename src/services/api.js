@@ -225,15 +225,24 @@ export const addCategory = async (commerceName, category) => {
  */
 export const deleteCategory = async (commerceName, category) => {
   try {
-    const response = await api.delete(`/comercio/${commerceName}/categoria`, { categoria: category }, { headers: {
-      'authorization': localStorage.getItem('@solanches/loginToken')
-    }});
+    const token = localStorage.getItem('@solanches/loginToken')
+
+    const response = await api.delete(
+      `/comercio/${commerceName}/categoria`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'authorization': token
+          },
+        data: { categoria: category }
+      },
+    );
 
     if (response.status === 200) {
       openNotification(commerceName, "Categoria removida com sucesso");
     }
     return response.data;
   } catch (e) {
+    console.log(e.response, commerceName, category)
     if (e.response.status === 401) {
       // clearLocalStorage()
       openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
@@ -259,17 +268,15 @@ export const addFavorite = async (commerceName, productId) => {
       }}
     );
 
-    if (response.status === 200) {
-      openNotification(
-        commerceName,
-        "Produto adicionado aos destaques com sucesso"
-      );
-    }
+    openNotification(
+      commerceName,
+      "Produto adicionado aos destaques"
+    );
     return response.data;
   } catch (e) {
     
     if (e.response.status === 401) {
-      // clearLocalStorage()
+      clearLocalStorage()
       openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
     } else {
       openNotification(commerceName, "Ocorreu um erro ao tentar adicionar o produto aos destaques, por favor tente novamente.");

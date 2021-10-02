@@ -30,7 +30,7 @@ export const Header = () => {
   const [activeLoginModal, setActiveLoginModal] = useState(false)
 
   const handleLogout = async () => {
-    const response = await logout()
+    const response = await logout(user)
 
     if (response) {
       updateInfo()

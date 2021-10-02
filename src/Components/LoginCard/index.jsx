@@ -5,7 +5,7 @@ import { IoCloseOutline } from 'react-icons/io5'
 
 import styles from './styles.module.css'
 import { useHistory } from 'react-router'
-import { formatRoute, normalize } from '../../util/format'
+import { formatRoute } from '../../util/format'
 import { login } from '../../services/api'
 import useLoginContext from '../../contexts/login.context'
 
