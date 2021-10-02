@@ -111,7 +111,7 @@ select {
 }
 
 .body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .iconPadding {
@@ -121,10 +121,13 @@ select {
   z-index: -2;
 }
 
-@media screen and (max-width: 600px) {
-  .App {
+@media screen and (max-width: 800px) {
+  .body {
+    padding: 3rem;
   }
+}
 
+@media screen and (max-width: 600px) {
   .body {
     padding: 3rem 1rem;
   }

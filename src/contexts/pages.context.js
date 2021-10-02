@@ -8,7 +8,6 @@ import React, {
 
 import { Categories } from '../pages/Categories'
 import { Home } from '../pages/Home'
-import { Login } from '../pages/Login'
 import { EditMenu } from '../pages/EditMenu'
 import { RegisterMenu } from '../pages/Register/index'
 import { useHistory } from 'react-router-dom'

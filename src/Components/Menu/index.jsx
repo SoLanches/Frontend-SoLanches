@@ -1,5 +1,9 @@
 import React from 'react'
+import { useHistory, useParams } from 'react-router'
 import { MenuIcon } from '../../assets/icons/MenuIcon'
+import useLoginContext from '../../contexts/login.context'
+import { formatRoute } from '../../util/format'
+import { Button } from '../Button'
 import { ProductCard } from '../ProductCard'
 
 import style from './style.module.css'
@@ -22,14 +26,25 @@ export const CategorySection = ({ productsData, category }) => {
 }
 
 export const Menu = ({ menu = {}, activeCategories = [] }) => {
-  console.log(menu, activeCategories)
+  const { user } = useLoginContext()
+  const { commerceName } = useParams()
+  const history = useHistory()
+  console.log(menu, activeCategories, user)
   return (
     <section className={style.sectionMenu}>
       <div className={style.sectionTitle}>
         <MenuIcon />
         <h2>Cardápio</h2>
+        {formatRoute(user) === commerceName ? (
+          <Button
+            title='editar cardápio'
+            handleClick={() => history.push(`/${commerceName}/edit`)}
+          />
+        ) : (
+          <></>
+        )}
       </div>
-      {menu === {} ? (
+      {Object.keys(menu).length > 0 ? (
         activeCategories.map((category, index) => {
           if (menu[category]) {
             return (
@@ -43,7 +58,7 @@ export const Menu = ({ menu = {}, activeCategories = [] }) => {
           return <></>
         })
       ) : (
-        <p>Não há itens no cardápio</p>
+        <p className={style.noItens}>Ainda não há itens no cardápio!</p>
       )}
     </section>
   )
