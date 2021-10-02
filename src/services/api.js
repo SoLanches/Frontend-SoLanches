@@ -82,16 +82,15 @@ export const getCardapio = async (commerceName) => {
  *
  * Route that returns the products registered in the commerce menu.
  *
- * @param {string} commerceName The name of the commerce
- * @param {bool} categories a bool value to switch the format of the reponse.
+ * @param {*} commerceName The name of the commerce
+ * @param {*} categories a bool value to switch the format of the reponse.
  * For more information go to the documentation of the API
  * @returns
  */
-export const getProdutos = async (commerceName, categories = true) => {
+export const fetchProdutos = async (commerceName, categories = true) => {
   try {
-    const response = await api.get(
-      `/comercio/${commerceName}/produtos?categories=${categories}`
-    );
+    console.log('comercio 2 >>>', commerceName)
+    const response = await api.get(`/comercio/${commerceName}/produtos?categories=${categories}`);
     return response.data;
   } catch (e) {
     openNotification(
@@ -358,5 +357,21 @@ export const addCommerce = async (nome, password, attributes) => {
       `Ocorreu um problema ao cadastrar o comércio com nome: ${nome}`,
     );
     return null;
+  }
+}
+
+/**
+ * Route that allows the frontend to get the commerce name
+ * 
+ * @param {string} commerceName 
+ * @returns commerce data
+ */
+ export const getCommerce = async (commerceName) => {
+  try {
+    const response = await api.get(`/comercio/${commerceName}`)
+    return response.data
+    
+  } catch (e) {
+      return null
   }
 }

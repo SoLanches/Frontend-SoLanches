@@ -7,7 +7,7 @@ import { BiCheck } from 'react-icons/bi'
 import Logo from '../../assets/icons/logo.svg'
 
 import styles from './styles.module.css'
-import { editProduct, getProdutos, addProduct } from '../../services/api'
+import { editProduct, fetchProdutos, addProduct } from '../../services/api'
 import useCommerceContext from '../../contexts/commerce.context'
 import { Select } from '../Select'
 import useLoginContext from '../../contexts/login.context'
@@ -53,7 +53,7 @@ export const EditModal = (props) => {
           categoria: category,
         })
 
-    const products = await getProdutos(commerceName)
+    const products = await fetchProdutos(commerceName)
     setProducts(products)
     clearProperties()
     handleClick()
