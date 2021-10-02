@@ -1,37 +1,47 @@
-import React, { useEffect, useState } from 'react'
-import { fetchProdutos } from '../../services/api'
+import React from 'react'
+import { MenuIcon } from '../../assets/icons/MenuIcon'
 import { ProductCard } from '../ProductCard'
 
-const CategorySection = ({ produtosData }) => {
+import style from './style.module.css'
+
+export const CategorySection = ({ productsData, category }) => {
   return (
-    <div style={{ display: 'flex', gap: '2rem' }}>
-      {produtosData.map((produto) => (
-        <ProductCard
-          title={produto.nome}
-          category={produto.attributes.categoria}
-          editable={false}
-        />
-      ))}
+    <div>
+      <h3 className={style.sectionCategoryTitle}>{category}</h3>
+      <div className={style.sectionProducts}>
+        {productsData.map((produto) => (
+          <ProductCard
+            title={produto.nome}
+            category={produto.attributes.categoria}
+            editable={false}
+          />
+        ))}
+      </div>
     </div>
   )
 }
 
-export const Menu = ({ menu }) => {
-  if (!menu) {
-    return 'Carregando...'
-  }
-
+export const Menu = ({ menu = {}, activeCategories = [] }) => {
+  console.log(menu, activeCategories)
   return (
-    <>
-      {' '}
-      {Object.keys(menu).map((key) => {
-        return (
-          <>
-            <h2>{key}</h2>
-            <CategorySection produtosData={menu[key]}></CategorySection>
-          </>
-        )
+    <section>
+      <div className={style.sectionTitle}>
+        <MenuIcon />
+        <h2>Cardápio</h2>
+      </div>
+
+      {activeCategories.map((category, index) => {
+        if (menu[category]) {
+          return (
+            <CategorySection
+              key={index}
+              productsData={menu[category]}
+              category={category}
+            />
+          )
+        }
+        return <></>
       })}
-    </>
+    </section>
   )
 }
