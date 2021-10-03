@@ -25,12 +25,16 @@ export function MenuPage() {
     getCommerceMenu()
   }, [commerceName])
 
+  function mergeProducts() {
+    return [].concat.apply([], Object.values(products))
+  }
+
   return (
     menu && (
       <div className={style.menu}>
         <CommerceInfo commerceName={commerceName} />
         <FavProducts
-          products={products ? Object.values(products) : [[]]}
+          products={products ? mergeProducts() : [[]]}
           activeCategories={menu.categorias}
           favedIds={menu.destaques}
         />

@@ -17,13 +17,18 @@ export const FavProducts = ({
   const { commerceName } = useParams()
   const history = useHistory()
   const favedProducts = products.filter((product) => {
+    // console.log(product)
     return (
       favedIds &&
-      product[0] &&
-      favedIds.includes(product[0]._id) &&
-      activeCategories.includes(product[0].attributes.categoria)
+      product &&
+      favedIds.includes(product._id) &&
+      activeCategories.includes(product.attributes.categoria)
     )
   })
+
+  // console.log(favedProducts)
+  console.log(products)
+  // console.log(favedIds)
 
   return (
     <section className={style.FavSection}>
@@ -46,10 +51,10 @@ export const FavProducts = ({
               return (
                 <ProductCard
                   key={index}
-                  title={product[0].nome}
-                  category={product[0].attributes.categoria}
-                  description={product[0].attributes.description}
-                  price={product[0].attributes.price}
+                  title={product.nome}
+                  category={product.attributes.categoria}
+                  description={product.attributes.description}
+                  price={product.attributes.price}
                   editable={false}
                 />
               )
