@@ -7,7 +7,6 @@ describe("Testa comportamento do componente ProductCard", () => {
         cy.visit('/categorias')
 
         cy.get('.style_title__1zb6s').first().click()
-
         cy.get('.styles_commerce_image__3bbwV').should('be.visible')
 
     })
@@ -19,14 +18,12 @@ describe("Testa comportamento do componente ProductCard", () => {
 
         cy.get('.style_title__1zb6s').first().click()
 
-
         cy.wait("@getCardapio").then(({ response }) => {
             const name = response.body.nome;
             cy.get(".styles_container__6trCd")
                 .find(".styles_container__6trCd h1")
                 .should("to.have", name);
         })
-
     })
 
     it("Retorna true se os itens de redes sociais estao visíveis ", () => {
@@ -35,8 +32,8 @@ describe("Testa comportamento do componente ProductCard", () => {
         cy.visit('/categorias')
 
         cy.get('.style_title__1zb6s').first().click()
-
-        cy.get(".styles_social_medias__U_Jbp").should("to.have", name);
+        
+        cy.get(".styles_social_medias__U_Jbp").should("be.visible");
 
     })
     
@@ -55,7 +52,6 @@ describe("Testa comportamento do componente ProductCard", () => {
                 .find(".styles_address__384Kd")
                 .should("to.have", adress);
         })
-
     })
 
     it("Retorna true se o botão de contato está visível e possui link e verifica se o botão de horários está visível", () => {
@@ -113,7 +109,6 @@ describe("Testa comportamento do componente ProductCard", () => {
                 }
             })
         })
-
     })
 
     it("Retorna true se os títulos das seções da página estão visíveis ", () => {
