@@ -170,7 +170,7 @@ export function RegisterSchedule() {
                   </td>
                   <td className={styles.closesAt}>
                     <input
-                      id="opens"
+                      id="closes"
                       type="time"
                       value={scheduleItem.closes}
                       onChange={(e) =>
