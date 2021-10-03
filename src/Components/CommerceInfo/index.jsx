@@ -4,11 +4,11 @@ import Instagram from '../../assets/icons/instagram.svg'
 import Facebook from '../../assets/icons/facebook.svg'
 import Mail from '../../assets/icons/mail.svg'
 import Whatsapp from '../../assets/icons/whatsapp.svg'
-import styles from './styles.module.css'
 import { useEffect, useState } from 'react'
 import { getCommerce } from '../../services/api'
 import user from '../../assets/images/user.svg'
 import { deformatName } from '../../util/format'
+import styles from './styles.module.css'
 
 export const CommerceInfo = ({ commerceName }) => {
   const [name, setName] = useState('')
@@ -36,7 +36,7 @@ export const CommerceInfo = ({ commerceName }) => {
         <div className={styles.social_medias}>
           <a
             href={socialMedia ? socialMedia.instagram : ''}
-            target='_blank'
+            target={socialMedia ? '_blank' : ''}
             rel='noreferrer'
           >
             <img src={Instagram} alt='Instagram' />
@@ -44,7 +44,7 @@ export const CommerceInfo = ({ commerceName }) => {
 
           <a
             href={socialMedia ? socialMedia.facebook : ''}
-            target='_blank'
+            target={socialMedia ? '_blank' : ''}
             rel='noreferrer'
           >
             <img src={Facebook} alt='Facebook' />
@@ -52,7 +52,7 @@ export const CommerceInfo = ({ commerceName }) => {
 
           <a
             href={socialMedia ? `mailto:${socialMedia.email}` : ''}
-            target='_blank'
+            target={socialMedia ? '_blank' : ''}
             rel='noreferrer'
           >
             <img src={Mail} alt='Email' />

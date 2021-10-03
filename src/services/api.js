@@ -244,7 +244,7 @@ export const deleteCategory = async (commerceName, category) => {
   } catch (e) {
     console.log(e.response, commerceName, category)
     if (e.response.status === 401) {
-      // clearLocalStorage()
+      clearLocalStorage()
       openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
     } else {
       openNotification(commerceName, "Ocorreu um erro ao tentar remover a categoria, por favor tente novamente.");
