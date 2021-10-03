@@ -23,9 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
-const COMMAND_DELAY = 500;
-
+const COMMAND_DELAY = 2000;
 
 for (const command of ['visit', 'click', 'trigger', 'type', 'clear', 'reload', 'contains']) {
     Cypress.Commands.overwrite(command, (originalFn, ...args) => {
@@ -38,7 +36,6 @@ for (const command of ['visit', 'click', 'trigger', 'type', 'clear', 'reload', '
         });
     });
 } 
-
 
 Cypress.Commands.overwrite('type', (originalFn, subject, text, options = {}) => {
     options.delay = 100

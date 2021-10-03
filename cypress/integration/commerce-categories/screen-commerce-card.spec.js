@@ -9,7 +9,7 @@ describe("Testa a visualização dos cards de categoria", () => {
     cy.get("@container-cards").find(".style_categoryCard__2FPBJ").as("cards");
     expect("@cards").to.have.length(6);
 
-    const categories = ["Todas", "Pizza", "Hamburguer", "Sorvete", "Lanches"];
+    const categories = ["Todas", "Pizza", "Hambúrguer", "Sorvete", "Lanches"];
     let index = 0;
     cy.get("@cards").each((category) => {
       // Índice 0 é o container da imagem
