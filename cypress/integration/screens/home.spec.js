@@ -25,16 +25,12 @@ describe("Testa comportamento da página inicial", () => {
         cy.url().should('eq', 'http://localhost:3000/registrar')
     })
 
-
-
     it("Retorna true se ao clicar na logo a aplicação é redirecionada para a página inicial", () => {
 
         cy.get('.style_logo__35L7a').click()
         cy.url().should('include', '/inicio')
         cy.url().should('eq', 'http://localhost:3000/inicio')
     })
-
-
 
     it("Retorna true se ao clicar no botão a aplicação é redirecionada para as rotas corretas", () => {
 
@@ -45,12 +41,9 @@ describe("Testa comportamento da página inicial", () => {
             cy.get(elemento).click().then(() => {
                 cy.url().should('include', `${lista[index]}`)
             })
-
         })
 
         cy.get('.style_container__3bycN').find('.style_paginas__12h2h').as("items");
         expect("@items").to.have.length(6)
     })
-
-
 })
