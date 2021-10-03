@@ -6,38 +6,44 @@ import React, {
   useEffect,
 } from 'react'
 import { useHistory, useParams } from 'react-router'
-import { getProdutos, getCardapio } from '../services/api'
+import { fetchProdutos, getCardapio } from '../services/api'
 
 const CommerceContext = createContext()
 
 export function CommerceProvider({ children }) {
   const { commerceName } = useParams()
   const [activeCategories, setActiveCategories] = useState([])
-  const [favProductIds, setFavProductIds] = useState([])
+  const [favProductIds, setFavProductIds] = useState(null)
   const [products, setProducts] = useState([])
   const history = useHistory()
 
-  useEffect(() => {
-    async function getDadosProdutos() {
-      const response = await getProdutos(commerceName)
-      !response ? history.push('/categorias') : setProducts(response) 
-    }
+  async function getDadosProdutos() {
+    const response = await fetchProdutos(commerceName)
+    !response ? history.push('/categorias') : setProducts(response) 
+  }
 
-    async function getDadosCardapio() {
-      const response = await getCardapio(commerceName)
-      
-      if (!response) {
-        history.push('/categorias')
-      } else {
-        setActiveCategories(response.categorias)
-        setFavProductIds(response.destaques)
-      }
+  async function getDadosCardapio() {
+    const response = await getCardapio(commerceName)
+    
+    if (!response) {
+      history.push('/categorias')
+    } else {
+      setActiveCategories(response.categorias)
+      setFavProductIds(response.destaques)
     }
+  }
+
+  useEffect(() => {
 
     getDadosProdutos()
     getDadosCardapio()
     
   }, [])
+
+  const updateData = async () => {
+    getDadosProdutos()
+    getDadosCardapio()
+  }
 
   const values = {
     commerceName,
@@ -47,6 +53,7 @@ export function CommerceProvider({ children }) {
     setFavProductIds,
     activeCategories,
     setActiveCategories,
+    updateData,
   }
 
   return (

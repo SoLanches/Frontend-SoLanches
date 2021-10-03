@@ -4,7 +4,6 @@ export const openNotification = (key, text, description, icon, style) => {
   notification.open({
     key,
     message: text,
-    description: description,
     icon: icon,
     style: style
   });

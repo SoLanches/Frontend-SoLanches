@@ -1,9 +1,52 @@
 import axios from "axios";
 import { openNotification } from "../util/notification";
+import { clearLocalStorage } from "../util/util"
 
 export const api = axios.create({
   baseURL: "https://solanches.herokuapp.com/",
 });
+
+export const login = async (user, password) => {
+  try {
+    const response = await api.post(`/login`, { nome: user, password: password })
+    return response
+  } catch (e) {
+    openNotification(
+      user, 
+      `Ocorreu um problema ao fazer o login do comércio com o usuário ${user}`,
+    )
+    return null
+  }
+}
+
+export const logout = async () => {
+  try {
+    const response = await api.delete(`/logout`, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }})
+
+    if (response.status === 200) {
+      clearLocalStorage()
+      openNotification(
+        'logout',
+        'Logout feito com sucesso!' 
+      )
+    } else {
+      openNotification(
+        'logout',
+        'Ocorreu um problema ao fazer o logout' 
+      )
+    }
+
+    return response
+  } catch (e) {
+    openNotification(
+      'logout',
+      `Ocorreu um problema ao fazer o logout`, 
+    )
+    return null
+  }
+}
 
 export const getCategories = async () => {
     try {
@@ -11,7 +54,7 @@ export const getCategories = async () => {
       return response
       
     } catch (e) {
-        return null
+      return null
     }
   }
 
@@ -39,16 +82,14 @@ export const getCardapio = async (commerceName) => {
  *
  * Route that returns the products registered in the commerce menu.
  *
- * @param {string} commerceName The name of the commerce
- * @param {bool} categories a bool value to switch the format of the reponse.
+ * @param {*} commerceName The name of the commerce
+ * @param {*} categories a bool value to switch the format of the reponse.
  * For more information go to the documentation of the API
  * @returns
  */
-export const getProdutos = async (commerceName, categories = true) => {
+export const fetchProdutos = async (commerceName, categories = true) => {
   try {
-    const response = await api.get(
-      `/comercio/${commerceName}/produtos?categories=${categories}`
-    );
+    const response = await api.get(`/comercio/${commerceName}/produtos?categories=${categories}`);
     return response.data;
   } catch (e) {
     openNotification(
@@ -68,15 +109,21 @@ export const getProdutos = async (commerceName, categories = true) => {
  */
 export const deleteProduct = async (commerceName, idProduct) => {
   try {
-    await api.delete(`/comercio/${commerceName}/produto/${idProduct}`);
+    const response = await api.delete(`/comercio/${commerceName}/produto/${idProduct}`, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }});
 
-    openNotification(commerceName, "Produto removido com sucesso");
+    if (response.status === 200) {
+      openNotification(commerceName, "Produto removido com sucesso");
+    }
+
   } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema remover o produto com id: ${idProduct}`,
-      e.data
-    );
+    if (e.response.status === 401) {
+      clearLocalStorage()
+      openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
+    } else {
+      openNotification(commerceName, "Ocorreu um problema remover o produto");
+    }
   }
 };
 
@@ -90,15 +137,23 @@ export const deleteProduct = async (commerceName, idProduct) => {
  */
 export const editProduct = async (commerceName, idProduct, newProduct) => {
   try {
-    await api.patch(`/comercio/${commerceName}/produto/${idProduct}`, {
+    const response = await api.patch(`/comercio/${commerceName}/produto/${idProduct}`, {
       attributes: newProduct,
-    });
-    openNotification(commerceName, "Produto alterado com sucesso");
+    }, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }});
+
+    if (response.status === 200) {
+      openNotification(commerceName, "Produto alterado com sucesso");
+    }
+
   } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao alterar o produto com id: ${idProduct}`
-    );
+    if (e.response.status === 401) {
+      clearLocalStorage()
+      openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
+    } else {
+      openNotification(commerceName, "Não foi possível alterar o produto desejado");
+    }
   }
 };
 
@@ -110,16 +165,23 @@ export const editProduct = async (commerceName, idProduct, newProduct) => {
  */
 export const addProduct = async (commerceName, newProduct) => {
   try {
-    await api.post(`/comercio/${commerceName}/produto`, {
+    const response = await api.post(`/comercio/${commerceName}/produto`, {
       nome: newProduct.title,
       attributes: newProduct,
-    });
-    openNotification(commerceName, "Produto cadastrado com sucesso");
+    }, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }});
+
+    if (response.status === 200) {
+      openNotification(commerceName, "Produto cadastrado com sucesso");
+    }
   } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao alterar o novo produto com nome: ${newProduct.title}`
-    );
+    if (e.response.status === 401) {
+      clearLocalStorage()
+      openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
+    } else {
+      openNotification(commerceName, "Não foi possível cadastrar o produto desejado");
+    }
   }
 };
 
@@ -134,14 +196,22 @@ export const addCategory = async (commerceName, category) => {
   try {
     const response = await api.post(`/comercio/${commerceName}/categoria`, {
       categoria: category,
-    });
-    openNotification(commerceName, "Categoria cadastrada com sucesso");
+    }, { headers: {
+      'authorization': localStorage.getItem('@solanches/loginToken')
+    }});
+
+    if (response.status === 201) {
+      openNotification(commerceName, "Categoria cadastrada com sucesso");
+    }
+
     return response.data;
   } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao cadastrar uma nova categoria com nome: ${category}`
-    );
+    if (e.response.status === 401) {
+      clearLocalStorage()
+      openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
+    } else {
+      openNotification(commerceName, "Ocorreu um erro ao tentar cadastrar a categoria, por favor tente novamente.");
+    }
     return null;
   }
 };
@@ -155,16 +225,30 @@ export const addCategory = async (commerceName, category) => {
  */
 export const deleteCategory = async (commerceName, category) => {
   try {
-    const response = await api.delete(`/comercio/${commerceName}/categoria`, {
-      data: { categoria: category },
-    });
-    openNotification(commerceName, "Categoria removida com sucesso");
+    const token = localStorage.getItem('@solanches/loginToken')
+
+    const response = await api.delete(
+      `/comercio/${commerceName}/categoria`, {
+        headers: {
+          'Content-Type': 'application/json',
+          'authorization': token
+          },
+        data: { categoria: category }
+      },
+    );
+
+    if (response.status === 200) {
+      openNotification(commerceName, "Categoria removida com sucesso");
+    }
     return response.data;
   } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao remover a categoria com nome: ${category}`
-    );
+    console.log(e.response, commerceName, category)
+    if (e.response.status === 401) {
+      clearLocalStorage()
+      openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
+    } else {
+      openNotification(commerceName, "Ocorreu um erro ao tentar remover a categoria, por favor tente novamente.");
+    }
     return null;
   }
 };
@@ -179,18 +263,24 @@ export const deleteCategory = async (commerceName, category) => {
 export const addFavorite = async (commerceName, productId) => {
   try {
     const response = await api.post(
-      `/comercio/${commerceName}/destaques/${productId}`
+      `/comercio/${commerceName}/destaques/${productId}`, {},{ headers: {
+        'authorization': localStorage.getItem('@solanches/loginToken')
+      }}
     );
+
     openNotification(
       commerceName,
-      "Produto adicionado aos destaques com sucesso"
+      "Produto adicionado aos destaques"
     );
     return response.data;
   } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao adicionar o produto com id ${productId} aos destaques`
-    );
+    
+    if (e.response.status === 401) {
+      clearLocalStorage()
+      openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
+    } else {
+      openNotification(commerceName, "Ocorreu um erro ao tentar adicionar o produto aos destaques, por favor tente novamente.");
+    }
     return null;
   }
 };
@@ -205,18 +295,25 @@ export const addFavorite = async (commerceName, productId) => {
 export const removeFavorite = async (commerceName, productId) => {
   try {
     const response = await api.delete(
-      `/comercio/${commerceName}/destaques/${productId}`
+      `/comercio/${commerceName}/destaques/${productId}`, { headers: {
+        'authorization': localStorage.getItem('@solanches/loginToken')
+      }}
     );
-    openNotification(
-      commerceName,
-      "Produto removido aos destaques com sucesso"
-    );
+
+    if (response.status === 200) {
+      openNotification(
+        commerceName,
+        "Produto removido dos destaques com sucesso"
+      );
+    }
     return response.data;
   } catch (e) {
-    openNotification(
-      commerceName,
-      `Ocorreu um problema ao remover o produto com id ${productId} aos destaques`
-    );
+    if (e.response.status === 401) {
+      clearLocalStorage()
+      openNotification(commerceName, "Problemas no login, por favor faça o login novamente.");
+    } else {
+      openNotification(commerceName, "Ocorreu um erro ao tentar remover o produto aos destaques, por favor tente novamente.");
+    }
     return null;
   }
 };
@@ -239,5 +336,21 @@ export const addCommerce = async (nome, password, attributes) => {
       `Ocorreu um problema ao cadastrar o comércio com nome: ${nome}`,
     );
     return null;
+  }
+}
+
+/**
+ * Route that allows the frontend to get the commerce name
+ * 
+ * @param {string} commerceName 
+ * @returns commerce data
+ */
+ export const getCommerce = async (commerceName) => {
+  try {
+    const response = await api.get(`/comercio/${commerceName}`)
+    return response.data
+    
+  } catch (e) {
+      return null
   }
 }

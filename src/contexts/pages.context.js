@@ -8,10 +8,10 @@ import React, {
 
 import { Categories } from '../pages/Categories'
 import { Home } from '../pages/Home'
-import { Login } from '../pages/Login'
 import { EditMenu } from '../pages/EditMenu'
 import { RegisterMenu } from '../pages/Register/index'
 import { useHistory } from 'react-router-dom'
+import { MenuPage } from "../pages/Menu";
 
 const PagesContext = createContext()
 
@@ -36,15 +36,6 @@ export function PagesProvider({ children }) {
       private: false,
     },
     {
-      name: 'Login',
-      text: 'Fazer login',
-      path: '/login',
-      component: Login,
-      logged: false,
-      header: true,
-      private: false,
-    },
-    {
       name: "editMenu",
       text: "Edit Menu",
       path: "/:commerceName/edit",
@@ -59,6 +50,14 @@ export function PagesProvider({ children }) {
       component: RegisterMenu,
       header: false,
       private: false,
+    },
+    {
+      name: 'cardapio',
+      text: 'Cardápio',
+      path: '/:commerceName',
+      component: MenuPage,
+      header: true,
+      private: false
     },
   ];
   
