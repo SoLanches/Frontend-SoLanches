@@ -1,88 +1,97 @@
 .container {
-    margin-top:5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0.5rem 1rem 3rem 1rem;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 1rem 3rem 1rem;
 }
 
 .commerce_image {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .commerce_image img {
-    border-radius: 50%;
-    width: 6.5rem;
-    height: 6.5rem;
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
 }
 
-h1 {
-    display: flex;
-    max-width: 22.5rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1.15rem;
-    font-weight: 700 !important; 
-    padding: 0.75rem 0 0.1rem 0;
+.container h1 {
+  display: flex;
+  max-width: 22.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700 !important;
+  padding: 0.75rem 0 0.1rem 0;
 }
 
 .address {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.55rem 0 0.35rem 0;
-    color: var(--primary-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.55rem 0 0.35rem 0;
+  color: var(--primary-text);
 }
 
 .address span {
-    margin-left: 0.2rem;
-    font-weight: 500;
-    font-size: 0.8rem;
-}
-
-.social_medias a {
-    height: 20px;
-}
-
-.social_medias a:first-child, a:nth-child(2) {
-    margin-right: 0.2rem;
-}
-
-.social_medias img {
-    width: 20px;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 0.65rem;
-    width: 100%;
-}
-
-.buttons button {
-    padding: 0.15rem 0.75rem;
-    transition: all 0.2s;
-}
-
-.buttons button:first-child {
-    margin-right: 1.5rem;
-}
-
-.buttons button span {
-    font-weight: 600;
-    padding-left: 0.25rem;
-    font-size: 0.8rem;
+  margin-left: 0.2rem;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .social_medias {
-    display: flex;
-    align-items: center;
-    padding-top: 0.4rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social_medias .social_medias a {
+  height: 28px;
+}
+
+.linkInactive {
+  cursor: not-allowed;
+}
+
+.social_medias a:first-child,
+a:nth-child(2) {
+  margin-right: 0.2rem;
+}
+
+.social_medias img {
+  width: 28px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.65rem;
+  width: 100%;
+}
+
+.buttons button {
+  transition: all 0.2s;
+}
+
+.buttons button:first-child {
+  margin-right: 1.5rem;
+}
+
+.buttons button span {
+  font-weight: 600;
+  padding-left: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.social_medias {
+  display: flex;
+  align-items: center;
+  padding-top: 0.4rem;
 }
 
 #none_icon {
-    display: none;
+  display: none;
 }

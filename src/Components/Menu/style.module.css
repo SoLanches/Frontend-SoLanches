@@ -1,0 +1,43 @@
+.sectionMenu {
+  border-top: 2px solid #95959545;
+}
+
+.sectionCategoryTitle {
+  font-size: 32px;
+  margin: 2rem 0 3rem 0;
+}
+
+.sectionProducts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.sectionTitle {
+  display: flex;
+  gap: 1rem;
+  font-size: 42px;
+  align-items: center;
+  width: fit-content;
+  margin: 1rem auto;
+}
+
+.noItens {
+  margin: 3rem 0;
+  font-size: 1rem;
+  color: #818181;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .sectionCategoryTitle {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .sectionProducts {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+  }
+}

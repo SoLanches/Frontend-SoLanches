@@ -11,21 +11,31 @@ import { useHistory } from 'react-router-dom'
 
 import style from './style.module.css'
 import { LoginCard } from '../LoginCard'
+import useLoginContext from '../../contexts/login.context'
+import { formatRoute } from '../../util/format'
+import { logout } from '../../services/api'
 
 export const Header = () => {
+  const { token, user, updateInfo } = useLoginContext()
   const history = useHistory()
   const { pathname, handlePathname } = usePagesContext()
   const [lastScrollTop, setScrollTop] = useState(window.pageYOffset)
   const [retracted, setRetract] = useState(false)
-  // TODO: Mudar para quando tiver login adaptando código para o componente saber se o usuario está logado.
-  // eslint-disable-next-line no-unused-vars
-  const [logged, setLogged] = useState(true)
+  const [logged, setLogged] = useState(token !== null)
+
+  useEffect(() => {
+    setLogged(token !== null)
+  }, [token])
 
   const [activeLoginModal, setActiveLoginModal] = useState(false)
 
-  const handleLogout = () => {
-    setLogged(false)
-    history.push('/inicio')
+  const handleLogout = async () => {
+    const response = await logout(user)
+
+    if (response) {
+      updateInfo()
+      history.push('/inicio')
+    }
   }
 
   const handleScroll = useCallback(() => {
@@ -67,8 +77,9 @@ export const Header = () => {
           {logged ? (
             <>
               <Link
-                to={'/categorias'}
-                className={pathname === '/perfil' ? style.active : ''}
+                to={`/${formatRoute(user)}`}
+                params={{ commerceName: formatRoute(user) }}
+                className={pathname === `/${user}` ? style.active : ''}
               >
                 {'Meu perfil'}
               </Link>

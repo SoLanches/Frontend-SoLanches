@@ -1,6 +1,6 @@
 import { Button } from '../../../Components/Button'
 import { CategoryTags } from '../../../Components/CategoryTags'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ProductCard } from '../../../Components/ProductCard'
 
 import style from './style.module.css'
@@ -8,15 +8,25 @@ import { Select } from '../../../Components/Select'
 import { EditModal } from '../../../Components/EditModal'
 import { addCategory, deleteCategory } from '../../../services/api'
 import useCommerceContext from '../../../contexts/commerce.context'
+import useLoginContext from '../../../contexts/login.context'
+import { useParams } from 'react-router'
 
 const EditPage = () => {
+  const { commerceName } = useParams()
+
+  useEffect(() => {
+    updateData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   const {
-    commerceName,
+    updateData,
     products,
     activeCategories,
     setActiveCategories,
     favProductIds,
   } = useCommerceContext()
+  const { updateInfo } = useLoginContext()
 
   const [filterCategorie, setFilterCategorie] = useState('todos')
 
@@ -31,6 +41,8 @@ const EditPage = () => {
         setActiveCategories(response.categorias)
       }
     }
+
+    updateInfo()
   }
 
   const handleAddCategory = async () => {
@@ -41,10 +53,12 @@ const EditPage = () => {
         setActiveCategories(response.categorias)
       }
     }
+    updateInfo()
   }
 
   return (
-    products && (
+    products &&
+    favProductIds && (
       <div className={style.wrapper}>
         <section className={style.titleContainer}>
           <h1 className={style.title}>Editando o seu cardápio</h1>
@@ -108,7 +122,7 @@ const EditPage = () => {
                         <ProductCard
                           id={product._id}
                           {...product.attributes}
-                          favorited={favProductIds.includes(product._id)}
+                          editable={true}
                           key={index}
                         />
                       )
@@ -119,7 +133,6 @@ const EditPage = () => {
                         id={product._id}
                         {...product.attributes}
                         key={index}
-                        favorited={favProductIds.includes(product._id)}
                       />
                     )
                   })}

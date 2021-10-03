@@ -1,7 +1,7 @@
 export const Shopping = ({ className, width = 800 }) => {
   return (
     <svg
-      style={{ width: width, height: width * 0.85 }}
+      style={{ width: width, height: '85%' }}
       viewBox={`0 0 1668 1422`}
       fill='none'
       xmlns='http://www.w3.org/2000/svg'

@@ -1,47 +1,47 @@
-import { useRegister } from "../../../contexts/register.context";
-import { useStep } from "../../../contexts/steps.context";
-import { addCommerce } from "../../../services/api";
-import { CheckCategory } from "../../../Components/CheckCategory";
-import { Button } from "../../../Components/Button";
-import { openNotification } from "../../../util/notification";
-import Check from "../../../assets/icons/check.svg";
+import { useRegister } from '../../../contexts/register.context'
+import { useStep } from '../../../contexts/steps.context'
+import { addCommerce } from '../../../services/api'
+import { CheckCategory } from '../../../Components/CheckCategory'
+import { Button } from '../../../Components/Button'
+import { openNotification } from '../../../util/notification'
+import Check from '../../../assets/icons/check.svg'
 
-import { useState, useEffect, useCallback } from "react";
-import { useHistory } from "react-router-dom";
-import { BiErrorAlt } from "react-icons/bi";
+import { useState, useEffect, useCallback } from 'react'
+import { useHistory } from 'react-router-dom'
+import { BiErrorAlt } from 'react-icons/bi'
 
-import styles from "./styles.module.css";
+import styles from './styles.module.css'
 
 export function RegisterCategory() {
-  const history = useHistory();
+  const history = useHistory()
 
-  const { newCommerce, setNewCommerce } = useRegister();
-  const { previousStep } = useStep();
+  const { newCommerce, setNewCommerce } = useRegister()
+  const { previousStep } = useStep()
 
-  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState([])
 
-  const [modalIsActive, setModalIsActive] = useState(false);
+  const [modalIsActive, setModalIsActive] = useState(false)
 
   const showModal = useCallback(() => {
     if (!modalIsActive) {
-      setModalIsActive(!modalIsActive);
+      setModalIsActive(!modalIsActive)
     } else {
-      setModalIsActive(!modalIsActive);
-      history.push("/inicio");
+      setModalIsActive(!modalIsActive)
+      history.push('/inicio')
     }
-  }, [setModalIsActive, modalIsActive, history]);
+  }, [setModalIsActive, modalIsActive, history])
 
   const handleRegisterCommerce = async () => {
     if (!selectedCategories.length) {
       openNotification(
-        "empty-categories",
-        "Erro ao cadastrar comércio",
-        "Por favor, adicione ao menos uma categoria.",
+        'empty-categories',
+        'Erro ao cadastrar comércio',
+        'Por favor, adicione ao menos uma categoria.',
         <BiErrorAlt />,
         {
-          color: "red",
+          color: 'red',
         }
-      );
+      )
     } else {
       if (newCommerce) {
         const reqBody = {
@@ -56,30 +56,30 @@ export function RegisterCategory() {
             social_media: newCommerce.social_media,
             profileImage: newCommerce.profileImage,
           },
-        };
+        }
 
         const response = await addCommerce(
           reqBody.nome,
           reqBody.password,
           reqBody.attributes
-        );
+        )
 
         if (response) {
-          showModal();
+          showModal()
         }
       }
     }
-  };
+  }
 
   function toggleSelect(category) {
     if (selectedCategories.includes(category)) {
       setSelectedCategories((prevState) => {
-        return prevState.filter((current) => current !== category);
-      });
+        return prevState.filter((current) => current !== category)
+      })
     } else {
       setSelectedCategories((prevState) => {
-        return [...prevState, category];
-      });
+        return [...prevState, category]
+      })
     }
   }
 
@@ -87,10 +87,10 @@ export function RegisterCategory() {
     setNewCommerce({
       ...newCommerce,
       category: selectedCategories,
-    });
-  }, [selectedCategories]);
+    })
+  }, [selectedCategories, newCommerce, setNewCommerce])
 
-  const categories = ["Pizza", "Hambúrguer", "Sorvete", "Lanches"];
+  const categories = ['Pizza', 'Hambúrguer', 'Sorvete', 'Lanches']
 
   return (
     <>
@@ -100,7 +100,7 @@ export function RegisterCategory() {
       >
         <h1>Cadastro realizado com sucesso!</h1>
         <span>
-          <img src={Check} alt="Imagem de cadastro concluído" />
+          <img src={Check} alt='Imagem de cadastro concluído' />
         </span>
         <span>
           O próximo passo será adicionar os produtos a cada categoria criada.
@@ -117,19 +117,19 @@ export function RegisterCategory() {
               <div key={category} onClick={() => toggleSelect(category)}>
                 <CheckCategory key={category} categoryName={category} />
               </div>
-            );
+            )
           })}
         </div>
         <div className={styles.buttons}>
           <button onClick={() => previousStep()}>Voltar</button>
           <Button
-            title="Cadastrar"
+            title='Cadastrar'
             handleClick={() => {
-              handleRegisterCommerce();
+              handleRegisterCommerce()
             }}
           />
         </div>
       </div>
     </>
-  );
+  )
 }
