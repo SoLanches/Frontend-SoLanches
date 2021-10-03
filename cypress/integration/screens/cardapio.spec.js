@@ -64,7 +64,6 @@ describe("Testa comportamento do componente ProductCard", () => {
         cy.get('.style_card__3up6Y a').first().then(url => {
             cy.intercept('GET', `**/comercio/${url.attr('href')}`).as('getCardapio');
         })
-
         cy.get('.style_title__1zb6s').first().click()
         cy.wait("@getCardapio").then(({ response }) => {
 
@@ -83,7 +82,6 @@ describe("Testa comportamento do componente ProductCard", () => {
         cy.get('.style_card__3up6Y a').first().then(url => {
             cy.intercept('GET', `**/comercio/${url.attr('href')}`).as('getCardapio')
         })
-
         cy.get('.style_title__1zb6s').first().click()
         cy.wait("@getCardapio").then(({ response }) => {
             const horarios = response.body.attributes.horarios
