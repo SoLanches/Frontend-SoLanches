@@ -1,0 +1,26 @@
+.FavSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.noItens {
+  margin: 2rem 0;
+  font-size: 1rem;
+  color: #818181;
+}
+
+.sectionTitle {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
