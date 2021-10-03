@@ -95,7 +95,7 @@ describe("Testa comportamento do componente ProductCard", () => {
 
         cy.get('.style_title__1zb6s').first().click()
         cy.wait("@getCardapio").then(({ response }) => {
-            const responseLength = response.body.destaques.length;
+            const responseLength = response.body.destaques.length ;
             if (responseLength === 0) {
                 cy.get('.styles_noItens__k7KG9').should("have.text", "Não há itens em destaque!")
             }else {
