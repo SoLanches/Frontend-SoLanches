@@ -34,4 +34,6 @@ describe("Testa comportamento do componente CardCommerce", () => {
         cy.get('.style_times__yY4i5').should('be.visible')
 
     })
+
+    
 })
