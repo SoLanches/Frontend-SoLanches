@@ -25,7 +25,6 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 const COMMAND_DELAY = 3000;
 
-
 for (const command of ['visit', 'click', 'trigger', 'type', 'clear', 'reload', 'contains']) {
     Cypress.Commands.overwrite(command, (originalFn, ...args) => {
         const origVal = originalFn(...args);
@@ -36,4 +35,10 @@ for (const command of ['visit', 'click', 'trigger', 'type', 'clear', 'reload', '
             }, COMMAND_DELAY);
         });
     });
-}
+} 
+
+Cypress.Commands.overwrite('type', (originalFn, subject, text, options = {}) => {
+    options.delay = 100
+  
+    return originalFn(subject, text, options)
+  })

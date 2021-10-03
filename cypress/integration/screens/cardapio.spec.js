@@ -101,7 +101,7 @@ describe("Testa comportamento do componente ProductCard", () => {
             }else {
                 cy.get(".styles_products__nqs1O")
                     .find(".style_container__1SUz-")
-                    .should("have.length", responseLength)
+                    .should("have.length", responseLength - 1)
             }
         })
     })
