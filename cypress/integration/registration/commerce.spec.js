@@ -125,8 +125,7 @@ describe('testa a tela de cadastro de comercio', () => {
 
     })
 
-    it.only('não permite avançar para criação de comérico se não tiver selecionado categoria', () => {
-        cy.intercept('POST', '**/comercio', { statusCode: 201, fixture: 'registeredCommerce' });
+    it('não permite avançar para criação de comérico se não tiver selecionado categoria', () => {
         cy.get('.styles_inputGroup__1__Ht').should('be.visible');
         cy.fillRegistrationForm();
         cy.contains('Avançar').should('be.visible').click();
@@ -163,8 +162,7 @@ describe('testa a tela de cadastro de comercio', () => {
         cy.contains('Avançar').should('be.visible').click();
         cy.contains('Hambúrguer').should('be.visible').click();
         cy.contains('Cadastrar').should('be.visible').click();
-    
-
+        cy.contains('Cadastro realizado com sucesso!');
     })
 
 })
