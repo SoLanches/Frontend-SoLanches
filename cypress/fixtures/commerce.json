@@ -1,14 +1,14 @@
 {
-    "name": "Comercio_testess",
+    "name": "hamburgueria",
     "phone": "83999999999",
-    "email": "teste@hotmail.com",
-    "cnpj": "9999999999999999",
-    "instagram": "",
-    "facebook": "",
+    "email": "hamburgueria@hotmail.com",
+    "cnpj": "8216751400010912",
+    "instagram": "facebook.com/teste",
+    "facebook": "instagram.com/teste",
     "city": "cidade teste",
     "street": "rua teste",
     "district": "bairro teste",
     "number": "3",
-    "password": "12345678",
-    "passwordConfirm": "12345678"    
+    "password": "hamburgueria",
+    "passwordConfirm": "hamburgueria"    
 }
