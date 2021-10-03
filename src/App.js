@@ -4,8 +4,6 @@ import 'antd/lib/notification/style/index.css';
 import { ReactComponent as IconPadding } from './assets/icons/iconPadding.svg'
 import { Routes } from './Routes'
 
-import { ReactComponent as IconPadding } from './assets/icons/iconPadding.svg'
-
 function App() {
   return (
     <div className='App'>
