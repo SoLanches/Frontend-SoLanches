@@ -17,7 +17,6 @@ export const FavProducts = ({
   const { commerceName } = useParams()
   const history = useHistory()
   const favedProducts = products.filter((product) => {
-    // console.log(product)
     return (
       favedIds &&
       product &&
@@ -25,10 +24,6 @@ export const FavProducts = ({
       activeCategories.includes(product.attributes.categoria)
     )
   })
-
-  // console.log(favedProducts)
-  console.log(products)
-  // console.log(favedIds)
 
   return (
     <section className={style.FavSection}>
