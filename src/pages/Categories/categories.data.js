@@ -24,7 +24,7 @@ export const categories =  [
         id:3,
         image: hamburguer,
         descricao: 'hamburguer',
-        title: 'Hamburguer',
+        title: 'Hambúrguer',
         
     },
     {

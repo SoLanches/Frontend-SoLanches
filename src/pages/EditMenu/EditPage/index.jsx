@@ -132,6 +132,7 @@ const EditPage = () => {
                       <ProductCard
                         id={product._id}
                         {...product.attributes}
+                        editable={true}
                         key={index}
                       />
                     )

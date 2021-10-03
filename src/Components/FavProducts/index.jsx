@@ -19,9 +19,9 @@ export const FavProducts = ({
   const favedProducts = products.filter((product) => {
     return (
       favedIds &&
-      product[0] &&
-      favedIds.includes(product[0]._id) &&
-      activeCategories.includes(product[0].attributes.categoria)
+      product &&
+      favedIds.includes(product._id) &&
+      activeCategories.includes(product.attributes.categoria)
     )
   })
 
@@ -46,10 +46,10 @@ export const FavProducts = ({
               return (
                 <ProductCard
                   key={index}
-                  title={product[0].nome}
-                  category={product[0].attributes.categoria}
-                  description={product[0].attributes.description}
-                  price={product[0].attributes.price}
+                  title={product.nome}
+                  category={product.attributes.categoria}
+                  description={product.attributes.description}
+                  price={product.attributes.price}
                   editable={false}
                 />
               )
