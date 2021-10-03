@@ -88,7 +88,8 @@ export function RegisterCategory() {
       ...newCommerce,
       category: selectedCategories,
     })
-  }, [selectedCategories, newCommerce, setNewCommerce])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCategories, setNewCommerce])
 
   const categories = ['Pizza', 'Hambúrguer', 'Sorvete', 'Lanches']
 
