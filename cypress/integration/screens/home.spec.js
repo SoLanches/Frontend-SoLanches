@@ -38,7 +38,7 @@ describe("Testa comportamento da página inicial", () => {
 
     it("Retorna true se ao clicar no botão a aplicação é redirecionada para as rotas corretas", () => {
 
-        cy.get('.style_container__3bycN .style_paginas__12h2h').find('a').each((elemento, index, list) => {
+        cy.get('.style_container__3bycN .style_paginas__12h2h').find('a').each((elemento, index) => {
 
             const lista = ['/inicio', '/categorias']
 
