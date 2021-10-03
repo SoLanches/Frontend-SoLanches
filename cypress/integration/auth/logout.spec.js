@@ -31,3 +31,4 @@ describe('teste de logout', () => {
           .and('have.text', 'Logout feito com sucesso!');
     })
 })
+
