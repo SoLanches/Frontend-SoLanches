@@ -1,0 +1,14 @@
+{
+    "name": "hamburgueria",
+    "phone": "83999999999",
+    "email": "hamburgueria@hotmail.com",
+    "cnpj": "8216751400010912",
+    "instagram": "facebook.com/teste",
+    "facebook": "instagram.com/teste",
+    "city": "cidade teste",
+    "street": "rua teste",
+    "district": "bairro teste",
+    "number": "3",
+    "password": "hamburgueria",
+    "passwordConfirm": "hamburgueria"    
+}
