@@ -79,7 +79,7 @@ export const Header = () => {
               <Link
                 to={`/${formatRoute(user)}`}
                 params={{ commerceName: formatRoute(user) }}
-                className={pathname === '/perfil' ? style.active : ''}
+                className={pathname === `/${user}` ? style.active : ''}
               >
                 {'Meu perfil'}
               </Link>
