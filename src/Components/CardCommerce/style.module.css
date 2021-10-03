@@ -1,141 +1,139 @@
-.container{
-    width: 300px;
-    height: fit-content;
-    border-radius: 40px;
-    background-color: var(--color-base);
-    margin: 20px;
+.container {
+  width: 300px;
+  height: fit-content;
+  border-radius: 40px;
+  background-color: var(--color-base);
+  margin: 20px;
 
-    display: flex;
-    flex-direction: column;    
-    align-items: center;
-    padding-bottom: 18px;
-    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
-    transition: .3s;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 18px;
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.3));
+  transition: 0.3s;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.container:hover{
-    transform: scale(1.03);
+.container:hover {
+  transform: scale(1.03);
 }
 
-.icon{
-    border-radius: 100%;
-    width: 25%;
-    height: 25%;
-    margin: 10% 0 5%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.icon {
+  border-radius: 100%;
+  width: 25%;
+  height: 25%;
+  margin: 10% 0 5%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.title{
-    color: var(--primary-text);
-    font-weight: 600;
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 12px;
+.title {
+  color: var(--primary-text);
+  font-weight: 600;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 12px;
 }
 
-.line{
-    border: 0;
-    border-top: 1px solid #DCDCDC ;
-    width: 75%;
-    display: block;
-    align-self: center;
-    margin: 0 auto 14px auto 
+.line {
+  border: 0;
+  border-top: 1px solid #dcdcdc;
+  width: 75%;
+  display: block;
+  align-self: center;
+  margin: 0 auto 14px auto;
 }
 
-.adress{
-    margin-bottom: 18px;
+.adress {
+  margin-bottom: 18px;
 }
 
-.containerInfos{
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 10fr;
-    padding:0 24px 0 24px;
+.containerInfos {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 10fr;
+  padding: 0 24px 0 24px;
 }
 
-.location{
-    margin-top: -5px;
+.location {
+  margin-top: -5px;
 }
 
-.infos{
-    margin-top: -2px;
+.infos {
+  margin-top: -2px;
 }
 
-.times  {
-    margin-bottom: 8px;
+.times {
+  margin-bottom: 8px;
 }
 
-p{
-    color: var(--primary-text);
-    font-size: 14px;
+p {
+  color: var(--primary-text);
+  font-size: 14px;
 }
 
 @media screen and (max-width: 550px) {
-    .container{
-        width: 240px;
-        border-radius: 35px;
-    }
+  .container {
+    width: 240px;
+    border-radius: 35px;
+  }
 
-    .title{
-        font-size: 14px;
-    }
+  .title {
+    font-size: 14px;
+  }
 
-    p{
-        font-size: 12px;
-    }
+  p {
+    font-size: 12px;
+  }
 
-    .times  {
-        margin-bottom: 6px;
-    }
+  .times {
+    margin-bottom: 6px;
+  }
 
-    .containerInfos{
-        display: grid;
-        grid-template-columns: 1.3fr 12fr;
-        padding:0 12px 0 14px
-    }
+  .containerInfos {
+    display: grid;
+    grid-template-columns: 1.3fr 12fr;
+    padding: 0 12px 0 14px;
+  }
 
-    .location{
-        margin-top: -7px;
-    }
-    
-    .infos{
-        margin-top: -4px;
-    }
+  .location {
+    margin-top: -7px;
+  }
 
+  .infos {
+    margin-top: -4px;
+  }
 }
 
 @media screen and (max-width: 330px) {
-    .container{
-        width: 200px;
-        border-radius: 25px;
-        padding: 0 10px 10px 10px;
-    }
+  .container {
+    width: 200px;
+    border-radius: 25px;
+    padding: 0 10px 10px 10px;
+  }
 
-    .containerInfos{
-        display: grid;
-        grid-template-columns: 1.2fr 8fr;
-        padding:0 8px 0 8px;
-        width: 100%;
-    }
+  .containerInfos {
+    display: grid;
+    grid-template-columns: 1.2fr 8fr;
+    padding: 0 8px 0 8px;
+    width: 100%;
+  }
 
-    .title{
-        font-size: 12px;
-    }
+  .title {
+    font-size: 12px;
+  }
 
-    p{
-        font-size: 10px;
-    }
+  p {
+    font-size: 10px;
+  }
 
-    .location{
-        margin-top: -9px;
-    
-    }
-    
-    .infos{
-        margin-top: -5px;
-    }
+  .location {
+    margin-top: -9px;
+  }
+
+  .infos {
+    margin-top: -5px;
+  }
 }
-
