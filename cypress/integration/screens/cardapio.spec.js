@@ -2,9 +2,11 @@
 
 describe("Testa comportamento do componente ProductCard", () => {
 
-    it("Retorna true se imagem de perfil está visível", () => {
-
+    beforeEach(() => {
         cy.visit('/categorias')
+    })
+
+    it("Retorna true se imagem de perfil está visível", () => {
 
         cy.get('.style_title__1zb6s').first().click()
         cy.get('.styles_commerce_image__3bbwV').should('be.visible')
@@ -13,7 +15,6 @@ describe("Testa comportamento do componente ProductCard", () => {
     it("Retorna true se nome de perfil está visível ", () => {
 
         cy.intercept('GET', "**/cardapio").as('getCardapio');
-        cy.visit('/categorias')
 
         cy.get('.style_title__1zb6s').first().click()
         cy.wait("@getCardapio").then(({ response }) => {
@@ -27,7 +28,6 @@ describe("Testa comportamento do componente ProductCard", () => {
     it("Retorna true se os itens de redes sociais estao visíveis ", () => {
 
         cy.intercept('GET', "**/cardapio").as('getCardapio')
-        cy.visit('/categorias')
 
         cy.get('.style_title__1zb6s').first().click()
         cy.get(".styles_social_medias__U_Jbp").should("be.visible")
@@ -36,7 +36,6 @@ describe("Testa comportamento do componente ProductCard", () => {
     it("Retorna true se endereço está visível ", () => {
 
         cy.intercept('GET', "**/cardapio").as('getCardapio');
-        cy.visit('/categorias')
 
         cy.get('.style_title__1zb6s').first().click()
 
@@ -50,7 +49,6 @@ describe("Testa comportamento do componente ProductCard", () => {
 
     it("Retorna true se o botão de contato está visível e possui link e verifica se o botão de horários está visível", () => {
 
-        cy.visit('/categorias')
         cy.get('.style_title__1zb6s').first().click()
 
         cy.get(".style_container__jFrh2").should("be.visible")
@@ -59,8 +57,6 @@ describe("Testa comportamento do componente ProductCard", () => {
 
     it("Retorna true se o botão de horários está visível e se os horários cadastrados estão sendo renderizados corretamente", () => {
 
-        cy.visit('/categorias')
-
         cy.get('.style_card__3up6Y a').first().then(url => {
             cy.intercept('GET', `**/comercio/${url.attr('href')}`).as('getCardapio');
         })
@@ -68,36 +64,23 @@ describe("Testa comportamento do componente ProductCard", () => {
         cy.wait("@getCardapio").then(({ response }) => {
 
             const horarios = response.body.attributes.horarios
-            let index = 1;
             let finalIndex = horarios.length;
             cy.get('.style_opens__2UkAm').then(liArray => {
-                for (index; index <= finalIndex; index++) {
+                for (let index = 1; index <= finalIndex; index++) {
                     expect(liArray[index]).to.have.text(horarios[index - 1].opens);
                 }
             })
-        })
 
-        cy.visit('/categorias')
-
-        cy.get('.style_card__3up6Y a').first().then(url => {
-            cy.intercept('GET', `**/comercio/${url.attr('href')}`).as('getCardapio')
-        })
-        cy.get('.style_title__1zb6s').first().click()
-        cy.wait("@getCardapio").then(({ response }) => {
-            const horarios = response.body.attributes.horarios
-            let index = 1;
-            let finalIndex = horarios.length;
             cy.get('.style_closes__2ryWy').then(liArray => {
-                for (index; index <= finalIndex; index++) {
+                for (let index = 1; index <= finalIndex; index++) {
                     expect(liArray[index]).to.have.text(horarios[index - 1].closes);
                 }
             })
         })
+
     })
 
     it("Retorna true se os títulos das seções da página estão visíveis ", () => {
-
-        cy.visit('/categorias')
 
         cy.get('.style_title__1zb6s').first().click()
         cy.get(".style_container__3bycN").should("be.visible")
@@ -109,7 +92,6 @@ describe("Testa comportamento do componente ProductCard", () => {
     it("Retorna true se houver produto no destaque e está visível, se caso não houver destaque deve retornar true se tiver uma mensagem na tela", () => {
         
         cy.intercept('GET', "**/cardapio").as('getCardapio')
-        cy.visit('/categorias')
 
         cy.get('.style_title__1zb6s').first().click()
         cy.wait("@getCardapio").then(({ response }) => {
@@ -125,8 +107,6 @@ describe("Testa comportamento do componente ProductCard", () => {
     })
 
     it("Retorna true se todos os itens e o componente de productCard estão visíveis", () => {
-
-        cy.visit('/categorias')
 
         cy.get('.style_title__1zb6s').first().click()
         cy.get('.style_container__1SUz-').should('be.visible')
