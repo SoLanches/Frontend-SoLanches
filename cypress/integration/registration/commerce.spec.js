@@ -96,7 +96,9 @@ describe('testa a tela de cadastro de comercio', () => {
         cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
         cy.contains('Avançar').should('be.visible').click();
         cy.get('.ant-notification').should('be.visible');
-        cy.get('.ant-notification-notice-description').should('have.text', 'Preencha todos os horários antes de avançar.');
+        cy.get('.ant-notification-notice-description')
+          .should('be.visible')  
+          .and('have.text', 'Preencha todos os horários antes de avançar.');
         cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
     })
 
@@ -109,21 +111,12 @@ describe('testa a tela de cadastro de comercio', () => {
         cy.contains('Adicionar horário').should('be.visible').click();
         cy.get('.ant-notification').should('be.visible');
         cy.get('.ant-notification-notice-description')
-          .should('have.text', 'Por favor, preencha os campos de horário antes de adicionar um novo.');
+          .should('be.visible')
+          .and('have.text', 'Por favor, preencha os campos de horário antes de adicionar um novo.');
     })
 
-    it.skip('permite avançar a tela de horários se tiver horário preenchido' , () => {
-        cy.get('.styles_inputGroup__1__Ht').should('be.visible');
-        cy.fillRegistrationForm();
-        cy.contains('Avançar').should('be.visible').click();
-        cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
-        cy.get('#opens').should('be.visible').type('08:00');
-        // cy.get('#closes').should('be.visible').type('12:00');
-        cy.contains('Avançar').should('be.visible').click();
-        cy.get('.styles_scheduleList__Ad1Zv').should('not.be.visible');
-    })
-
-    it.skip('permite criacao de comercio', () => {
+    it('permite avançar a tela de horários para de imagem de perfil se tiver horário preenchido' , () => {
+        cy.intercept('POST','**/comercio', {statusCode: 201, fixture: 'registeredCommerce'});
         cy.get('.styles_inputGroup__1__Ht').should('be.visible');
         cy.fillRegistrationForm();
         cy.contains('Avançar').should('be.visible').click();
@@ -131,7 +124,51 @@ describe('testa a tela de cadastro de comercio', () => {
         cy.get('#opens').should('be.visible').type('08:00');
         cy.get('#closes').should('be.visible').type('12:00');
         cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('not.exist');
+        cy.get('.styles_upload__34Ww6').should('be.visible');
+        
+    })
+
+    it('não permite avançar para criação de comérico se não tiver selecionado categoria', () => {
+        cy.intercept('POST','**/comercio', {statusCode: 201, fixture: 'registeredCommerce'});
+        cy.get('.styles_inputGroup__1__Ht').should('be.visible');
+        cy.fillRegistrationForm();
         cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
+        cy.get('#opens').should('be.visible').type('08:00');
+        cy.get('#closes').should('be.visible').type('12:00');
+        cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('not.exist');
+        
+        const imagePath = 'images/lanche.jpg'
+        cy.get('.fileInput')
+          .attachFile(imagePath);
+
+        cy.contains('Avançar').should('be.visible').click();
+        cy.contains('Cadastrar').should('be.visible').click();
+        cy.get('.ant-notification-notice-description')
+          .should('be.visible')
+          .and('have.text', 'Por favor, adicione ao menos uma categoria.')
+    })
+
+    it('permite criacao de comercio', () => {
+        cy.intercept('POST','**/comercio', {statusCode: 201, fixture: 'registeredCommerce'});
+        cy.get('.styles_inputGroup__1__Ht').should('be.visible');
+        cy.fillRegistrationForm();
+        cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('be.visible');
+        cy.get('#opens').should('be.visible').type('08:00');
+        cy.get('#closes').should('be.visible').type('12:00');
+        cy.contains('Avançar').should('be.visible').click();
+        cy.get('.styles_scheduleList__Ad1Zv').should('not.exist');
+        
+        const imagePath = 'images/lanche.jpg'
+        cy.get('.fileInput')
+          .attachFile(imagePath);
+
+        cy.contains('Avançar').should('be.visible').click();
+        cy.contains('Hambúrguer').should('be.visible').click();
+        cy.contains('Cadastrar').should('be.visible').click();
 
     })
 
