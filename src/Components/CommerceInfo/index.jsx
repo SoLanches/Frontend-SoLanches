@@ -18,6 +18,7 @@ export const CommerceInfo = ({ commerceName }) => {
   useEffect(() => {
     async function getCommerceProducts() {
       const commerceInfoData = await getCommerce(commerceName)
+      console.log(commerceInfoData)
       setCommerceInfo(commerceInfoData.attributes)
       setName(commerceInfoData.nome)
       setSocialMedia(commerceInfoData.attributes.social_media)
@@ -35,7 +36,8 @@ export const CommerceInfo = ({ commerceName }) => {
         <h1>{deformatName(name)}</h1>
         <div className={styles.social_medias}>
           <a
-            href={socialMedia ? socialMedia.instagram : ''}
+            className={socialMedia ? '' : styles.linkInactive}
+            href={socialMedia ? socialMedia.instagram : undefined}
             target={socialMedia ? '_blank' : ''}
             rel='noreferrer'
           >
@@ -43,7 +45,8 @@ export const CommerceInfo = ({ commerceName }) => {
           </a>
 
           <a
-            href={socialMedia ? socialMedia.facebook : ''}
+            className={socialMedia ? '' : styles.linkInactive}
+            href={socialMedia ? socialMedia.facebook : undefined}
             target={socialMedia ? '_blank' : ''}
             rel='noreferrer'
           >
@@ -51,7 +54,8 @@ export const CommerceInfo = ({ commerceName }) => {
           </a>
 
           <a
-            href={socialMedia ? `mailto:${socialMedia.email}` : ''}
+            className={socialMedia ? '' : styles.linkInactive}
+            href={socialMedia ? `mailto:${socialMedia.email}` : undefined}
             target={socialMedia ? '_blank' : ''}
             rel='noreferrer'
           >
